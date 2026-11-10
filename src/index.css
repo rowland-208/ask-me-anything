@@ -517,7 +517,6 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   transition: opacity 400ms;
-  animation: nudge-x 1.8s ease-in-out infinite;
 }
 
 .hint.gone {
@@ -616,16 +615,13 @@ body {
   50% { rotate: 1.5deg; }
 }
 
-@keyframes nudge-x {
-  0%, 100% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
+    /* play each animation once, instantly; never loop (a 1ms loop = jitter) */
     animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 1ms !important;
     transition-delay: 0ms !important;
   }
