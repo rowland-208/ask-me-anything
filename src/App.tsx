@@ -33,6 +33,19 @@ function CardFront({ card, number }: { card: Card; number: number }) {
           </p>
         )}
         <p className="question">{card.question}</p>
+        {card.scale && (
+          <div className="scale">
+            <div className="scale-track" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <span key={i} />
+              ))}
+            </div>
+            <div className="scale-ends">
+              <span>{card.scale[0]}</span>
+              <span>{card.scale[1]}</span>
+            </div>
+          </div>
+        )}
       </div>
       {card.nudge && <p className="nudge">↳ {card.nudge}</p>}
       <span className="corner">{number}</span>

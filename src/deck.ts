@@ -1,13 +1,15 @@
 import words from '../words.yaml'
 import data from '../cards.yaml'
 
-export type Vibe = 'whimsical' | 'deep' | 'nerdy' | 'spicy'
+export type Vibe = 'whimsical' | 'deep' | 'nerdy' | 'spicy' | 'preference'
 
 export type Card = {
   vibe: Vibe
   fact?: string
   question: string
   nudge?: string
+  /** Two ends of a slider, for "where do you land?" cards. */
+  scale?: [string, string]
 }
 
 export const VIBES: Record<Vibe, { sticker: string; label: string }> = {
@@ -15,6 +17,7 @@ export const VIBES: Record<Vibe, { sticker: string; label: string }> = {
   deep: { sticker: '🌊', label: 'deep' },
   nerdy: { sticker: '🔭', label: 'nerdy' },
   spicy: { sticker: '🌶️', label: 'spicy' },
+  preference: { sticker: '🎚️', label: 'preference' },
 }
 
 function loadCards(): Card[] {
@@ -26,6 +29,10 @@ function loadCards(): Card[] {
       fact: typeof c.fact === 'string' ? c.fact : undefined,
       question: c.question,
       nudge: typeof c.nudge === 'string' ? c.nudge : undefined,
+      scale:
+        Array.isArray(c.scale) && c.scale.length === 2 && c.scale.every((x: unknown) => typeof x === 'string')
+          ? (c.scale as [string, string])
+          : undefined,
     }))
 }
 

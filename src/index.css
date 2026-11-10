@@ -17,6 +17,8 @@
   --nerdy-ink: #1d7a45;
   --spicy: #ffadbf;
   --spicy-ink: #c2183f;
+  --preference: #ffd2a6;
+  --preference-ink: #b4520e;
 
   --line: 3px solid var(--ink);
   --pop: 0 6px 0 var(--ink);
@@ -422,7 +424,7 @@ body {
 
 .front {
   gap: 4cqw;
-  padding: 6cqw;
+  padding: 27cqw 6cqw 6cqw; /* top: clear the colored band */
   background: var(--paper);
 }
 
@@ -442,14 +444,16 @@ body {
 .vibe-deep { --c: var(--deep); --c-ink: var(--deep-ink); }
 .vibe-nerdy { --c: var(--nerdy); --c-ink: var(--nerdy-ink); }
 .vibe-spicy { --c: var(--spicy); --c-ink: var(--spicy-ink); }
+.vibe-preference { --c: var(--preference); --c-ink: var(--preference-ink); }
 
 .sticker {
-  position: relative;
+  /* centered in the colored band (22cqw tall, minus its 3px bottom border) */
+  position: absolute;
+  top: calc(11cqw - 1.5px);
+  left: 6cqw;
   display: inline-flex;
-  align-self: flex-start;
   align-items: center;
   gap: 1.6cqw;
-  margin-top: 3cqw;
   padding: 1.4cqw 4cqw 1.6cqw 2.4cqw;
   border: var(--line);
   border-radius: 999px;
@@ -460,11 +464,51 @@ body {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  transform: rotate(-3deg);
+  transform: translateY(-50%) rotate(-3deg);
 }
 
 .sticker span {
   font-size: 6cqw;
+}
+
+.scale {
+  display: flex;
+  flex-direction: column;
+  gap: 2cqw;
+  margin-top: 1cqw;
+}
+
+.scale-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 7cqw;
+  padding: 0 2cqw;
+  border: 2.5px solid var(--ink);
+  border-radius: 999px;
+  background: linear-gradient(90deg, white, var(--c));
+}
+
+.scale-track span {
+  width: 3cqw;
+  height: 3cqw;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: white;
+}
+
+.scale-ends {
+  display: flex;
+  justify-content: space-between;
+  gap: 4cqw;
+  color: var(--c-ink);
+  font-size: 4cqw;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.scale-ends span:last-child {
+  text-align: right;
 }
 
 .body {

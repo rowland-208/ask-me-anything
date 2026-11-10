@@ -9,10 +9,15 @@ stuff is wherever the conversation wanders next.
 All card content lives in [`cards.yaml`](./cards.yaml), one card per entry:
 
 ```yaml
-- vibe: nerdy            # whimsical | deep | nerdy | spicy
+- vibe: nerdy            # whimsical | deep | nerdy | spicy | preference
   fact: Wombats poop cubes.   # optional fun fact / trivia
   question: What's your weirdly specific way of marking your territory?
   nudge: Which of mine have you noticed?   # optional follow-up
+
+- vibe: preference
+  question: How do you feel about pineapple on pizza?
+  scale: ["crime", "delicacy"]   # optional: two ends of a slider on the card
+  nudge: What's a food opinion you'd defend in court?
 ```
 
 The YAML is turned into JSON at build time, so a typo in it fails the build

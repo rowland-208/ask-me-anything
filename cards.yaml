@@ -4,14 +4,16 @@
 # the good stuff is wherever the conversation wanders next.
 #
 # Fields:
-#   vibe:     whimsical | deep | nerdy | spicy   (sets the card's color & sticker)
+#   vibe:     whimsical | deep | nerdy | spicy | preference   (card color & sticker)
 #   fact:     (optional) a fun fact or bit of trivia shown above the question
 #   question: the main prompt (required)
 #   nudge:    (optional) a follow-up to keep things rolling
+#   scale:    (optional) two ends of a slider, e.g. ["crime", "delicacy"]
 #
 # Tip: if a line contains a colon, wrap it in quotes or use the `>-` style below.
 #
-# Deck balance: 30% whimsical, 30% nerdy, 20% deep, 20% spicy.
+# The first 100 cards are 30% whimsical, 30% nerdy, 20% deep, 20% spicy.
+# Then come 200 preference cards: 100 scales and 100 favorites.
 
 # ---------------------------------------------------------------------------
 # 🌈 WHIMSICAL (30)
@@ -650,3 +652,908 @@
     What's a role-play scenario you'd be up for trying, even just for
     the laughs?
   nudge: Who would you be, and who would I be?
+
+# ---------------------------------------------------------------------------
+# 🎚️ PREFERENCE (200): where do you land, and what's your favorite?
+# `scale` (optional) is the two ends of a slider drawn on the card.
+# ---------------------------------------------------------------------------
+
+- vibe: preference
+  question: "How do you feel about pineapple on pizza?"
+  scale: ["crime", "delicacy"]
+  nudge: "What's a food opinion you'd defend in court?"
+
+- vibe: preference
+  question: "How much of a morning person are you?"
+  scale: ["vampire", "sunrise club"]
+  nudge: "What does your perfect first hour of the day look like?"
+
+- vibe: preference
+  question: "How do you feel about surprise parties?"
+  scale: ["nightmare", "yes please"]
+  nudge: "What's the best surprise anyone ever pulled on you?"
+
+- vibe: preference
+  question: "How spicy do you like your food?"
+  scale: ["ketchup is spicy", "ghost peppers"]
+  nudge: "What's the spiciest thing you've ever eaten?"
+
+- vibe: preference
+  question: "How tidy is your ideal home?"
+  scale: ["lived-in chaos", "showroom"]
+  nudge: "What's the one thing that has to be clean for you to relax?"
+
+- vibe: preference
+  question: "How do you feel about camping?"
+  scale: ["hotel please", "under the stars"]
+  nudge: "What's your best (or worst) outdoor story?"
+
+- vibe: preference
+  question: "How much planning do you want on a vacation?"
+  scale: ["wing it", "spreadsheet"]
+  nudge: "What's the best unplanned thing that ever happened on a trip?"
+
+- vibe: preference
+  question: "How do you feel about karaoke?"
+  scale: ["never", "hand me the mic"]
+  nudge: "What's your go-to karaoke song, real or hypothetical?"
+
+- vibe: preference
+  question: "How do you feel about scary movies?"
+  scale: ["eyes closed", "more blood"]
+  nudge: "What's the scariest thing you've ever watched?"
+
+- vibe: preference
+  question: "How much do you like being the center of attention?"
+  scale: ["invisible please", "spotlight"]
+  nudge: "When did you last love being in the spotlight?"
+
+- vibe: preference
+  question: "How do you feel about cold weather?"
+  scale: ["hibernate", "snow day!"]
+  nudge: "Where would you live if weather were the only factor?"
+
+- vibe: preference
+  question: "How competitive are you at board games?"
+  scale: ["here for snacks", "flip the table"]
+  nudge: "Which game brings out the worst in you?"
+
+- vibe: preference
+  question: "Texting or calling?"
+  scale: ["text forever", "just call me"]
+  nudge: "Who's the one person you always call?"
+
+- vibe: preference
+  question: "How adventurous are you with new foods?"
+  scale: ["chicken nuggets", "anything once"]
+  nudge: "What's the strangest thing you've ever eaten?"
+
+- vibe: preference
+  question: "How do you feel about dancing in public?"
+  scale: ["absolutely not", "first on the floor"]
+  nudge: "What would it take to get you dancing tonight?"
+
+- vibe: preference
+  question: "How do you feel about rainy days?"
+  scale: ["ruins everything", "cozy perfection"]
+  nudge: "What's your ideal rainy-day plan?"
+
+- vibe: preference
+  question: "How much do you love a good routine?"
+  scale: ["chaos goblin", "same thing every day"]
+  nudge: "What's one routine you'd never give up?"
+
+- vibe: preference
+  question: "How do you feel about roller coasters?"
+  scale: ["feet on the ground", "front row"]
+  nudge: "What's the most thrilling thing you've ever done?"
+
+- vibe: preference
+  question: "How sentimental are you about old stuff?"
+  scale: ["toss it all", "keep every ticket stub"]
+  nudge: "What's one thing you'll never throw away?"
+
+- vibe: preference
+  question: "How do you feel about cats?"
+  scale: ["no thank you", "cat royalty"]
+  nudge: "What animal would be your ideal pet?"
+
+- vibe: preference
+  question: "How do you feel about small talk?"
+  scale: ["torture", "love it"]
+  nudge: "What's a question you wish strangers would ask instead?"
+
+- vibe: preference
+  question: "How long do you need to recover after a big party?"
+  scale: ["a full week", "let's go again"]
+  nudge: "How do you recharge best?"
+
+- vibe: preference
+  question: "How much do you care about your birthday?"
+  scale: ["just another day", "birthday month"]
+  nudge: "What was your best birthday ever?"
+
+- vibe: preference
+  question: "How do you feel about long road trips?"
+  scale: ["are we there yet", "open road forever"]
+  nudge: "Who's in charge of the music?"
+
+- vibe: preference
+  question: "How do you feel about cilantro?"
+  scale: ["tastes like soap", "put it on everything"]
+  nudge: "What food do you wish you liked?"
+
+- vibe: preference
+  question: "How much do you trust your gut?"
+  scale: ["overthinker", "pure instinct"]
+  nudge: "When did your gut turn out to be right?"
+
+- vibe: preference
+  question: "How do you feel about museums?"
+  scale: ["snooze", "stay till closing"]
+  nudge: "What would be in a museum about your life?"
+
+- vibe: preference
+  question: "How early do you show up to things?"
+  scale: ["fashionably late", "painfully early"]
+  nudge: "What's the latest you've ever been to something important?"
+
+- vibe: preference
+  question: "How do you feel about social media?"
+  scale: ["log off forever", "chronically online"]
+  nudge: "What would you do with the time if it vanished tomorrow?"
+
+- vibe: preference
+  question: "How do you feel about leftovers?"
+  scale: ["never again", "better the next day"]
+  nudge: "What dish is best eaten cold the next morning?"
+
+- vibe: preference
+  question: "How brave are you with bugs?"
+  scale: ["call for help", "bug whisperer"]
+  nudge: "What's your most dramatic bug encounter?"
+
+- vibe: preference
+  question: "How much do you like being outdoors?"
+  scale: ["indoor cat", "always outside"]
+  nudge: "What's your favorite outdoor place?"
+
+- vibe: preference
+  question: "How do you feel about hugs from people you just met?"
+  scale: ["handshake please", "bring it in"]
+  nudge: "Who gives the best hugs you know?"
+
+- vibe: preference
+  question: "How much do you like puzzles and riddles?"
+  scale: ["no thanks", "can't stop till solved"]
+  nudge: "What's a real-life mystery you'd love to solve?"
+
+- vibe: preference
+  question: "How do you feel about musicals?"
+  scale: ["please stop singing", "I know every word"]
+  nudge: "If your life were a musical, what's the big number about?"
+
+- vibe: preference
+  question: "How picky are you about coffee?"
+  scale: ["any bean will do", "single origin only"]
+  nudge: "How do you take it, and why?"
+
+- vibe: preference
+  question: "How do you feel about spontaneous weekend trips?"
+  scale: ["give me notice", "car's already packed"]
+  nudge: "Where would we go if we left tonight?"
+
+- vibe: preference
+  question: "How clean is your car right now?"
+  scale: ["archaeological site", "spotless"]
+  nudge: "What's the weirdest thing in there?"
+
+- vibe: preference
+  question: "How do you feel about having your photo taken?"
+  scale: ["hide", "work the camera"]
+  nudge: "What's your favorite photo of yourself?"
+
+- vibe: preference
+  question: "How do you feel about sharing food off your plate?"
+  scale: ["don't touch my fries", "family style"]
+  nudge: "What's the one food you'd never share?"
+
+- vibe: preference
+  question: "How loud do you like your music?"
+  scale: ["background hum", "concert volume"]
+  nudge: "What song do you always turn all the way up?"
+
+- vibe: preference
+  question: "How do you feel about gardening?"
+  scale: ["plant killer", "green thumb"]
+  nudge: "What would you grow if you had a huge garden?"
+
+- vibe: preference
+  question: "How much do you enjoy cooking?"
+  scale: ["microwave chef", "chef's kiss"]
+  nudge: "What's your signature dish?"
+
+- vibe: preference
+  question: "How do you feel about working out?"
+  scale: ["only if chased", "gym rat"]
+  nudge: "What kind of movement actually feels good to you?"
+
+- vibe: preference
+  question: "How do you feel about winter holidays?"
+  scale: ["bah humbug", "decorations up in October"]
+  nudge: "What tradition do you look forward to most?"
+
+- vibe: preference
+  question: "How do you feel about swimming in the ocean?"
+  scale: ["what's down there?", "mermaid at heart"]
+  nudge: "What's your best beach memory?"
+
+- vibe: preference
+  question: "How organized is your phone?"
+  scale: ["10,000 unread", "inbox zero"]
+  nudge: "What app do you open first every morning?"
+
+- vibe: preference
+  question: "How do you feel about a whole morning in bed with a book?"
+  scale: ["boring", "heaven"]
+  nudge: "What book could you read again and again?"
+
+- vibe: preference
+  question: "How much do you like people watching?"
+  scale: ["not my thing", "the best sport"]
+  nudge: "Make up a backstory for someone you can see right now."
+
+- vibe: preference
+  question: "How do you feel about splurging?"
+  scale: ["save every penny", "treat yourself"]
+  nudge: "What's the best thing you've ever splurged on?"
+
+- vibe: preference
+  question: "How do you feel about mint chocolate chip?"
+  scale: ["toothpaste", "perfection"]
+  nudge: "What's your ice cream order?"
+
+- vibe: preference
+  question: "How do you feel about thunderstorms?"
+  scale: ["under the blankets", "front porch show"]
+  nudge: "What sound helps you fall asleep?"
+
+- vibe: preference
+  question: "How do you feel about deep talks at 2 a.m.?"
+  scale: ["go to sleep", "best part of the night"]
+  nudge: "What's the deepest late-night talk you've ever had?"
+
+- vibe: preference
+  question: "How much do you want to be fussed over when you're sick?"
+  scale: ["leave me alone", "full nursing service"]
+  nudge: "What's your sick-day comfort food?"
+
+- vibe: preference
+  question: "How do you feel about clowns?"
+  scale: ["terrifying", "delightful"]
+  nudge: "What's an irrational fear you have?"
+
+- vibe: preference
+  question: "How handy are you around the house?"
+  scale: ["call someone", "I'll build it"]
+  nudge: "What's the best thing you've ever fixed?"
+
+- vibe: preference
+  question: "How do you feel about reality TV?"
+  scale: ["brain rot", "guilty pleasure"]
+  nudge: "What reality show could you actually win?"
+
+- vibe: preference
+  question: "How do you feel about matching outfits as a couple?"
+  scale: ["never", "matching pajamas"]
+  nudge: "What would our couple costume be?"
+
+- vibe: preference
+  question: "How do you feel about big crowds?"
+  scale: ["get me out", "the more the merrier"]
+  nudge: "What's the biggest crowd you've ever been part of?"
+
+- vibe: preference
+  question: "How much do you like trying new restaurants?"
+  scale: ["my usual spot", "never the same place twice"]
+  nudge: "What's your favorite hidden gem?"
+
+- vibe: preference
+  question: "How do you feel about naps?"
+  scale: ["waste of time", "olympic napper"]
+  nudge: "Where was the best nap you've ever taken?"
+
+- vibe: preference
+  question: "How much do you like learning languages?"
+  scale: ["one is plenty", "polyglot dreams"]
+  nudge: "Which language would you learn instantly if you could?"
+
+- vibe: preference
+  question: "How do you feel about long phone calls?"
+  scale: ["five minutes max", "hours and hours"]
+  nudge: "Who could you talk to for hours?"
+
+- vibe: preference
+  question: "How much do you like surprises in general?"
+  scale: ["tell me everything", "keep me guessing"]
+  nudge: "What surprise would make your whole year?"
+
+- vibe: preference
+  question: "How do you feel about pets sleeping in the bed?"
+  scale: ["floor only", "pile on"]
+  nudge: "What pet would you want curled up at the foot of the bed?"
+
+- vibe: preference
+  question: "How do you feel about haunted houses?"
+  scale: ["never going in", "where's the ghost?"]
+  nudge: "Do you believe in ghosts, even a little?"
+
+- vibe: preference
+  question: "How much of a sweet tooth do you have?"
+  scale: ["savory forever", "dessert first"]
+  nudge: "What dessert would you pick for your last meal?"
+
+- vibe: preference
+  question: "How do you feel about getting lost in a new city?"
+  scale: ["panic", "best way to explore"]
+  nudge: "What city do you want to get lost in?"
+
+- vibe: preference
+  question: "How do you feel about winter sports?"
+  scale: ["cocoa in the lodge", "black diamond"]
+  nudge: "What sport would you try if you knew you couldn't get hurt?"
+
+- vibe: preference
+  question: "How much do you like poetry?"
+  scale: ["roses are red, whatever", "I write it in secret"]
+  nudge: "Can you recite any poem, even a silly one?"
+
+- vibe: preference
+  question: "How do you feel about video games?"
+  scale: ["never touch them", "gamer for life"]
+  nudge: "What game would you want to live inside?"
+
+- vibe: preference
+  question: "How much do you like hosting people at home?"
+  scale: ["my home is my cave", "open house"]
+  nudge: "What would our dream dinner party look like?"
+
+- vibe: preference
+  question: "Sunrise or sunset?"
+  scale: ["team sunrise", "team sunset"]
+  nudge: "Where's the best one you've ever seen?"
+
+- vibe: preference
+  question: "How do you feel about country music?"
+  scale: ["nope", "yeehaw"]
+  nudge: "What genre surprised you by being good?"
+
+- vibe: preference
+  question: "Which is worse, being too hot or too cold?"
+  scale: ["freezing is worse", "sweating is worse"]
+  nudge: "Who controls the thermostat in your dream home?"
+
+- vibe: preference
+  question: "How do you feel about astrology?"
+  scale: ["total nonsense", "what's your rising sign?"]
+  nudge: "Which sign do you secretly think fits you?"
+
+- vibe: preference
+  question: "How do you feel about spiders?"
+  scale: ["burn the house down", "little friends"]
+  nudge: "What animal do you think is unfairly hated?"
+
+- vibe: preference
+  question: "How excited are you about technology getting smarter?"
+  scale: ["back to typewriters", "bring on the robots"]
+  nudge: "What invention do you wish existed?"
+
+- vibe: preference
+  question: "How do you feel about long walks with no destination?"
+  scale: ["where are we going?", "favorite hobby"]
+  nudge: "Where should our next long walk be?"
+
+- vibe: preference
+  question: "How much do you care about what you wear?"
+  scale: ["whatever's clean", "every outfit is a statement"]
+  nudge: "What's the best thing in your closet?"
+
+- vibe: preference
+  question: "How do you feel about breakfast for dinner?"
+  scale: ["wrong", "best idea ever"]
+  nudge: "What's your ultimate breakfast?"
+
+- vibe: preference
+  question: "How do you feel about big family holidays?"
+  scale: ["survival mode", "can't wait"]
+  nudge: "What's the funniest family holiday story you have?"
+
+- vibe: preference
+  question: "How do you feel about tattoos?"
+  scale: ["never on me", "covered in ink"]
+  nudge: "What would you get if it had to mean something?"
+
+- vibe: preference
+  question: "How chatty are you with strangers?"
+  scale: ["headphones on", "I'll know their life story"]
+  nudge: "Who's the most interesting stranger you've ever talked to?"
+
+- vibe: preference
+  question: "How do you feel about Mondays?"
+  scale: ["dread", "fresh start"]
+  nudge: "What would make Mondays great?"
+
+- vibe: preference
+  question: "How often do you like to rearrange your space?"
+  scale: ["nothing ever moves", "every month"]
+  nudge: "What would you change about our space?"
+
+- vibe: preference
+  question: "How do you feel about sushi?"
+  scale: ["cooked rolls only", "omakase every time"]
+  nudge: "What food took you the longest to learn to like?"
+
+- vibe: preference
+  question: "How bold are you with your hair?"
+  scale: ["same cut forever", "pink next week"]
+  nudge: "What's the boldest hair choice you've ever made?"
+
+- vibe: preference
+  question: "How do you feel about rom-coms?"
+  scale: ["eye roll", "on repeat"]
+  nudge: "Which rom-com plot would fit us best?"
+
+- vibe: preference
+  question: "How do you feel about waking up early on vacation?"
+  scale: ["sleep till noon", "up for the sunrise"]
+  nudge: "What's the perfect vacation day, hour by hour?"
+
+- vibe: preference
+  question: "How do you feel about public speaking?"
+  scale: ["terrified", "give me a stage"]
+  nudge: "What's a speech you'd love to give?"
+
+- vibe: preference
+  question: "How much do you enjoy shopping?"
+  scale: ["get in, get out", "all-day affair"]
+  nudge: "What store could you spend hours in?"
+
+- vibe: preference
+  question: "How much of a foodie are you?"
+  scale: ["food is fuel", "trips planned around meals"]
+  nudge: "What's the best meal of your life?"
+
+- vibe: preference
+  question: "How do you feel about tarot and fortune tellers?"
+  scale: ["skeptic", "book me a reading"]
+  nudge: "What would you want to know about your future?"
+
+- vibe: preference
+  question: "How do you feel about moving to another country?"
+  scale: ["never leaving", "passport ready"]
+  nudge: "Where would we move?"
+
+- vibe: preference
+  question: "How much do you like being alone?"
+  scale: ["lonely fast", "alone time is sacred"]
+  nudge: "What's your favorite thing to do alone?"
+
+- vibe: preference
+  question: "How do you feel about stuff on the kitchen counters?"
+  scale: ["every surface clear", "it's decor"]
+  nudge: "Which room in a home feels most like you?"
+
+- vibe: preference
+  question: "How do you feel about getting older?"
+  scale: ["dreading it", "future cool old person"]
+  nudge: "What kind of old person do you want to be?"
+
+- vibe: preference
+  question: "How do you feel about the smell of gasoline?"
+  scale: ["gross", "weirdly love it"]
+  nudge: "What's a weird smell you secretly love?"
+
+- vibe: preference
+  question: "How closely do you follow recipes?"
+  scale: ["to the gram", "recipes are suggestions"]
+  nudge: "What's your best kitchen improvisation?"
+
+- vibe: preference
+  question: "What's your favorite word?"
+  nudge: "Use it in a sentence about me."
+
+- vibe: preference
+  question: "What's your favorite sandwich?"
+  nudge: "Build me one, out loud, step by step."
+
+- vibe: preference
+  question: "What was your favorite TV show as a kid?"
+  nudge: "Which character were you?"
+
+- vibe: preference
+  question: "What's your favorite holiday, and why?"
+  nudge: "How would you celebrate it if money were no object?"
+
+- vibe: preference
+  question: "What's your favorite thing about where you grew up?"
+  nudge: "What's something about it you don't miss?"
+
+- vibe: preference
+  question: "What's your favorite animal at the zoo?"
+  nudge: "What would it say about you?"
+
+- vibe: preference
+  question: "What's your favorite way to spend a Sunday?"
+  nudge: "What's a Sunday tradition we should start?"
+
+- vibe: preference
+  question: "What's a movie you'll watch any time it's on?"
+  nudge: "What's your favorite line from it?"
+
+- vibe: preference
+  question: "What's your favorite comfort food?"
+  nudge: "Who made it best?"
+
+- vibe: preference
+  question: "What's your favorite color right now, and has it changed?"
+  nudge: "What color would you paint our front door?"
+
+- vibe: preference
+  question: "What's your favorite season for a date?"
+  nudge: "Plan our perfect date in it."
+
+- vibe: preference
+  question: "What's your favorite memory of us so far?"
+  nudge: "What made it stick?"
+
+- vibe: preference
+  question: "What was your favorite book as a kid?"
+  nudge: "What did it teach you?"
+
+- vibe: preference
+  question: "What's your favorite cereal?"
+  nudge: "And what's the correct milk-to-cereal ratio?"
+
+- vibe: preference
+  question: "What's your favorite city you've ever visited?"
+  nudge: "What would you do there on a perfect day?"
+
+- vibe: preference
+  question: "What's your favorite board or card game?"
+  nudge: "Are we playing tonight?"
+
+- vibe: preference
+  question: "What's your favorite dinosaur?"
+  nudge: "Defend your choice."
+
+- vibe: preference
+  question: "What's your favorite kind of weather?"
+  nudge: "What do you do when it shows up?"
+
+- vibe: preference
+  question: "What's your favorite song to sing in the car?"
+  nudge: "Sing the chorus. I'll wait."
+
+- vibe: preference
+  question: "What's your favorite thing about yourself?"
+  nudge: "What's something you like about yourself that people rarely notice?"
+
+- vibe: preference
+  question: "What's your favorite thing about me that isn't physical?"
+  nudge: "When did you first notice it?"
+
+- vibe: preference
+  question: "What's your favorite pizza topping combo?"
+  nudge: "What's a combo you'd never order?"
+
+- vibe: preference
+  question: "What's your favorite emoji, and how do you use it?"
+  nudge: "Which one represents me?"
+
+- vibe: preference
+  question: "What's your favorite sound?"
+  nudge: "And the sound you hate the most?"
+
+- vibe: preference
+  question: "What's the best piece of advice you've ever gotten?"
+  nudge: "Who gave it to you?"
+
+- vibe: preference
+  question: "What's your favorite quote or saying?"
+  nudge: "Do you actually live by it?"
+
+- vibe: preference
+  question: "What's your favorite thing to cook for someone else?"
+  nudge: "Who would you most like to cook for?"
+
+- vibe: preference
+  question: "What's your favorite fruit?"
+  nudge: "Which fruit is the most overrated?"
+
+- vibe: preference
+  question: "What's your favorite time of day?"
+  nudge: "What are you usually doing then?"
+
+- vibe: preference
+  question: "What's your favorite holiday tradition from your family?"
+  nudge: "Which one would you change?"
+
+- vibe: preference
+  question: "What's your favorite flower or plant?"
+  nudge: "Would you rather get flowers or a plant?"
+
+- vibe: preference
+  question: "What's your favorite kind of date?"
+  nudge: "When's the last time we did it?"
+
+- vibe: preference
+  question: "What's your favorite movie theater snack?"
+  nudge: "Sweet and salty mixed, or kept separate?"
+
+- vibe: preference
+  question: "What's your favorite app that isn't social media?"
+  nudge: "Which app would you delete forever if you could?"
+
+- vibe: preference
+  question: "Who's your favorite superhero or villain?"
+  nudge: "Which power would you steal from them?"
+
+- vibe: preference
+  question: "Which celebrity would you most want as a friend?"
+  nudge: "What would the two of you do together?"
+
+- vibe: preference
+  question: "What's your favorite piece of clothing you've ever owned?"
+  nudge: "What happened to it?"
+
+- vibe: preference
+  question: "What's your favorite thing to make with your hands?"
+  nudge: "Teach me how."
+
+- vibe: preference
+  question: "What's your favorite sport to watch?"
+  nudge: "Who's your team, and why?"
+
+- vibe: preference
+  question: "What's your favorite thing about mornings?"
+  nudge: "And your least favorite?"
+
+- vibe: preference
+  question: "What's your favorite cozy activity?"
+  nudge: "What makes something feel cozy to you?"
+
+- vibe: preference
+  question: "What's your favorite drink order?"
+  nudge: "What does it say about you?"
+
+- vibe: preference
+  question: "What's your favorite thing you own that cost almost nothing?"
+  nudge: "How did you get it?"
+
+- vibe: preference
+  question: "What's your favorite piece of music without lyrics?"
+  nudge: "What does it make you picture?"
+
+- vibe: preference
+  question: "What's your favorite thing to learn about?"
+  nudge: "What's the last rabbit hole you fell down?"
+
+- vibe: preference
+  question: "What's your favorite fictional world?"
+  nudge: "What would your job be there?"
+
+- vibe: preference
+  question: "What's your favorite kind of dog?"
+  nudge: "What would we name ours?"
+
+- vibe: preference
+  question: "What's your favorite thing about your job, or a job you've had?"
+  nudge: "What would your dream job look like?"
+
+- vibe: preference
+  question: "What's your favorite way to be comforted when you're sad?"
+  nudge: "How should I do it?"
+
+- vibe: preference
+  question: "What's your favorite thing to do when you can't sleep?"
+  nudge: "What keeps you up most often?"
+
+- vibe: preference
+  question: "What's your favorite font?"
+  nudge: "What font would your personality be?"
+
+- vibe: preference
+  question: "What's your favorite dessert to make?"
+  nudge: "Can we make it this week?"
+
+- vibe: preference
+  question: "What's your favorite insect?"
+  nudge: "Which bug would you be?"
+
+- vibe: preference
+  question: "What's your favorite planet?"
+  nudge: "Would you visit if you were guaranteed a ride home?"
+
+- vibe: preference
+  question: "What's your favorite element on the periodic table?"
+  nudge: "Which element is most like you?"
+
+- vibe: preference
+  question: "What's your favorite number, and why?"
+  nudge: "Is it lucky for you?"
+
+- vibe: preference
+  question: "What's your favorite letter of the alphabet?"
+  nudge: "And which letter is the worst?"
+
+- vibe: preference
+  question: "What's your favorite pasta shape?"
+  nudge: "What sauce does it deserve?"
+
+- vibe: preference
+  question: "What's your favorite form of potato?"
+  nudge: "Rank your top three."
+
+- vibe: preference
+  question: "Who's your favorite cartoon character?"
+  nudge: "Which one are you most like?"
+
+- vibe: preference
+  question: "What's your favorite thing about our relationship?"
+  nudge: "What's one thing you'd love more of?"
+
+- vibe: preference
+  question: "What's your favorite place to be alone with your thoughts?"
+  nudge: "What do you usually think about there?"
+
+- vibe: preference
+  question: "What's your favorite hot sauce or condiment?"
+  nudge: "What do you put it on that nobody else does?"
+
+- vibe: preference
+  question: "What's your favorite piece of art?"
+  nudge: "Where would you hang it?"
+
+- vibe: preference
+  question: "If you could only keep one sense, which is your favorite?"
+  nudge: "Which would be hardest to lose?"
+
+- vibe: preference
+  question: "What's your favorite thing about the night sky?"
+  nudge: "Have you ever seen a meteor shower?"
+
+- vibe: preference
+  question: "What's your favorite gadget you own?"
+  nudge: "What's the oldest gadget you still use?"
+
+- vibe: preference
+  question: "What's your favorite thing your parents did for you?"
+  nudge: "What will you do the same way?"
+
+- vibe: preference
+  question: "What's your favorite name for a boat?"
+  nudge: "Where are we sailing it?"
+
+- vibe: preference
+  question: "What's your favorite way to waste time?"
+  nudge: "Is it really a waste?"
+
+- vibe: preference
+  question: "What's your favorite smell of food cooking?"
+  nudge: "Who cooks it best?"
+
+- vibe: preference
+  question: "What's your favorite ancient civilization?"
+  nudge: "What would your life have been like there?"
+
+- vibe: preference
+  question: "What's your favorite thing you collect, or used to collect?"
+  nudge: "What's the gem of the collection?"
+
+- vibe: preference
+  question: "What's your favorite room in a house?"
+  nudge: "Describe your dream version of it."
+
+- vibe: preference
+  question: "What's your favorite word in another language?"
+  nudge: "What does it mean?"
+
+- vibe: preference
+  question: "What's your favorite cheese?"
+  nudge: "Which cheese is overrated?"
+
+- vibe: preference
+  question: "What's your favorite kind of bread?"
+  nudge: "Bakery or homemade?"
+
+- vibe: preference
+  question: "What's your favorite thing to do at the beach?"
+  nudge: "Sandcastles or shell hunting?"
+
+- vibe: preference
+  question: "What's your favorite part of the holidays, besides gifts?"
+  nudge: "What's the best gift you've ever given?"
+
+- vibe: preference
+  question: "What's your favorite meme or internet moment?"
+  nudge: "Can you describe it without laughing?"
+
+- vibe: preference
+  question: "What's your favorite thing someone has ever made for you?"
+  nudge: "Do you still have it?"
+
+- vibe: preference
+  question: "What's your favorite quirk of your own?"
+  nudge: "Which of my quirks do you love?"
+
+- vibe: preference
+  question: "What's your favorite thing to wear around the house?"
+  nudge: "How long have you had it?"
+
+- vibe: preference
+  question: "What's your favorite place you've ever slept?"
+  nudge: "What made it so good?"
+
+- vibe: preference
+  question: "What's your favorite thing about being an adult?"
+  nudge: "And what do you miss about being a kid?"
+
+- vibe: preference
+  question: "What's your favorite fast food order?"
+  nudge: "When did you last have it?"
+
+- vibe: preference
+  question: "What's your favorite thing about who you were five years ago?"
+  nudge: "What would you tell that person now?"
+
+- vibe: preference
+  question: "What's your favorite way to celebrate a win?"
+  nudge: "What's a win we should celebrate right now?"
+
+- vibe: preference
+  question: "What's your favorite bird?"
+  nudge: "Can you do its call?"
+
+- vibe: preference
+  question: "What's your favorite thing about autumn?"
+  nudge: "Pumpkin spice, yes or no?"
+
+- vibe: preference
+  question: "What was your favorite toy as a kid?"
+  nudge: "Where is it now?"
+
+- vibe: preference
+  question: "What's your favorite way to get around a city?"
+  nudge: "Bike, walk, train, or scooter?"
+
+- vibe: preference
+  question: "What's your favorite thing about your best friend?"
+  nudge: "How did you two meet?"
+
+- vibe: preference
+  question: "What's your favorite thing to do on the first warm day of the year?"
+  nudge: "Let's plan it."
+
+- vibe: preference
+  question: "What's your favorite candle or room scent?"
+  nudge: "What should our home smell like?"
+
+- vibe: preference
+  question: "What's your favorite thing to overhear?"
+  nudge: "What's the funniest thing you've ever overheard?"
+
+- vibe: preference
+  question: "What's your favorite part of a road trip?"
+  nudge: "Leaving, the drive, or arriving?"
+
+- vibe: preference
+  question: "What's your favorite vegetable?"
+  nudge: "Which vegetable would you ban?"
+
+- vibe: preference
+  question: "What's your favorite piece of trivia?"
+  nudge: "Teach it to me like I'm five."
+
+- vibe: preference
+  question: "What's your favorite thing about today?"
+  nudge: "What would make tomorrow even better?"
