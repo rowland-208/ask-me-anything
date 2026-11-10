@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
-import { CARDS, VIBES, randomSeed, shuffled, tilt } from './deck'
+import { CARDS, VIBES, shuffled, tilt } from './deck'
 import type { Card } from './deck'
+import { toCode, useRoom } from './room'
+import { SharePopup } from './Share'
 
 type Motion = 'none' | 'spring' | 'toss' | 'draw'
 type Pose = { x: number; y: number; rot: number; scale: number; back: boolean; motion: Motion }
@@ -15,10 +17,6 @@ const PILE_SHOWN = 4
 const PILE_W = 76
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-function initialSeed(): string {
-  return new URLSearchParams(window.location.search).get('seed') || randomSeed()
-}
 
 function CardFront({ card, number }: { card: Card; number: number }) {
   const vibe = VIBES[card.vibe]
@@ -54,14 +52,17 @@ function CardBack() {
 }
 
 function App() {
-  const [seed, setSeed] = useState(initialSeed)
-  const [seedDraft, setSeedDraft] = useState(seed)
+  // The room holds the shared truth ({ seed, pos }). `seed` and `pos` below are
+  // what this screen is showing; the animations catch them up to the room.
+  const { room, snap } = useRoom(CARDS.length)
+  const [seed, setSeed] = useState('')
+  const [seedDraft, setSeedDraft] = useState<string | null>(null) // null = not editing
   const [pos, setPos] = useState(0)
   const [pose, setPose] = useState<Pose>({ ...CENTER, back: true, motion: 'none' })
-  const [phase, setPhase] = useState<Phase>('busy')
+  const [phase, setPhase] = useState<Phase>('idle')
   const [swiped, setSwiped] = useState(false)
   const [cardW, setCardW] = useState(300)
-  const [confirming, setConfirming] = useState(false)
+  const [modal, setModal] = useState<'roll' | 'share' | null>(null)
 
   const slotRef = useRef<HTMLDivElement>(null)
   const deckRef = useRef<HTMLDivElement>(null)
@@ -119,16 +120,7 @@ function App() {
     )
   }, [later, target])
 
-  // Deal a fresh deck whenever the seed changes (and on first load).
-  useEffect(() => {
-    clearTimers()
-    setPos(0)
-    draw()
-    const url = new URL(window.location.href)
-    url.searchParams.set('seed', seed)
-    window.history.replaceState(null, '', url)
-    return clearTimers
-  }, [seed, draw, clearTimers])
+  useEffect(() => clearTimers, [clearTimers])
 
   /** Swipe right: toss the card onto the discard pile and draw the next. */
   const toss = useCallback(() => {
@@ -177,7 +169,35 @@ function App() {
     } else unDiscard()
   }, [current, later, pos, target])
 
-  const swipe = (x: number) => (x > 0 ? toss() : undo())
+  // Catch this screen up to the room: someone else swiped, the host corrected
+  // us, or the seed changed. One step animates; bigger jumps just redeal.
+  useEffect(() => {
+    if (phase !== 'idle' || !snap.seed) return
+    if (snap.seed !== seed) {
+      setSeed(snap.seed)
+      setPos(snap.pos)
+      draw()
+    } else if (snap.pos === pos + 1) toss()
+    else if (snap.pos === pos - 1) undo()
+    else if (snap.pos !== pos) {
+      setPos(snap.pos)
+      draw()
+    }
+  }, [phase, snap.seed, snap.pos, seed, pos, toss, undo, draw])
+
+  /** A swipe on this device: animate right away and tell the room. */
+  const swipe = (dir: 'next' | 'undo') => {
+    if (dir === 'next' && current) {
+      toss()
+      room.act('next')
+    } else if (dir === 'undo' && pos > 0) {
+      undo()
+      room.act('undo')
+    } else {
+      setPose({ ...CENTER })
+      setPhase('idle')
+    }
+  }
 
   const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (phase !== 'idle') return
@@ -204,46 +224,56 @@ function App() {
     drag.current = null
     const x = e.clientX - d.x0
     const y = e.clientY - d.y0
-    if (Math.abs(x) > SWIPE_PX && Math.abs(x) > Math.abs(y)) swipe(x)
+    if (Math.abs(x) > SWIPE_PX && Math.abs(x) > Math.abs(y)) swipe(x > 0 ? 'next' : 'undo')
     else {
       setPose({ ...CENTER })
       setPhase('idle')
     }
   }
 
+  const swipeRef = useRef(swipe)
+  useLayoutEffect(() => {
+    swipeRef.current = swipe
+  })
+
   // Keyboard swiping, for laptops.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (confirming) {
-        if (e.key === 'Escape') setConfirming(false)
+      if (modal) {
+        if (e.key === 'Escape') setModal(null)
         return
       }
       if (phase !== 'idle' || e.target instanceof HTMLInputElement) return
-      if (e.key === 'ArrowRight' || e.key === ' ') toss()
-      else if (e.key === 'ArrowLeft') undo()
+      if (e.key === 'ArrowRight' || e.key === ' ') swipeRef.current('next')
+      else if (e.key === 'ArrowLeft') swipeRef.current('undo')
       else return
       e.preventDefault()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [confirming, phase, toss, undo])
+  }, [modal, phase])
 
   /** Rolling a new seed throws away the current deck, so always ask first. */
-  const askNewSeed = () => setConfirming(true)
+  const askNewSeed = () => setModal('roll')
 
   const newSeed = () => {
-    setConfirming(false)
-    let next = randomSeed()
-    while (next === seed) next = randomSeed()
-    setSeedDraft(next)
-    setSeed(next)
+    setModal(null)
+    room.rollNew()
   }
 
+  /** The seed box is the room box: a typed code joins that room, or starts it. */
   const commitSeed = () => {
-    const next = seedDraft.trim() || seed
-    setSeedDraft(next)
-    if (next !== seed) setSeed(next)
+    const code = toCode(seedDraft ?? '')
+    setSeedDraft(null)
+    if (code) room.goTo(code)
   }
+
+  const rollNote =
+    snap.role === 'guest'
+      ? "You'll leave this room and start a new deck of your own."
+      : snap.people > 1
+        ? 'Everyone here moves to the new deck with you.'
+        : 'This shuffles up a brand new deck.'
 
   const dragHandlers = {
     onPointerDown,
@@ -276,18 +306,30 @@ function App() {
             🎲
           </button>
           <input
-            aria-label="Shuffle seed"
-            value={seedDraft}
+            aria-label="Shuffle seed and room code"
+            value={seedDraft ?? snap.seed}
             spellCheck={false}
+            autoCapitalize="none"
+            autoCorrect="off"
+            onFocus={() => setSeedDraft(snap.seed)}
             onChange={(e) => setSeedDraft(e.target.value)}
             onBlur={commitSeed}
           />
         </form>
+        <button
+          type="button"
+          className={`share-btn status-${snap.status} ${snap.role}`}
+          aria-label="Play together"
+          onClick={() => setModal('share')}
+        >
+          <span aria-hidden="true">👥</span>
+          {snap.people > 1 ? <b>{snap.people}</b> : <b>share</b>}
+        </button>
       </header>
 
       <section className="stage">
         <div className="slot" ref={slotRef}>
-          {current ? (
+          {!seed ? null : current ? (
             <div
               className={`fly-x m-${pose.motion} ${phase === 'drag' ? 'lifted' : ''}`}
               style={{ transform: `translateX(${pose.x}px)` }}
@@ -353,8 +395,9 @@ function App() {
           <span className="pile-label">discard · {pos}</span>
         </div>
       </section>
-      {confirming && (
-        <div className="overlay" onClick={() => setConfirming(false)}>
+      {modal === 'share' && <SharePopup snap={snap} url={room.shareUrl} onClose={() => setModal(null)} />}
+      {modal === 'roll' && (
+        <div className="overlay" onClick={() => setModal(null)}>
           <div
             className="popup"
             role="alertdialog"
@@ -364,9 +407,9 @@ function App() {
           >
             <div className="popup-die" aria-hidden="true">🎲</div>
             <p id="confirm-title">Roll a new seed?</p>
-            <p className="popup-note">This shuffles up a brand new deck.</p>
+            <p className="popup-note">{rollNote}</p>
             <div className="popup-buttons">
-              <button type="button" className="btn ghost" onClick={() => setConfirming(false)}>
+              <button type="button" className="btn ghost" onClick={() => setModal(null)}>
                 nope
               </button>
               <button type="button" className="btn" onClick={newSeed} autoFocus>

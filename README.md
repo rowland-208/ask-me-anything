@@ -18,14 +18,30 @@ All card content lives in [`cards.yaml`](./cards.yaml), one card per entry:
 The YAML is turned into JSON at build time, so a typo in it fails the build
 instead of breaking the site.
 
-## Shuffling
+## Playing together
 
-The box at the top is the shuffle seed; tap the 🎲 to roll a new one (it asks
-first). The same seed always gives the same
-order, and it's saved in the URL (`?seed=...`) so you can share a deck.
+The seed is also the room code. Every visit starts a fresh room with a random
+seed like `spontaneous-squirrel`. Tap **share** to get a link or QR code, and
+anyone who opens it joins your room: swipes show up on everyone's screen.
+
+- **No backend.** Phones connect directly to each other with WebRTC
+  ([PeerJS](https://peerjs.com/)). PeerJS's free public server is only used to
+  introduce them.
+- **The host is the source of truth.** Every swipe is stamped with the card it
+  was made on; if two people swipe at once, the host keeps the first and
+  everyone animates to the result.
+- **Typing a code** joins that room if someone's in it, or starts it if not.
+- **Rolling a new seed** (🎲) asks first, then moves everyone in the room along
+  to the new deck.
+- **If the host leaves**, one of the guests quietly takes over.
+- **Refreshing** as a host starts a new room; guests rejoin theirs.
+- If the matchmaker can't be reached, the app still works solo.
+
 Swipe right for the next card, left to undo (put the card back on the deck and
-bring back the last one). Arrow keys work too. When the deck runs out, hit
-**new seed** for a fresh shuffle.
+bring back the last one). Arrow keys work too.
+
+To test rooms against a local matchmaker instead of the public one, run
+`npx peer --port 9000` and start the app with `VITE_PEER_HOST=127.0.0.1`.
 
 ## Develop locally
 

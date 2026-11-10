@@ -58,12 +58,40 @@ body {
 /* ---------- header ---------- */
 
 .top {
-  display: flex;
+  display: grid;
   width: 100%;
   max-width: 560px;
+  grid-template-areas:
+    'logo share'
+    'seed seed';
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.seed {
+  grid-area: seed;
+}
+
+.share-btn {
+  grid-area: share;
+}
+
+/* wide screens: everything on one row */
+@media (min-width: 640px) {
+  .top {
+    grid-template-areas: 'logo seed share';
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .seed {
+    justify-self: end;
+    width: min(100%, 290px);
+  }
 }
 
 .logo {
@@ -88,6 +116,7 @@ body {
 
 .seed {
   display: flex;
+  min-width: 0;
   align-items: center;
   gap: 6px;
   padding: 4px 6px 4px 10px;
@@ -99,8 +128,9 @@ body {
 }
 
 .seed input {
-  width: 9.5em;
+  width: 100%;
   min-width: 0;
+  flex: 1 1 auto;
   padding: 3px 4px;
   border: 0;
   border-radius: 999px;
@@ -110,6 +140,54 @@ body {
   font: inherit;
   font-weight: 500;
   font-size: 0.95rem;
+}
+
+.share-btn {
+  position: relative;
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 5px;
+  height: 38px;
+  padding: 0 14px 0 11px;
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 3px 0 var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.share-btn b {
+  font-size: 0.9rem;
+}
+
+/* little status light: grey connecting, green live, red offline */
+.share-btn::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: #c9c2d6;
+}
+
+.share-btn.status-live::after {
+  background: #3ccf6e;
+}
+
+.share-btn.status-offline::after {
+  background: #ff5a5a;
+}
+
+.share-btn:focus-visible {
+  outline: 2.5px solid var(--ink);
+  outline-offset: 2px;
 }
 
 .die {
@@ -219,6 +297,31 @@ body {
   outline-offset: 3px;
 }
 
+.share .qr {
+  width: 180px;
+  margin: 14px auto 6px;
+  overflow: hidden;
+  border: var(--line);
+  border-radius: 14px;
+}
+
+.share .qr svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.popup .room-code {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.room-code b {
+  font-weight: 700;
+  word-break: break-all;
+}
+
 /* ---------- stage & big card ---------- */
 
 .stage {
@@ -233,7 +336,7 @@ body {
 
 .slot {
   position: relative;
-  width: min(82vw, 360px, calc((100dvh - 290px) / 1.4));
+  width: min(82vw, 360px, calc((100dvh - 330px) / 1.4));
   aspect-ratio: 5 / 7;
   z-index: 5;
 }
