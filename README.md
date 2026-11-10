@@ -20,7 +20,8 @@ instead of breaking the site.
 
 ## Shuffling
 
-The 🎲 box at the top is the shuffle seed. The same seed always gives the same
+The box at the top is the shuffle seed; tap the 🎲 to roll a new one (it asks
+first). The same seed always gives the same
 order, and it's saved in the URL (`?seed=...`) so you can share a deck.
 Swipe right for the next card, left to undo (put the card back on the deck and
 bring back the last one). Arrow keys work too. When the deck runs out, hit

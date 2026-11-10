@@ -61,6 +61,7 @@ function App() {
   const [phase, setPhase] = useState<Phase>('busy')
   const [swiped, setSwiped] = useState(false)
   const [cardW, setCardW] = useState(300)
+  const [confirming, setConfirming] = useState(false)
 
   const slotRef = useRef<HTMLDivElement>(null)
   const deckRef = useRef<HTMLDivElement>(null)
@@ -213,6 +214,10 @@ function App() {
   // Keyboard swiping, for laptops.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (confirming) {
+        if (e.key === 'Escape') setConfirming(false)
+        return
+      }
       if (phase !== 'idle' || e.target instanceof HTMLInputElement) return
       if (e.key === 'ArrowRight' || e.key === ' ') toss()
       else if (e.key === 'ArrowLeft') undo()
@@ -221,9 +226,13 @@ function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [phase, toss, undo])
+  }, [confirming, phase, toss, undo])
+
+  /** Rolling a new seed throws away the current deck, so always ask first. */
+  const askNewSeed = () => setConfirming(true)
 
   const newSeed = () => {
+    setConfirming(false)
     let next = randomSeed()
     while (next === seed) next = randomSeed()
     setSeedDraft(next)
@@ -231,7 +240,7 @@ function App() {
   }
 
   const commitSeed = () => {
-    const next = seedDraft.trim() || randomSeed()
+    const next = seedDraft.trim() || seed
     setSeedDraft(next)
     if (next !== seed) setSeed(next)
   }
@@ -263,7 +272,9 @@ function App() {
             ;(document.activeElement as HTMLElement | null)?.blur()
           }}
         >
-          <span aria-hidden="true">🎲</span>
+          <button type="button" className="die" aria-label="Roll a new seed" onClick={askNewSeed}>
+            🎲
+          </button>
           <input
             aria-label="Shuffle seed"
             value={seedDraft}
@@ -298,7 +309,7 @@ function App() {
               <button
                 type="button"
                 className="new-seed"
-                onClick={newSeed}
+                onClick={askNewSeed}
               >
                 <span aria-hidden="true">🎲</span> new seed
               </button>
@@ -342,6 +353,29 @@ function App() {
           <span className="pile-label">discard · {pos}</span>
         </div>
       </section>
+      {confirming && (
+        <div className="overlay" onClick={() => setConfirming(false)}>
+          <div
+            className="popup"
+            role="alertdialog"
+            aria-modal="true"
+            aria-labelledby="confirm-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="popup-die" aria-hidden="true">🎲</div>
+            <p id="confirm-title">Roll a new seed?</p>
+            <p className="popup-note">This shuffles up a brand new deck.</p>
+            <div className="popup-buttons">
+              <button type="button" className="btn ghost" onClick={() => setConfirming(false)}>
+                nope
+              </button>
+              <button type="button" className="btn" onClick={newSeed} autoFocus>
+                roll it!
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }

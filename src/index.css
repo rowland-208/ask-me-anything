@@ -112,8 +112,111 @@ body {
   font-size: 0.95rem;
 }
 
+.die {
+  display: grid;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 300ms cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.die:hover {
+  transform: rotate(-20deg) scale(1.15);
+}
+
+.die:active {
+  transform: rotate(180deg) scale(0.9);
+}
+
+.die:focus-visible {
+  border-radius: 6px;
+  outline: 2.5px solid var(--ink);
+  outline-offset: 2px;
+}
+
 .seed:focus-within {
   background: white;
+}
+
+/* ---------- confirm popup ---------- */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgb(43 33 64 / 0.35);
+  animation: fade-in 200ms ease-out;
+}
+
+.popup {
+  width: min(100%, 300px);
+  padding: 22px 22px 20px;
+  border: var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: var(--pop);
+  text-align: center;
+  animation: pop-in 320ms cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.popup p {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.popup .popup-note {
+  margin-top: 6px;
+  opacity: 0.65;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.popup-die {
+  margin-bottom: 6px;
+  font-size: 2.6rem;
+  transform: rotate(-12deg);
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn {
+  padding: 8px 18px 10px;
+  border: var(--line);
+  border-radius: 999px;
+  background: var(--pink);
+  box-shadow: 0 4px 0 var(--ink);
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.btn.ghost {
+  background: white;
+  color: var(--ink);
+}
+
+.btn:active {
+  box-shadow: 0 1px 0 var(--ink);
+  transform: translateY(3px);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
 }
 
 /* ---------- stage & big card ---------- */
@@ -346,7 +449,7 @@ body {
   font-weight: 700;
   transform: rotate(-3deg);
   transition: transform 120ms, box-shadow 120ms;
-  animation: wiggle-soft 2.4s ease-in-out infinite;
+  animation: wiggle-soft 6s ease-in-out infinite;
 }
 
 .new-seed:hover {
@@ -498,14 +601,19 @@ body {
   100% { transform: rotate(0); }
 }
 
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 @keyframes pop-in {
   0% { opacity: 0; transform: scale(0.8); }
   100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes wiggle-soft {
-  0%, 100% { rotate: 0deg; }
-  50% { rotate: 4deg; }
+  0%, 100% { rotate: -1.5deg; }
+  50% { rotate: 1.5deg; }
 }
 
 @keyframes nudge-x {
