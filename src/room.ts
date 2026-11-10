@@ -191,6 +191,9 @@ export class Room {
     const token = ++this.token
     const stale = () => token !== this.token
     const old = { peer: this.peer, host: this.host, guests: this.guests }
+    // Let go of our old host right away. Otherwise, when the old room hangs up
+    // mid-move, we'd think the host vanished and take over the old room instead.
+    this.host = null
 
     // Show the new deck immediately; if we end up joining, the host corrects us.
     // A brand new deck's first card is dealt to us.
@@ -297,6 +300,7 @@ export class Room {
     this.lastSeen.set(conn, Date.now())
     this.send(conn, { t: 'hello', id: this.snap.me })
     conn.on('data', (d) => {
+      if (this.host !== conn) return // a room we've already left
       this.lastSeen.set(conn, Date.now())
       const msg = d as Msg
       if (msg.t === 'state') this.set({ seed: msg.seed, pos: msg.pos, drawer: msg.drawer })

@@ -370,11 +370,7 @@ function App() {
             </div>
           )}
         </div>
-        {hidden && current ? (
-          <p className="hint listen">👂 someone else drew this one. Listen up!</p>
-        ) : (
-          <p className={`hint ${swiped ? 'gone' : ''}`}>swipe right for the next card, left to undo</p>
-        )}
+        <p className={`hint ${swiped ? 'gone' : ''}`}>swipe right for the next card, left to undo</p>
       </section>
 
       <section className="table">
