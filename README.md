@@ -1,6 +1,28 @@
 # Ask Me Anything
 
-A static React + TypeScript site built with Vite and published on GitHub Pages.
+A little deck of date-night conversation cards. Swipe a card away to toss it on
+the discard pile and draw the next one. The answer isn't the point; the good
+stuff is wherever the conversation wanders next.
+
+## The cards
+
+All card content lives in [`cards.yaml`](./cards.yaml), one card per entry:
+
+```yaml
+- vibe: nerdy            # whimsical | deep | nerdy | spicy
+  fact: Wombats poop cubes.   # optional fun fact / trivia
+  question: What's your weirdly specific way of marking your territory?
+  nudge: Which of mine have you noticed?   # optional follow-up
+```
+
+The YAML is turned into JSON at build time, so a typo in it fails the build
+instead of breaking the site.
+
+## Shuffling
+
+The 🎲 box at the top is the shuffle seed. The same seed always gives the same
+order, and it's saved in the URL (`?seed=...`) so you can share a deck.
+Arrow keys / space also swipe on a laptop.
 
 ## Develop locally
 
@@ -9,11 +31,7 @@ npm install
 npm run dev
 ```
 
-Edit `src/App.tsx` to build out the site. Check the production build with:
-
-```sh
-npm run build
-```
+Check the production build with `npm run build`.
 
 ## Publish with GitHub Pages
 

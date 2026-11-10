@@ -1,0 +1,82 @@
+# Ask Me Anything: the card deck
+#
+# Each card is one conversation starter. The answer isn't the point;
+# the good stuff is wherever the conversation wanders next.
+#
+# Fields:
+#   vibe:     whimsical | deep | nerdy | spicy   (sets the card's color & sticker)
+#   fact:     (optional) a fun fact or bit of trivia shown above the question
+#   question: the main prompt (required)
+#   nudge:    (optional) a follow-up to keep things rolling
+#
+# Tip: if a line contains a colon, wrap it in quotes or use the `>-` style below.
+
+- vibe: whimsical
+  question: >-
+    You're a ghost who gets to haunt exactly one place forever.
+    Where do you pick, and what's your signature spooky move?
+  nudge: Who would you most enjoy scaring?
+
+- vibe: nerdy
+  fact: >-
+    Cleopatra lived closer in time to the Moon landing than to the
+    building of the Great Pyramid.
+  question: >-
+    If you could drop into any moment in history as an invisible
+    observer for one hour, when and where would you go?
+  nudge: What would you be most nervous to find out?
+
+- vibe: deep
+  question: >-
+    What's a belief you held strongly five years ago that you've
+    quietly let go of?
+  nudge: What changed your mind? A person, a moment, or just time?
+
+- vibe: spicy
+  question: >-
+    What's a small, everyday thing someone could do that would
+    instantly make you want to kiss them?
+  nudge: Have I done it yet?
+
+- vibe: whimsical
+  question: >-
+    We're opening a tiny, extremely niche shop together. What do we
+    sell, and what's the name on the sign?
+  nudge: Who's our very first customer?
+
+- vibe: nerdy
+  fact: >-
+    Wombats poop cubes. The shape stacks neatly and doesn't roll away,
+    which is handy for marking territory.
+  question: >-
+    What's your weirdly specific way of marking your territory, at
+    home, at work, or with people?
+  nudge: Which of my little territory markers have you noticed?
+
+- vibe: deep
+  question: When do you feel most like yourself?
+  nudge: What would help you get more of that?
+
+- vibe: spicy
+  question: >-
+    Is there a fantasy you've been curious about but never said out
+    loud? You can just give a hint.
+  nudge: Hotter or colder?
+
+- vibe: nerdy
+  fact: >-
+    The word "nerd" first appeared in print in Dr. Seuss's
+    "If I Ran the Zoo" (1950).
+  question: >-
+    What were you a total nerd about as a kid, and is any of it still
+    in there?
+  nudge: Teach me one thing about it right now.
+
+- vibe: deep
+  fact: >-
+    Archaeologists have found pots of honey in ancient Egyptian tombs
+    that were still edible after 3,000 years.
+  question: >-
+    What's something about us that you hope stays exactly the same,
+    no matter how much time passes?
+  nudge: And what's something you hope changes?
