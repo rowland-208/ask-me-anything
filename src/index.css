@@ -400,6 +400,7 @@ body {
 
 .nudge {
   margin: 0;
+  padding-right: 6cqw; /* room for the card number */
   color: var(--c-ink, var(--ink));
   font-size: 4.4cqw;
   font-weight: 500;

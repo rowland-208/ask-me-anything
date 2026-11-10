@@ -10,12 +10,189 @@
 #   nudge:    (optional) a follow-up to keep things rolling
 #
 # Tip: if a line contains a colon, wrap it in quotes or use the `>-` style below.
+#
+# Deck balance: 30% whimsical, 30% nerdy, 20% deep, 20% spicy.
+
+# ---------------------------------------------------------------------------
+# 🌈 WHIMSICAL (30)
+# ---------------------------------------------------------------------------
 
 - vibe: whimsical
   question: >-
     You're a ghost who gets to haunt exactly one place forever.
     Where do you pick, and what's your signature spooky move?
   nudge: Who would you most enjoy scaring?
+
+- vibe: whimsical
+  question: >-
+    We're opening a tiny, extremely niche shop together. What do we
+    sell, and what's the name on the sign?
+  nudge: Who's our very first customer?
+
+- vibe: whimsical
+  question: >-
+    If our relationship had a theme song that played every time we
+    walked into a room, what would it be?
+  nudge: And what plays when we're fighting over the thermostat?
+
+- vibe: whimsical
+  question: >-
+    You can talk to one species of animal, but they're all extremely
+    gossipy. Which species do you pick?
+  nudge: What's the first piece of drama you'd want the scoop on?
+
+- vibe: whimsical
+  question: What's a completely useless skill you're weirdly proud of?
+  nudge: Demonstrate. Right now.
+
+- vibe: whimsical
+  question: >-
+    If you were a cryptid, what would the locals say about you, and
+    where would you be spotted?
+  nudge: What are you doing in the one blurry photo of you?
+
+- vibe: whimsical
+  question: >-
+    We're getting a pet that is legally required to be ridiculous.
+    What animal is it, and what's its full name?
+  nudge: What's its one terrible habit?
+
+- vibe: whimsical
+  question: >-
+    You wake up as the villain in a kids' cartoon. What's your evil
+    scheme, and why is it secretly a little bit sympathetic?
+  nudge: Who's the plucky hero who keeps foiling you?
+
+- vibe: whimsical
+  question: >-
+    If you were a food, what would you be, and what would you be
+    served with?
+  nudge: What's the worst thing someone could pair you with?
+
+- vibe: whimsical
+  question: >-
+    You get to add one tiny, harmless law that everyone has to follow.
+    What is it?
+  nudge: What's the punishment for breaking it?
+
+- vibe: whimsical
+  question: >-
+    Pick any decade to be a teenager in. What are you wearing, and
+    where are you hanging out?
+  nudge: What would teenage you think of present you?
+
+- vibe: whimsical
+  question: >-
+    You have to replace your laugh with a sound effect. Which one do
+    you choose?
+  nudge: Which one would you pick for me?
+
+- vibe: whimsical
+  question: What's the most "you" object you own?
+  nudge: If it could talk, what would it say about you?
+
+- vibe: whimsical
+  question: >-
+    We get one free day where nothing counts. No consequences, no
+    calories, no phones. What do we do?
+  nudge: What do we never tell anyone about afterward?
+
+- vibe: whimsical
+  question: >-
+    You're on a cooking show but you can only make one dish. What is
+    it, and what fancy name do you give it for the judges?
+  nudge: What's your tragic backstory for the camera?
+
+- vibe: whimsical
+  question: >-
+    If your life were a video game, what would your special move be,
+    and what's your weakness?
+  nudge: What's the cheat code for putting you in a good mood?
+
+- vibe: whimsical
+  question: >-
+    You can bring one boring object in our home to life. Which one,
+    and what's its personality?
+  nudge: Does it like me?
+
+- vibe: whimsical
+  question: Describe your dream treehouse. Money is no object.
+  nudge: What's the password to get in?
+
+- vibe: whimsical
+  question: >-
+    What's a hill you'll die on that genuinely does not matter at all?
+  nudge: Has anyone ever come close to changing your mind?
+
+- vibe: whimsical
+  question: >-
+    We open a bed and breakfast. What's the weird gimmick that makes
+    it famous?
+  nudge: What does the one-star review say?
+
+- vibe: whimsical
+  question: >-
+    If you could instantly be an expert at one hobby you've never
+    tried, what would it be?
+  nudge: What's stopping you from trying it badly?
+
+- vibe: whimsical
+  question: >-
+    You're a pro wrestler. What's your ring name, entrance music, and
+    outfit?
+  nudge: What's your finishing move called?
+
+- vibe: whimsical
+  question: >-
+    For a month you can only eat foods of one color. Which color do
+    you pick, and what's your best meal?
+  nudge: Which color would be pure suffering?
+
+- vibe: whimsical
+  question: >-
+    A genie grants you three wishes, but each one has to cost under
+    $50. What do you wish for?
+  nudge: Which one would you secretly use on me?
+
+- vibe: whimsical
+  fact: Scotland's national animal is the unicorn.
+  question: >-
+    If you had to pick a mythical creature as your personal emblem,
+    what would it be and why?
+  nudge: What would mine be?
+
+- vibe: whimsical
+  question: What's the strangest dream you can still remember?
+  nudge: What do you think your brain was trying to tell you?
+
+- vibe: whimsical
+  fact: >-
+    Sea otters hold hands while they sleep so they don't drift apart.
+  question: >-
+    What's your weirdly specific ritual for falling asleep?
+  nudge: What's one we should start doing together?
+
+- vibe: whimsical
+  question: >-
+    We're writing a sitcom about our lives. What's it called, and who
+    is the scene-stealing side character?
+  nudge: What's my catchphrase?
+
+- vibe: whimsical
+  question: >-
+    You can live inside any painting or movie set for a week. Which
+    one do you pick?
+  nudge: What's the first thing you'd do there?
+
+- vibe: whimsical
+  question: >-
+    Your dream restaurant only serves the foods you loved as a kid.
+    What's on the menu?
+  nudge: Which "kid food" do you still secretly eat?
+
+# ---------------------------------------------------------------------------
+# 🔭 NERDY (30)
+# ---------------------------------------------------------------------------
 
 - vibe: nerdy
   fact: >-
@@ -26,24 +203,6 @@
     observer for one hour, when and where would you go?
   nudge: What would you be most nervous to find out?
 
-- vibe: deep
-  question: >-
-    What's a belief you held strongly five years ago that you've
-    quietly let go of?
-  nudge: What changed your mind? A person, a moment, or just time?
-
-- vibe: spicy
-  question: >-
-    What's a small, everyday thing someone could do that would
-    instantly make you want to kiss them?
-  nudge: Have I done it yet?
-
-- vibe: whimsical
-  question: >-
-    We're opening a tiny, extremely niche shop together. What do we
-    sell, and what's the name on the sign?
-  nudge: Who's our very first customer?
-
 - vibe: nerdy
   fact: >-
     Wombats poop cubes. The shape stacks neatly and doesn't roll away,
@@ -52,16 +211,6 @@
     What's your weirdly specific way of marking your territory, at
     home, at work, or with people?
   nudge: Which of my little territory markers have you noticed?
-
-- vibe: deep
-  question: When do you feel most like yourself?
-  nudge: What would help you get more of that?
-
-- vibe: spicy
-  question: >-
-    Is there a fantasy you've been curious about but never said out
-    loud? You can just give a hint.
-  nudge: Hotter or colder?
 
 - vibe: nerdy
   fact: >-
@@ -72,6 +221,234 @@
     in there?
   nudge: Teach me one thing about it right now.
 
+- vibe: nerdy
+  fact: >-
+    Botanically speaking, bananas are berries, but strawberries
+    aren't.
+  question: >-
+    What's something everyone gets wrong that you've quietly given up
+    correcting?
+  nudge: What's something you were embarrassingly late to learn?
+
+- vibe: nerdy
+  fact: >-
+    Tardigrades, tiny "water bears," have survived being exposed to
+    the vacuum of outer space.
+  question: >-
+    What's the toughest thing you've made it through that people
+    wouldn't guess by looking at you?
+  nudge: What got you through it?
+
+- vibe: nerdy
+  fact: >-
+    There are more ways to shuffle a deck of 52 cards than there are
+    atoms on Earth.
+  question: >-
+    What's a tiny, random moment that ended up changing your life?
+  nudge: Where do you think you'd be if it had gone the other way?
+
+- vibe: nerdy
+  fact: >-
+    Sunlight takes about 8 minutes to reach Earth, so you always see
+    the Sun as it was 8 minutes ago.
+  question: >-
+    What's something from your past that still colors how you see
+    things today?
+  nudge: Is that a good thing, or something you'd like to let go of?
+
+- vibe: nerdy
+  fact: >-
+    Crows can recognize individual human faces, hold grudges, and
+    even teach other crows who to dislike.
+  question: >-
+    Who have you held a grudge against for way longer than was
+    reasonable?
+  nudge: Be honest. Are you ready to let it go?
+
+- vibe: nerdy
+  fact: >-
+    The Eiffel Tower grows up to about 15 cm taller in summer as its
+    iron expands in the heat.
+  question: What season brings out the best version of you?
+  nudge: What's your favorite thing for us to do in it?
+
+- vibe: nerdy
+  fact: >-
+    Oxford University was already teaching students before the Aztec
+    capital, Tenochtitlan, was founded.
+  question: >-
+    What's a tradition from your family that you'd want to keep
+    going?
+  nudge: What's a brand new tradition you'd want to start with me?
+
+- vibe: nerdy
+  fact: >-
+    Koala fingerprints are so similar to human ones that they could
+    confuse a crime scene investigation.
+  question: >-
+    Who's someone you turned out to have a surprising amount in
+    common with?
+  nudge: What's the most surprising thing we have in common?
+
+- vibe: nerdy
+  fact: >-
+    A day on Venus (243 Earth days) is longer than its year
+    (225 Earth days).
+  question: What's a single day that felt longer than a whole year?
+  nudge: And a year that flew by like a single day?
+
+- vibe: nerdy
+  fact: >-
+    In 1947, engineers found a real moth stuck in the Harvard Mark II
+    computer and taped it into their logbook as the "first actual case
+    of bug being found."
+  question: >-
+    What's the most ridiculous way something has ever gone wrong for
+    you?
+  nudge: How did you fix it, if you fixed it at all?
+
+- vibe: nerdy
+  fact: Sharks have been around longer than trees.
+  question: >-
+    If you could visit any era of Earth's history, from the dinosaurs
+    to the ice age, which would you pick?
+  nudge: Which creature from that era would you want as a pet?
+
+- vibe: nerdy
+  fact: >-
+    Your brain is about 2% of your body weight but uses around 20% of
+    your energy.
+  question: What's something you overthink way more than you need to?
+  nudge: What actually helps you switch your brain off?
+
+- vibe: nerdy
+  fact: >-
+    Octopuses have three hearts, and one of them stops beating when
+    they swim, which is part of why they'd rather crawl.
+  question: >-
+    What's something you do that wears you out, but you'd never give
+    up?
+  nudge: What would make it a little easier?
+
+- vibe: nerdy
+  fact: >-
+    The Voyager probes carry a golden record of Earth's sounds,
+    music, and greetings, just in case aliens ever find them.
+  question: >-
+    You get to put one song, one sound, and one photo on a record for
+    aliens. What do you pick?
+  nudge: What would your picks tell them about humans?
+
+- vibe: nerdy
+  fact: >-
+    Studies suggest cows have best friends, and get measurably
+    stressed when they're separated from them.
+  question: Who was your first best friend, and what happened to them?
+  nudge: What made that friendship click?
+
+- vibe: nerdy
+  fact: >-
+    In 1932, Australia's military fought a "war" against emus with
+    machine guns. The emus won.
+  question: What's a battle you lost that you can laugh about now?
+  nudge: Would you want a rematch?
+
+- vibe: nerdy
+  fact: The smell of rain on dry earth has a name. It's "petrichor."
+  question: >-
+    What smell instantly teleports you to a specific memory?
+  nudge: Take me there. Describe it.
+
+- vibe: nerdy
+  fact: A group of flamingos is called a "flamboyance."
+  question: >-
+    If your friend group had a collective noun, what would it be?
+  nudge: What would a group of people like us be called?
+
+- vibe: nerdy
+  fact: >-
+    Astronauts can grow up to about 5 cm taller in space because their
+    spines decompress without gravity.
+  question: >-
+    Would you go to space if you got the chance? What would scare you
+    the most?
+  nudge: What's the first thing you'd do back on Earth?
+
+- vibe: nerdy
+  fact: The dot over a lowercase "i" or "j" is called a tittle.
+  question: >-
+    What's a tiny detail that other people miss but you always notice?
+  nudge: What's a tiny detail about me you've noticed?
+
+- vibe: nerdy
+  fact: >-
+    In a room of just 23 people, there's a better than 50% chance that
+    two of them share a birthday.
+  question: What's the wildest coincidence that's ever happened to you?
+  nudge: Do you believe in fate, or is it all just math?
+
+- vibe: nerdy
+  fact: The longest recorded flight of a chicken is 13 seconds.
+  question: >-
+    What's something you tried that was hilariously short-lived?
+  nudge: Would you give it another shot?
+
+- vibe: nerdy
+  fact: >-
+    Dolphins have signature whistles that work like names, and they
+    respond when they hear their own.
+  question: >-
+    What nicknames have you had over the years, and which one stuck?
+  nudge: What nickname do you secretly wish people called you?
+
+- vibe: nerdy
+  fact: >-
+    Despite the popular myth, the Great Wall of China can't be seen
+    from the Moon with the naked eye.
+  question: What's a "fact" you believed for way too long?
+  nudge: Who told you, and have you forgiven them?
+
+- vibe: nerdy
+  fact: >-
+    Under some conditions hot water can freeze faster than cold
+    water. It's called the Mpemba effect, and scientists still argue
+    about why.
+  question: >-
+    What's something you thought was impossible until you saw it
+    happen?
+  nudge: What would you love to be proven wrong about?
+
+- vibe: nerdy
+  fact: >-
+    Fredric Baur, who designed the Pringles can, had some of his
+    ashes buried in one.
+  question: >-
+    What's something you've made or done that you'd be proud to have
+    as part of your legacy?
+  nudge: What's something you still want to add to that list?
+
+- vibe: nerdy
+  fact: >-
+    A neutron star is so dense that a single teaspoon of it would
+    weigh about a billion tons.
+  question: >-
+    What's something heavy you carry around that nobody else can see?
+  nudge: How could I help carry it?
+
+# ---------------------------------------------------------------------------
+# 🌊 DEEP (20)
+# ---------------------------------------------------------------------------
+
+- vibe: deep
+  question: >-
+    What's a belief you held strongly five years ago that you've
+    quietly let go of?
+  nudge: What changed your mind? A person, a moment, or just time?
+
+- vibe: deep
+  question: When do you feel most like yourself?
+  nudge: What would help you get more of that?
+
 - vibe: deep
   fact: >-
     Archaeologists have found pots of honey in ancient Egyptian tombs
@@ -80,3 +457,196 @@
     What's something about us that you hope stays exactly the same,
     no matter how much time passes?
   nudge: And what's something you hope changes?
+
+- vibe: deep
+  question: What's something you wish more people asked you about?
+  nudge: So... tell me about it.
+
+- vibe: deep
+  question: What did you need to hear as a kid that nobody told you?
+  nudge: What would you say to that kid now?
+
+- vibe: deep
+  question: >-
+    What's a compliment you got years ago that you still think about?
+  nudge: Why do you think it stuck with you?
+
+- vibe: deep
+  question: When was the last time you completely changed your mind about someone?
+  nudge: What did it take?
+
+- vibe: deep
+  question: >-
+    What's a fear you've outgrown, and one you're still working on?
+  nudge: What would it look like to finally beat the second one?
+
+- vibe: deep
+  question: >-
+    What does "home" feel like to you? Is it a place, a person, or
+    something else?
+  nudge: When did you last feel it?
+
+- vibe: deep
+  question: >-
+    Which of your parents' habits have you caught yourself repeating?
+  nudge: Which ones do you want to keep, and which do you want to drop?
+
+- vibe: deep
+  question: >-
+    What's something you're proud of that you never really
+    celebrated?
+  nudge: Let's celebrate it. How should we do it?
+
+- vibe: deep
+  question: How do you know when you really trust someone?
+  nudge: What's something that breaks that trust for you?
+
+- vibe: deep
+  question: >-
+    If you could relive one ordinary day of your life, not a big
+    milestone, which one would you pick?
+  nudge: What made it so good?
+
+- vibe: deep
+  question: What's a question you've been a little afraid to ask me?
+  nudge: Want to ask it now?
+
+- vibe: deep
+  question: What does your inner voice sound like when you mess up?
+  nudge: Would you ever talk to a friend that way?
+
+- vibe: deep
+  question: What's a dream you gave up on? Do you miss it?
+  nudge: Is any part of it still possible?
+
+- vibe: deep
+  question: What's something small I do that makes you feel loved?
+  nudge: What's something you'd love me to do more often?
+
+- vibe: deep
+  question: >-
+    Who has shaped you the most without ever knowing it?
+  nudge: Would you ever tell them?
+
+- vibe: deep
+  fact: >-
+    Some bristlecone pines in California are nearly 5,000 years old,
+    and still growing.
+  question: >-
+    What do you hope is still true about your life when you're very,
+    very old?
+  nudge: What are you doing now to get there?
+
+- vibe: deep
+  fact: >-
+    The Japanese art of kintsugi repairs broken pottery with gold,
+    treating the cracks as part of the object's story.
+  question: >-
+    What's something that broke in your life that ended up making you
+    stronger?
+  nudge: What would you tell someone going through the same thing?
+
+# ---------------------------------------------------------------------------
+# 🌶️ SPICY (20)
+# ---------------------------------------------------------------------------
+
+- vibe: spicy
+  question: >-
+    What's a small, everyday thing someone could do that would
+    instantly make you want to kiss them?
+  nudge: Have I done it yet?
+
+- vibe: spicy
+  question: >-
+    Is there a fantasy you've been curious about but never said out
+    loud? You can just give a hint.
+  nudge: Hotter or colder?
+
+- vibe: spicy
+  question: >-
+    What's the first thing you noticed about me that you found
+    attractive?
+  nudge: And what do you notice now?
+
+- vibe: spicy
+  question: What's the most adventurous place you'd want to kiss me?
+  nudge: Location or body part? Your call.
+
+- vibe: spicy
+  question: What's an outfit you'd love to see me in?
+  nudge: And one you'd want me to see you in?
+
+- vibe: spicy
+  question: Describe your perfect slow, lazy morning in bed together.
+  nudge: What time do we actually get up?
+
+- vibe: spicy
+  question: >-
+    What's something that always turns you on that might surprise me?
+  nudge: Show or tell?
+
+- vibe: spicy
+  question: >-
+    On a scale from "bless your heart" to "do that again right now,"
+    how would you rate our last kiss?
+  nudge: How could I raise my score?
+
+- vibe: spicy
+  question: What's a song that always puts you in the mood?
+  nudge: Should we put it on?
+
+- vibe: spicy
+  question: Would you rather be teased slowly or swept off your feet?
+  nudge: Why not both?
+
+- vibe: spicy
+  question: What's your favorite way to be woken up?
+  nudge: Noted. For science.
+
+- vibe: spicy
+  question: >-
+    Who takes charge more often between us, and do you like it that
+    way?
+  nudge: Want to switch it up sometime?
+
+- vibe: spicy
+  question: What's the most attractive thing someone can say to you?
+  nudge: Whisper it to me so I get the tone right.
+
+- vibe: spicy
+  question: Blindfold, handcuffs, or a feather? Pick one and explain yourself.
+  nudge: When?
+
+- vibe: spicy
+  question: Lights on or lights off? Has that changed over time?
+  nudge: What would change your mind?
+
+- vibe: spicy
+  question: Where do you love being touched that isn't the obvious places?
+  nudge: Show me.
+
+- vibe: spicy
+  fact: >-
+    Kissing raises your heart rate and floods your brain with
+    dopamine and oxytocin.
+  question: What's been our best kiss so far, and what made it so good?
+  nudge: Should we try to top it?
+
+- vibe: spicy
+  fact: >-
+    Legend says the Aztec emperor Moctezuma drank cup after cup of
+    chocolate to boost his stamina.
+  question: >-
+    What food or drink do you find sexy, and how would you want to
+    use it?
+  nudge: Should we add it to the grocery list?
+
+- vibe: spicy
+  question: What's your favorite part of my body, and why?
+  nudge: Which part of you do you think I appreciate most?
+
+- vibe: spicy
+  question: >-
+    What's a role-play scenario you'd be up for trying, even just for
+    the laughs?
+  nudge: Who would you be, and who would I be?
