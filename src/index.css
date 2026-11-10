@@ -449,7 +449,7 @@ body {
   font-weight: 700;
   transform: rotate(-3deg);
   transition: transform 120ms, box-shadow 120ms;
-  animation: wiggle-soft 6s ease-in-out infinite;
+  animation: wiggle-soft 2.4s ease-in-out infinite;
 }
 
 .new-seed:hover {
@@ -517,6 +517,7 @@ body {
   font-size: 0.9rem;
   font-weight: 500;
   transition: opacity 400ms;
+  animation: nudge-x 1.8s ease-in-out infinite;
 }
 
 .hint.gone {
@@ -611,8 +612,13 @@ body {
 }
 
 @keyframes wiggle-soft {
-  0%, 100% { rotate: -1.5deg; }
-  50% { rotate: 1.5deg; }
+  0%, 100% { rotate: 0deg; }
+  50% { rotate: 4deg; }
+}
+
+@keyframes nudge-x {
+  0%, 100% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
