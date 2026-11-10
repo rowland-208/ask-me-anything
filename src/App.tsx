@@ -42,15 +42,6 @@ function CardFront({ card, number }: { card: Card; number: number }) {
   )
 }
 
-function EndFront() {
-  return (
-    <div className="face front end">
-      <div className="end-burst" aria-hidden="true">🎉</div>
-      <p className="question">That's the whole deck!</p>
-      <p className="nudge">swipe to shuffle it all up again</p>
-    </div>
-  )
-}
 
 function CardBack() {
   return (
@@ -65,7 +56,6 @@ function CardBack() {
 function App() {
   const [seed, setSeed] = useState(initialSeed)
   const [seedDraft, setSeedDraft] = useState(seed)
-  const [round, setRound] = useState(0)
   const [pos, setPos] = useState(0)
   const [pose, setPose] = useState<Pose>({ ...CENTER, back: true, motion: 'none' })
   const [phase, setPhase] = useState<Phase>('busy')
@@ -78,10 +68,7 @@ function App() {
   const drag = useRef<{ id: number; x0: number; y0: number } | null>(null)
   const timers = useRef<number[]>([])
 
-  const order = useMemo(
-    () => shuffled(round === 0 ? seed : `${seed}~${round}`, CARDS.length),
-    [seed, round],
-  )
+  const order = useMemo(() => shuffled(seed, CARDS.length), [seed])
   const current = pos < order.length ? CARDS[order[pos]] : null
   const deckLeft = Math.max(0, order.length - pos - 1)
   const discards = order.slice(Math.max(0, pos - PILE_SHOWN), pos)
@@ -134,7 +121,6 @@ function App() {
   // Deal a fresh deck whenever the seed changes (and on first load).
   useEffect(() => {
     clearTimers()
-    setRound(0)
     setPos(0)
     draw()
     const url = new URL(window.location.href)
@@ -143,39 +129,57 @@ function App() {
     return clearTimers
   }, [seed, draw, clearTimers])
 
-  const toss = useCallback(
-    (dir: number) => {
-      setPhase('busy')
-      setSwiped(true)
-      const spin = dir >= 0 ? 360 : -360
-      if (current) {
-        const t = target(discardRef.current)
-        setPose({ x: t.x, y: t.y, rot: tilt(round * 1000 + pos) + spin, scale: t.scale, back: false, motion: 'toss' })
-        later(() => {
-          setPos((p) => p + 1)
-          if (pos + 1 < order.length) draw()
-          else {
-            setPose({ ...CENTER, motion: 'none' })
-            setPhase('idle')
-          }
-        }, TOSS_MS)
-      } else {
-        // End of the deck: send the "all done" card into the deck and reshuffle.
-        const t = target(deckRef.current)
-        setPose({ x: t.x, y: t.y, rot: spin, scale: t.scale, back: true, motion: 'toss' })
-        later(() => {
-          setRound((r) => r + 1)
-          setPos(0)
-          draw()
-        }, TOSS_MS)
+  /** Swipe right: toss the card onto the discard pile and draw the next. */
+  const toss = useCallback(() => {
+    if (!current) {
+      setPhase('idle')
+      return
+    }
+    setPhase('busy')
+    setSwiped(true)
+    const t = target(discardRef.current)
+    setPose({ x: t.x, y: t.y, rot: tilt(pos) + 360, scale: t.scale, back: false, motion: 'toss' })
+    later(() => {
+      setPos((p) => p + 1)
+      if (pos + 1 < order.length) draw()
+      else {
+        setPose({ ...CENTER, motion: 'none' })
+        setPhase('idle')
       }
-    },
-    [current, draw, later, order.length, pos, round, target],
-  )
+    }, TOSS_MS)
+  }, [current, draw, later, order.length, pos, target])
+
+  /** Swipe left: put this card back on the deck and bring back the last discard. */
+  const undo = useCallback(() => {
+    if (pos === 0) {
+      setPose({ ...CENTER })
+      setPhase('idle')
+      return
+    }
+    setPhase('busy')
+    setSwiped(true)
+    const unDiscard = () => {
+      const t = target(discardRef.current)
+      setPos((p) => p - 1)
+      setPose({ x: t.x, y: t.y, rot: tilt(pos - 1), scale: t.scale, back: false, motion: 'none' })
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => {
+          setPose({ ...CENTER, motion: 'draw' })
+          later(() => setPhase('idle'), DRAW_MS)
+        }),
+      )
+    }
+    if (current) {
+      const t = target(deckRef.current)
+      setPose({ x: t.x, y: t.y, rot: -360, scale: t.scale, back: true, motion: 'toss' })
+      later(unDiscard, TOSS_MS)
+    } else unDiscard()
+  }, [current, later, pos, target])
+
+  const swipe = (x: number) => (x > 0 ? toss() : undo())
 
   const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (phase !== 'idle') return
-    e.currentTarget.setPointerCapture(e.pointerId)
     drag.current = { id: e.pointerId, x0: e.clientX, y0: e.clientY }
     setPhase('drag')
   }
@@ -185,6 +189,11 @@ function App() {
     if (!d || d.id !== e.pointerId) return
     const x = e.clientX - d.x0
     const y = e.clientY - d.y0
+    // Only grab the pointer once it really moves, so taps still reach buttons.
+    if (Math.hypot(x, y) > 8 && !e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.setPointerCapture(e.pointerId)
+    }
+    if (!current) return // the empty spot doesn't move, it just listens for a left swipe
     setPose({ x, y, rot: x * 0.08, scale: 1.04, back: false, motion: 'none' })
   }
 
@@ -194,7 +203,7 @@ function App() {
     drag.current = null
     const x = e.clientX - d.x0
     const y = e.clientY - d.y0
-    if (Math.hypot(x, y) > SWIPE_PX) toss(x)
+    if (Math.abs(x) > SWIPE_PX && Math.abs(x) > Math.abs(y)) swipe(x)
     else {
       setPose({ ...CENTER })
       setPhase('idle')
@@ -205,19 +214,33 @@ function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (phase !== 'idle' || e.target instanceof HTMLInputElement) return
-      if (e.key === 'ArrowRight' || e.key === ' ') toss(1)
-      else if (e.key === 'ArrowLeft') toss(-1)
+      if (e.key === 'ArrowRight' || e.key === ' ') toss()
+      else if (e.key === 'ArrowLeft') undo()
       else return
       e.preventDefault()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [phase, toss])
+  }, [phase, toss, undo])
+
+  const newSeed = () => {
+    let next = randomSeed()
+    while (next === seed) next = randomSeed()
+    setSeedDraft(next)
+    setSeed(next)
+  }
 
   const commitSeed = () => {
     const next = seedDraft.trim() || randomSeed()
     setSeedDraft(next)
     if (next !== seed) setSeed(next)
+  }
+
+  const dragHandlers = {
+    onPointerDown,
+    onPointerMove,
+    onPointerUp,
+    onPointerCancel: onPointerUp,
   }
 
   const pileStyle = { width: PILE_W, height: PILE_W * 1.4 }
@@ -253,31 +276,41 @@ function App() {
 
       <section className="stage">
         <div className="slot" ref={slotRef}>
-          <div
-            className={`fly-x m-${pose.motion} ${phase === 'drag' ? 'lifted' : ''}`}
-            style={{ transform: `translateX(${pose.x}px)` }}
-          >
+          {current ? (
             <div
-              className="fly-y"
-              style={{ transform: `translateY(${pose.y}px) rotate(${pose.rot}deg) scale(${pose.scale})` }}
-              onPointerDown={onPointerDown}
-              onPointerMove={onPointerMove}
-              onPointerUp={onPointerUp}
-              onPointerCancel={onPointerUp}
+              className={`fly-x m-${pose.motion} ${phase === 'drag' ? 'lifted' : ''}`}
+              style={{ transform: `translateX(${pose.x}px)` }}
             >
-              <div className="flip" style={{ transform: `rotateY(${pose.back ? 180 : 0}deg)` }}>
-                {current ? <CardFront card={current} number={order[pos] + 1} /> : <EndFront />}
-                <CardBack />
+              <div
+                className="fly-y"
+                style={{ transform: `translateY(${pose.y}px) rotate(${pose.rot}deg) scale(${pose.scale})` }}
+                {...dragHandlers}
+              >
+                <div className="flip" style={{ transform: `rotateY(${pose.back ? 180 : 0}deg)` }}>
+                  <CardFront card={current} number={order[pos] + 1} />
+                  <CardBack />
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div className="empty-spot" {...dragHandlers}>
+              <p>that's the whole deck!</p>
+              <button
+                type="button"
+                className="new-seed"
+                onClick={newSeed}
+              >
+                <span aria-hidden="true">🎲</span> new seed
+              </button>
+            </div>
+          )}
         </div>
-        <p className={`hint ${swiped ? 'gone' : ''}`}>swipe the card to draw another</p>
+        <p className={`hint ${swiped ? 'gone' : ''}`}>swipe right for the next card, left to undo</p>
       </section>
 
       <section className="table">
         <div className="pile-wrap">
-          <div className="pile deck" ref={deckRef} style={pileStyle} key={`deck-${round}-${seed}`}>
+          <div className="pile deck" ref={deckRef} style={pileStyle} key={`deck-${seed}`}>
             <div className="pile-outline" />
             {Array.from({ length: Math.min(deckLeft, 5) }, (_, i) => (
               <div
@@ -298,7 +331,7 @@ function App() {
             {discards.map((idx, i) => {
               const n = pos - discards.length + i
               return (
-                <div key={`${round}-${n}`} className="pile-card" style={pileCardStyle(tilt(round * 1000 + n))}>
+                <div key={n} className="pile-card" style={pileCardStyle(tilt(n))}>
                   <div className={n === pos - 1 ? 'landed' : undefined}>
                     <CardFront card={CARDS[idx]} number={idx + 1} />
                   </div>
