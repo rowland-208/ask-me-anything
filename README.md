@@ -18,6 +18,11 @@ All card content lives in [`cards.yaml`](./cards.yaml), one card per entry:
 The YAML is turned into JSON at build time, so a typo in it fails the build
 instead of breaking the site.
 
+## Seed words
+
+Random seeds are `<adjective>-<animal>`, picked from the lists in
+[`words.yaml`](./words.yaml). Add or remove words freely.
+
 ## Playing together
 
 The seed is also the room code. Every visit starts a fresh room with a random
@@ -30,6 +35,9 @@ anyone who opens it joins your room: swipes show up on everyone's screen.
 - **The host is the source of truth.** Every swipe is stamped with the card it
   was made on; if two people swipe at once, the host keeps the first and
   everyone animates to the result.
+- **Hidden draws.** The card you swipe in is face up for you and face down
+  for everyone else, so you can read it out loud. Once it's discarded it's
+  face up for all, and swiping back (undo) brings it back face up for everyone.
 - **Typing a code** joins that room if someone's in it, or starts it if not.
 - **Rolling a new seed** (🎲) asks first, then moves everyone in the room along
   to the new deck.

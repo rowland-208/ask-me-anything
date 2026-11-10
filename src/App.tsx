@@ -61,6 +61,9 @@ function App() {
   const [pose, setPose] = useState<Pose>({ ...CENTER, back: true, motion: 'none' })
   const [phase, setPhase] = useState<Phase>('idle')
   const [swiped, setSwiped] = useState(false)
+  // Is the card on screen face down because someone else drew it?
+  const [hidden, setHidden] = useState(false)
+  const wantHidden = snap.drawer !== null && snap.drawer !== snap.me
   const [cardW, setCardW] = useState(300)
   const [modal, setModal] = useState<'roll' | 'share' | null>(null)
 
@@ -107,14 +110,16 @@ function App() {
     }
   }, [])
 
-  /** Lift the top card off the deck, flip it, and plop it in the middle. */
-  const draw = useCallback(() => {
+  /** Lift the top card off the deck and plop it in the middle, flipping it
+   *  face up unless someone else drew it. */
+  const draw = useCallback((hide: boolean) => {
     const t = target(deckRef.current)
     setPhase('busy')
+    setHidden(hide)
     setPose({ x: t.x, y: t.y, rot: -6, scale: t.scale, back: true, motion: 'none' })
     requestAnimationFrame(() =>
       requestAnimationFrame(() => {
-        setPose({ ...CENTER, motion: 'draw' })
+        setPose({ ...CENTER, back: hide, motion: 'draw' })
         later(() => setPhase('idle'), DRAW_MS)
       }),
     )
@@ -122,19 +127,21 @@ function App() {
 
   useEffect(() => clearTimers, [clearTimers])
 
-  /** Swipe right: toss the card onto the discard pile and draw the next. */
-  const toss = useCallback(() => {
+  /** Swipe right: toss the card onto the discard pile (face up, for everyone)
+   *  and draw the next. */
+  const toss = useCallback((hideNext: boolean) => {
     if (!current) {
       setPhase('idle')
       return
     }
     setPhase('busy')
     setSwiped(true)
+    setHidden(false)
     const t = target(discardRef.current)
     setPose({ x: t.x, y: t.y, rot: tilt(pos) + 360, scale: t.scale, back: false, motion: 'toss' })
     later(() => {
       setPos((p) => p + 1)
-      if (pos + 1 < order.length) draw()
+      if (pos + 1 < order.length) draw(hideNext)
       else {
         setPose({ ...CENTER, motion: 'none' })
         setPhase('idle')
@@ -145,7 +152,7 @@ function App() {
   /** Swipe left: put this card back on the deck and bring back the last discard. */
   const undo = useCallback(() => {
     if (pos === 0) {
-      setPose({ ...CENTER })
+      setPose({ ...CENTER, back: hidden })
       setPhase('idle')
       return
     }
@@ -153,6 +160,7 @@ function App() {
     setSwiped(true)
     const unDiscard = () => {
       const t = target(discardRef.current)
+      setHidden(false) // back from the discard pile: everyone has seen it
       setPos((p) => p - 1)
       setPose({ x: t.x, y: t.y, rot: tilt(pos - 1), scale: t.scale, back: false, motion: 'none' })
       requestAnimationFrame(() =>
@@ -167,7 +175,7 @@ function App() {
       setPose({ x: t.x, y: t.y, rot: -360, scale: t.scale, back: true, motion: 'toss' })
       later(unDiscard, TOSS_MS)
     } else unDiscard()
-  }, [current, later, pos, target])
+  }, [current, hidden, later, pos, target])
 
   // Catch this screen up to the room: someone else swiped, the host corrected
   // us, or the seed changed. One step animates; bigger jumps just redeal.
@@ -176,25 +184,29 @@ function App() {
     if (snap.seed !== seed) {
       setSeed(snap.seed)
       setPos(snap.pos)
-      draw()
-    } else if (snap.pos === pos + 1) toss()
+      draw(wantHidden)
+    } else if (snap.pos === pos + 1) toss(wantHidden)
     else if (snap.pos === pos - 1) undo()
     else if (snap.pos !== pos) {
       setPos(snap.pos)
-      draw()
+      draw(wantHidden)
+    } else if (hidden !== wantHidden && current) {
+      // Same card, but who can see it changed (e.g. the drawer left): flip it.
+      setHidden(wantHidden)
+      setPose({ ...CENTER, back: wantHidden, motion: 'draw' })
     }
-  }, [phase, snap.seed, snap.pos, seed, pos, toss, undo, draw])
+  }, [phase, snap.seed, snap.pos, seed, pos, hidden, wantHidden, current, toss, undo, draw])
 
   /** A swipe on this device: animate right away and tell the room. */
   const swipe = (dir: 'next' | 'undo') => {
     if (dir === 'next' && current) {
-      toss()
+      toss(false) // we drew it, so we get to see it
       room.act('next')
     } else if (dir === 'undo' && pos > 0) {
       undo()
       room.act('undo')
     } else {
-      setPose({ ...CENTER })
+      setPose({ ...CENTER, back: hidden })
       setPhase('idle')
     }
   }
@@ -215,7 +227,7 @@ function App() {
       e.currentTarget.setPointerCapture(e.pointerId)
     }
     if (!current) return // the empty spot doesn't move, it just listens for a left swipe
-    setPose({ x, y, rot: x * 0.08, scale: 1.04, back: false, motion: 'none' })
+    setPose({ x, y, rot: x * 0.08, scale: 1.04, back: hidden, motion: 'none' })
   }
 
   const onPointerUp = (e: ReactPointerEvent<HTMLDivElement>) => {
@@ -226,7 +238,7 @@ function App() {
     const y = e.clientY - d.y0
     if (Math.abs(x) > SWIPE_PX && Math.abs(x) > Math.abs(y)) swipe(x > 0 ? 'next' : 'undo')
     else {
-      setPose({ ...CENTER })
+      setPose({ ...CENTER, back: hidden })
       setPhase('idle')
     }
   }
@@ -358,7 +370,11 @@ function App() {
             </div>
           )}
         </div>
-        <p className={`hint ${swiped ? 'gone' : ''}`}>swipe right for the next card, left to undo</p>
+        {hidden && current ? (
+          <p className="hint listen">👂 someone else drew this one. Listen up!</p>
+        ) : (
+          <p className={`hint ${swiped ? 'gone' : ''}`}>swipe right for the next card, left to undo</p>
+        )}
       </section>
 
       <section className="table">

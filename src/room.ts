@@ -1,6 +1,10 @@
 /**
  * Peer-to-peer rooms, no backend.
  *
+ * Hidden draws: whoever swipes a new card is its `drawer`. Only they see its
+ * face (so they can read it out loud); everyone else sees the back until it's
+ * discarded. Undo brings a discarded card back face up for everyone.
+ *
  * The seed *is* the room code. Whoever registers `PREFIX + seed` with the
  * public PeerJS matchmaker is the host; everyone else connects to them
  * directly over WebRTC. The host owns the truth ({ seed, pos }) and
@@ -24,13 +28,15 @@ const TAKEOVER_TIMEOUT_MS = 2500 // the host is presumed gone, so don't wait lon
 const PING_MS = 2000
 const SILENT_MS = 7000
 
-export type DeckState = { seed: string; pos: number }
+/** `drawer` is the id of whoever drew the current card, or null if everyone can see it. */
+export type DeckState = { seed: string; pos: number; drawer: string | null }
 export type Status = 'connecting' | 'live' | 'offline'
-export type Snapshot = DeckState & { role: 'host' | 'guest'; status: Status; people: number }
+export type Snapshot = DeckState & { role: 'host' | 'guest'; status: Status; people: number; me: string }
 
 type Msg =
-  | { t: 'state'; seed: string; pos: number }
-  | { t: 'swipe'; dir: 'next' | 'undo'; at: number }
+  | { t: 'state'; seed: string; pos: number; drawer: string | null }
+  | { t: 'swipe'; dir: 'next' | 'undo'; at: number; by: string }
+  | { t: 'hello'; id: string }
   | { t: 'move'; room: string }
   | { t: 'ping' }
   | { t: 'bye' }
@@ -103,6 +109,7 @@ export class Room {
   private guests: DataConnection[] = [] // set when we're the host
   private token = 0 // bumps on every enter(); stale async work checks it and bails
   private lastSeen = new Map<DataConnection, number>()
+  private guestIds = new Map<DataConnection, string>() // host: which device is on each connection
   private heartbeat = 0
   private listeners = new Set<() => void>()
   private deckSize: number
@@ -110,7 +117,8 @@ export class Room {
 
   constructor(deckSize: number) {
     this.deckSize = deckSize
-    this.snap = { seed: '', pos: 0, role: 'host', status: 'connecting', people: 1 }
+    const me = Math.random().toString(36).slice(2, 10)
+    this.snap = { seed: '', pos: 0, drawer: me, role: 'host', status: 'connecting', people: 1, me }
   }
 
   // ---- React glue ----------------------------------------------------------
@@ -156,14 +164,16 @@ export class Room {
 
   /** A swipe on this device. Applied right away; the host has the final say. */
   act(dir: 'next' | 'undo') {
-    const { pos } = this.snap
+    const { pos, me } = this.snap
     const next = dir === 'next' ? pos + 1 : pos - 1
     if (next < 0 || next > this.deckSize) return
+    // A fresh draw is ours alone; a card coming back from the discard pile is public.
+    const drawer = dir === 'next' ? me : null
     if (this.snap.role === 'guest' && this.host?.open) {
-      this.set({ pos: next }) // optimistic
-      this.send(this.host, { t: 'swipe', dir, at: pos })
+      this.set({ pos: next, drawer }) // optimistic
+      this.send(this.host, { t: 'swipe', dir, at: pos, by: me })
     } else {
-      this.set({ pos: next })
+      this.set({ pos: next, drawer })
       this.broadcast()
     }
   }
@@ -182,9 +192,16 @@ export class Room {
     const stale = () => token !== this.token
     const old = { peer: this.peer, host: this.host, guests: this.guests }
 
-    // Show the new deck immediately; if we end up joining, the host corrects pos.
-    const pos = code === this.snap.seed ? this.snap.pos : 0
-    this.set({ seed: code, pos, status: 'connecting', people: 1 })
+    // Show the new deck immediately; if we end up joining, the host corrects us.
+    // A brand new deck's first card is dealt to us.
+    const same = code === this.snap.seed
+    this.set({
+      seed: code,
+      pos: same ? this.snap.pos : 0,
+      drawer: same ? this.snap.drawer : this.snap.me,
+      status: 'connecting',
+      people: 1,
+    })
 
     if (mode === 'join-or-host') {
       for (let attempt = 0; attempt <= retries; attempt++) {
@@ -213,7 +230,7 @@ export class Room {
       const peer = await openPeer(PREFIX + code)
       if (stale()) return void peer.destroy()
       this.handOff(old, code)
-      this.becomeHost(peer, code)
+      this.becomeHost(peer)
     } catch (e) {
       if (stale()) return
       if (errType(e) === 'unavailable-id') {
@@ -232,6 +249,7 @@ export class Room {
     this.peer = null
     this.host = null
     this.guests = []
+    this.guestIds.clear()
     old.guests.forEach((g) => this.send(g, { t: 'move', room: code }))
     old.host?.close()
     if (old.host) this.lastSeen.delete(old.host)
@@ -243,10 +261,14 @@ export class Room {
     }, 400)
   }
 
-  private becomeHost(peer: Peer, code: string) {
+  private becomeHost(peer: Peer) {
     this.peer = peer
     this.set({ role: 'host', status: 'live', people: 1 })
     this.setUrl(null)
+    // Taking over a room: give the others a moment to rejoin, then reveal the
+    // current card if whoever drew it didn't come back.
+    const token = this.token
+    setTimeout(() => token === this.token && this.revealIfDrawerGone(), 5000)
     peer.on('connection', (conn) => {
       conn.on('open', () => {
         // One entry per device, even if it reconnects.
@@ -254,7 +276,7 @@ export class Room {
         if (!this.guests.includes(conn)) this.guests.push(conn)
         this.lastSeen.set(conn, Date.now())
         this.set({ people: this.guests.length + 1 })
-        this.send(conn, { t: 'state', seed: code, pos: this.snap.pos })
+        this.send(conn, this.stateMsg())
       })
       conn.on('data', (d) => {
         this.lastSeen.set(conn, Date.now())
@@ -273,10 +295,11 @@ export class Room {
     this.set({ role: 'guest', status: 'live' })
     this.setUrl(code)
     this.lastSeen.set(conn, Date.now())
+    this.send(conn, { t: 'hello', id: this.snap.me })
     conn.on('data', (d) => {
       this.lastSeen.set(conn, Date.now())
       const msg = d as Msg
-      if (msg.t === 'state') this.set({ seed: msg.seed, pos: msg.pos })
+      if (msg.t === 'state') this.set({ seed: msg.seed, pos: msg.pos, drawer: msg.drawer })
       else if (msg.t === 'move') void this.enter(msg.room, 'join-or-host', 8)
       else if (msg.t === 'bye') this.hostLost(conn, code)
     })
@@ -299,10 +322,13 @@ export class Room {
   }
 
   private dropGuest(conn: DataConnection) {
+    if (!this.guests.includes(conn)) return
     this.guests = this.guests.filter((g) => g !== conn)
     this.lastSeen.delete(conn)
+    this.guestIds.delete(conn)
     conn.close()
     this.set({ people: this.guests.length + 1 })
+    this.revealIfDrawerGone()
   }
 
   private beat() {
@@ -320,15 +346,25 @@ export class Room {
 
   private onHostData(from: DataConnection, msg: Msg) {
     if (msg.t === 'bye') return this.dropGuest(from)
+    if (msg.t === 'hello') return void this.guestIds.set(from, msg.id)
     if (msg.t !== 'swipe') return
     const { pos } = this.snap
     const next = msg.dir === 'next' ? pos + 1 : pos - 1
     if (msg.at === pos && next >= 0 && next <= this.deckSize) {
-      this.set({ pos: next })
+      this.set({ pos: next, drawer: msg.dir === 'next' ? msg.by : null })
       this.broadcast()
     } else {
       // Too late: someone else swiped first. Put them back in sync.
-      this.send(from, { t: 'state', seed: this.snap.seed, pos })
+      this.send(from, this.stateMsg())
+    }
+  }
+
+  /** If whoever drew the current card isn't here anymore, show it to everyone. */
+  private revealIfDrawerGone() {
+    const { drawer, me } = this.snap
+    if (drawer && drawer !== me && ![...this.guestIds.values()].includes(drawer)) {
+      this.set({ drawer: null })
+      this.broadcast()
     }
   }
 
@@ -346,6 +382,7 @@ export class Room {
 
   private teardown() {
     this.lastSeen.clear()
+    this.guestIds.clear()
     this.host?.close()
     this.guests.forEach((g) => g.close())
     this.peer?.destroy()
@@ -354,8 +391,13 @@ export class Room {
     this.guests = []
   }
 
+  private stateMsg(): Msg {
+    const { seed, pos, drawer } = this.snap
+    return { t: 'state', seed, pos, drawer }
+  }
+
   private broadcast() {
-    const msg: Msg = { t: 'state', seed: this.snap.seed, pos: this.snap.pos }
+    const msg = this.stateMsg()
     this.guests.forEach((g) => this.send(g, msg))
   }
 

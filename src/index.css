@@ -624,6 +624,11 @@ body {
   animation: nudge-x 1.8s ease-in-out infinite;
 }
 
+.hint.listen {
+  opacity: 0.85;
+  animation: none;
+}
+
 .hint.gone {
   opacity: 0;
 }

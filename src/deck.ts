@@ -1,4 +1,4 @@
-import { adjectives, animals } from 'unique-names-generator'
+import words from '../words.yaml'
 import data from '../cards.yaml'
 
 export type Vibe = 'whimsical' | 'deep' | 'nerdy' | 'spicy'
@@ -71,34 +71,13 @@ export function tilt(i: number): number {
   return ((hash(`tilt${i}`) % 2400) / 100) - 12
 }
 
-// The library's word lists are broad. These words make a bad (or just odd)
-// first impression as your room name: insults, sad or scary words, politics,
-// religion, identity, and a few fragments like "inc" and "ltd".
-const SKIP_ADJECTIVES = new Set(`
-  absent accused acute adverse afraid aggressive alleged alone angry annoyed anxious
-  appalling armed arrogant ashamed awful bad bitter blind bloody broken capitalist
-  christian chronic chubby clinical colonial communist condemned conservative criminal
-  crazy creepy crooked crude cruel damaged dangerous dead deaf deafening defeated
-  democratic depressed desperate dirty disabled disappointed disastrous disgusted
-  disturbed disturbing dreadful drunk dutch dying elderly electoral embarrassed
-  embarrassing envious ethnic evil fat fatal female feminist filthy foolish frail
-  frightened furious gay grieving grim gross grotesque guilty handicapped harsh
-  helpless homeless hon horrible hostile hurt ideological ill illegal inadequate
-  inappropriate inc injured jealous latin liberal lonely lost ltd mad male married
-  marxist mean mental miserable misleading moaning naked nasty negative nervous
-  obnoxious orthodox painful panicky parliamentary political poor pregnant presidential
-  protestant psychiatric quarrelsome racial religious repulsive retired rotten rude sad
-  scared scornful selfish severe sexual shocked sick skinny slimy socialist sore sorry
-  soviet stupid suspicious tasteless terrible thoughtless tory toxic tragic troubled
-  ugliest ugly unconscious unemployed unfair unfortunate unhappy unpleasant unsightly
-  upset useless vicious violent vulnerable weak wicked worried worrying wrong
-  xenophobic yucky zoophagous
-`.split(/\s+/))
-const SKIP_ANIMALS = new Set(`
-  bedbug booby canidae felidae galliform hookworm leech louse roundworm xerinae
-`.split(/\s+/))
-const ADJECTIVES = adjectives.filter((w) => !SKIP_ADJECTIVES.has(w))
-const ANIMALS = animals.filter((w) => !SKIP_ANIMALS.has(w))
+function wordList(key: string): string[] {
+  const list = words && typeof words === 'object' ? (words as Record<string, unknown>)[key] : null
+  return Array.isArray(list) ? list.filter((w): w is string => typeof w === 'string' && /^[a-z]+$/.test(w)) : []
+}
+
+const ADJECTIVES = wordList('adjectives')
+const ANIMALS = wordList('animals')
 
 /** A friendly random seed like "tremendous-caribou" (~350k combinations). */
 export function randomSeed(): string {
