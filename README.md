@@ -63,8 +63,17 @@ game, tap **share** for a link or QR code that drops people straight in.
 Swipe right for the next card, left to undo (put the card back on the deck and
 bring back the last one). Arrow keys work too.
 
-To test rooms against a local matchmaker instead of the public one, run
-`npx peer --port 9000` and start the app with `VITE_PEER_HOST=127.0.0.1`.
+To test rooms against a local matchmaker instead of the public one, start a
+PeerJS server bound to `127.0.0.1` (the default IPv6 bind can fail):
+
+```js
+// srv.cjs, after `npm install peer`
+const { PeerServer } = require('peer')
+PeerServer({ port: 9000, path: '/', host: '127.0.0.1' })
+```
+
+Then run `node srv.cjs` and start the app with `VITE_PEER_HOST=127.0.0.1`.
+See [`AGENTS.md`](./AGENTS.md) for more on testing rooms.
 
 ## Develop locally
 
