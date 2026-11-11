@@ -23,6 +23,14 @@ All card content lives in [`cards.yaml`](./cards.yaml), one card per entry:
 The YAML is turned into JSON at build time, so a typo in it fails the build
 instead of breaking the site.
 
+## Decks
+
+The start screen lets you pick a deck: **SFW** (everything except the spicy
+cards) or **Spicy** (all of them). It's also where the seed lives. Tap the
+logo during a game to come back here. In a room, everyone plays the same deck:
+picking the deck that's already in play resumes it, and picking the other one
+restarts the room on that deck. Opening someone's room link skips this screen.
+
 ## Seed words
 
 Random seeds are `<adjective>-<animal>`, picked from the lists in
@@ -31,7 +39,7 @@ Random seeds are `<adjective>-<animal>`, picked from the lists in
 ## Playing together
 
 The seed is also the room code. Every visit starts a fresh room with a random
-seed like `spontaneous-squirrel`. Tap **share** to get a link or QR code, and
+seed like `spontaneous-squirrel`. During a game, tap **share** to get a link or QR code, and
 anyone who opens it joins your room: swipes show up on everyone's screen.
 
 - **No backend.** Phones connect directly to each other with WebRTC

@@ -38,6 +38,33 @@ function loadCards(): Card[] {
 
 export const CARDS = loadCards()
 
+export type DeckId = 'sfw' | 'spicy'
+
+/** The decks you can pick on the start screen. Each is a list of card indices. */
+export const DECKS: Record<DeckId, { label: string; blurb: string; cards: number[] }> = {
+  sfw: {
+    label: 'SFW',
+    blurb: 'silly, deep & nerdy',
+    cards: CARDS.flatMap((c, i) => (c.vibe === 'spicy' ? [] : [i])),
+  },
+  spicy: {
+    label: 'Spicy',
+    blurb: 'everything, plus 🌶️',
+    cards: CARDS.map((_, i) => i),
+  },
+}
+
+export const DECK_SIZES: Record<DeckId, number> = {
+  sfw: DECKS.sfw.cards.length,
+  spicy: DECKS.spicy.cards.length,
+}
+
+/** The deck's cards (as indices into CARDS) in this seed's shuffled order. */
+export function dealOrder(seed: string, deck: DeckId): number[] {
+  const pool = DECKS[deck].cards
+  return shuffled(seed, pool.length).map((i) => pool[i])
+}
+
 /** String -> 32-bit hash (cyrb53, folded). */
 function hash(str: string): number {
   let h1 = 0xdeadbeef

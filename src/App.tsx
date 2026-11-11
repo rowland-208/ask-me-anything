@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
-import { CARDS, VIBES, shuffled, tilt } from './deck'
-import type { Card } from './deck'
+import { CARDS, DECKS, DECK_SIZES, VIBES, dealOrder, tilt } from './deck'
+import type { Card, DeckId } from './deck'
 import { toCode, useRoom } from './room'
 import { SharePopup } from './Share'
 
@@ -65,10 +65,15 @@ function CardBack() {
 }
 
 function App() {
-  // The room holds the shared truth ({ seed, pos }). `seed` and `pos` below are
-  // what this screen is showing; the animations catch them up to the room.
-  const { room, snap } = useRoom(CARDS.length)
+  // The room holds the shared truth ({ seed, deck, pos }). `seed`, `deck` and
+  // `pos` below are what this screen is showing; animations catch them up.
+  const { room, snap } = useRoom(DECK_SIZES)
+  // Start on deck selection, unless we arrived through someone's room link.
+  const [screen, setScreen] = useState<'select' | 'play'>(() =>
+    new URLSearchParams(window.location.search).has('room') ? 'play' : 'select',
+  )
   const [seed, setSeed] = useState('')
+  const [deck, setDeck] = useState<DeckId>('sfw')
   const [seedDraft, setSeedDraft] = useState<string | null>(null) // null = not editing
   const [pos, setPos] = useState(0)
   const [pose, setPose] = useState<Pose>({ ...CENTER, back: true, motion: 'none' })
@@ -86,7 +91,7 @@ function App() {
   const drag = useRef<{ id: number; x0: number; y0: number } | null>(null)
   const timers = useRef<number[]>([])
 
-  const order = useMemo(() => shuffled(seed, CARDS.length), [seed])
+  const order = useMemo(() => dealOrder(seed, deck), [seed, deck])
   const current = pos < order.length ? CARDS[order[pos]] : null
   const deckLeft = Math.max(0, order.length - pos - 1)
   const discards = order.slice(Math.max(0, pos - PILE_SHOWN), pos)
@@ -96,7 +101,8 @@ function App() {
   useLayoutEffect(() => {
     const el = slotRef.current
     if (!el) return
-    const ro = new ResizeObserver(() => setCardW(el.offsetWidth))
+    // (While the game is hidden behind deck selection its width reads 0; ignore that.)
+    const ro = new ResizeObserver(() => el.offsetWidth > 0 && setCardW(el.offsetWidth))
     ro.observe(el)
     return () => ro.disconnect()
   }, [])
@@ -194,8 +200,9 @@ function App() {
   // us, or the seed changed. One step animates; bigger jumps just redeal.
   useEffect(() => {
     if (phase !== 'idle' || !snap.seed) return
-    if (snap.seed !== seed) {
+    if (snap.seed !== seed || snap.deck !== deck) {
       setSeed(snap.seed)
+      setDeck(snap.deck)
       setPos(snap.pos)
       draw(wantHidden)
     } else if (snap.pos === pos + 1) toss(wantHidden)
@@ -208,7 +215,7 @@ function App() {
       setHidden(wantHidden)
       setPose({ ...CENTER, back: wantHidden, motion: 'draw' })
     }
-  }, [phase, snap.seed, snap.pos, seed, pos, hidden, wantHidden, current, toss, undo, draw])
+  }, [phase, snap.seed, snap.deck, snap.pos, seed, deck, pos, hidden, wantHidden, current, toss, undo, draw])
 
   /** A swipe on this device: animate right away and tell the room. */
   const swipe = (dir: 'next' | 'undo') => {
@@ -268,7 +275,7 @@ function App() {
         if (e.key === 'Escape') setModal(null)
         return
       }
-      if (phase !== 'idle' || e.target instanceof HTMLInputElement) return
+      if (screen !== 'play' || phase !== 'idle' || e.target instanceof HTMLInputElement) return
       if (e.key === 'ArrowRight' || e.key === ' ') swipeRef.current('next')
       else if (e.key === 'ArrowLeft') swipeRef.current('undo')
       else return
@@ -276,7 +283,7 @@ function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [modal, phase])
+  }, [modal, phase, screen])
 
   /** Rolling a new seed throws away the current deck, so always ask first. */
   const askNewSeed = () => setModal('roll')
@@ -291,6 +298,12 @@ function App() {
     const code = toCode(seedDraft ?? '')
     setSeedDraft(null)
     if (code) room.goTo(code)
+  }
+
+  /** Picked a deck: the room's current deck just resumes, another one restarts. */
+  const pickDeck = (d: DeckId) => {
+    room.chooseDeck(d)
+    setScreen('play')
   }
 
   const rollNote =
@@ -315,32 +328,62 @@ function App() {
 
   return (
     <main className="app">
+      {screen === 'select' && (
+        <section className="select">
+          <h1 className="logo big">
+            ask me <span>anything</span>
+          </h1>
+          <p className="select-note">pick a deck</p>
+          <div className="deck-choices">
+            {(Object.keys(DECKS) as DeckId[]).map((id) => {
+              const d = DECKS[id]
+              const playing = snap.deck === id && snap.pos > 0
+              return (
+                <button key={id} type="button" className={`deck-choice deck-${id}`} onClick={() => pickDeck(id)}>
+                  <span className="deck-stack" aria-hidden="true">
+                    <span />
+                    <span />
+                    <span className="deck-top">{id === 'spicy' ? '🌶️' : '☕'}</span>
+                  </span>
+                  <b>{d.label}</b>
+                  <small>{d.blurb}</small>
+                  <small>{d.cards.length.toLocaleString()} cards</small>
+                  {playing && <em>in progress</em>}
+                </button>
+              )
+            })}
+          </div>
+          <form
+            className="seed"
+            onSubmit={(e) => {
+              e.preventDefault()
+              commitSeed()
+              ;(document.activeElement as HTMLElement | null)?.blur()
+            }}
+          >
+            <button type="button" className="die" aria-label="Roll a new seed" onClick={askNewSeed}>
+              🎲
+            </button>
+            <input
+              aria-label="Shuffle seed and room code"
+              value={seedDraft ?? snap.seed}
+              spellCheck={false}
+              autoCapitalize="none"
+              autoCorrect="off"
+              onFocus={() => setSeedDraft(snap.seed)}
+              onChange={(e) => setSeedDraft(e.target.value)}
+              onBlur={commitSeed}
+            />
+          </form>
+          <p className="select-note small">the seed is also your room code</p>
+        </section>
+      )}
+
+      <div className={`game ${screen === 'play' ? '' : 'away'}`} aria-hidden={screen !== 'play'}>
       <header className="top">
-        <h1 className="logo">
+        <button type="button" className="logo" aria-label="Back to deck selection" onClick={() => setScreen('select')}>
           ask me <span>anything</span>
-        </h1>
-        <form
-          className="seed"
-          onSubmit={(e) => {
-            e.preventDefault()
-            commitSeed()
-            ;(document.activeElement as HTMLElement | null)?.blur()
-          }}
-        >
-          <button type="button" className="die" aria-label="Roll a new seed" onClick={askNewSeed}>
-            🎲
-          </button>
-          <input
-            aria-label="Shuffle seed and room code"
-            value={seedDraft ?? snap.seed}
-            spellCheck={false}
-            autoCapitalize="none"
-            autoCorrect="off"
-            onFocus={() => setSeedDraft(snap.seed)}
-            onChange={(e) => setSeedDraft(e.target.value)}
-            onBlur={commitSeed}
-          />
-        </form>
+        </button>
         <button
           type="button"
           className={`share-btn status-${snap.status} ${snap.role}`}
@@ -388,7 +431,7 @@ function App() {
 
       <section className="table">
         <div className="pile-wrap">
-          <div className="pile deck" ref={deckRef} style={pileStyle} key={`deck-${seed}`}>
+          <div className="pile deck" ref={deckRef} style={pileStyle} key={`deck-${seed}-${deck}`}>
             <div className="pile-outline" />
             {Array.from({ length: Math.min(deckLeft, 5) }, (_, i) => (
               <div
@@ -420,6 +463,7 @@ function App() {
           <span className="pile-label">discard · {pos}</span>
         </div>
       </section>
+      </div>
       {modal === 'share' && <SharePopup snap={snap} url={room.shareUrl} onClose={() => setModal(null)} />}
       {modal === 'roll' && (
         <div className="overlay" onClick={() => setModal(null)}>

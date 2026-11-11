@@ -19,6 +19,7 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
 import type { DataConnection, Peer, PeerError } from 'peerjs'
 import { randomSeed } from './deck'
+import type { DeckId } from './deck'
 
 const PREFIX = 'ask-me-anything-v1-'
 const JOIN_TIMEOUT_MS = 8000
@@ -29,12 +30,13 @@ const PING_MS = 2000
 const SILENT_MS = 7000
 
 /** `drawer` is the id of whoever drew the current card, or null if everyone can see it. */
-export type DeckState = { seed: string; pos: number; drawer: string | null }
+export type DeckState = { seed: string; deck: DeckId; pos: number; drawer: string | null }
 export type Status = 'connecting' | 'live' | 'offline'
 export type Snapshot = DeckState & { role: 'host' | 'guest'; status: Status; people: number; me: string }
 
 type Msg =
-  | { t: 'state'; seed: string; pos: number; drawer: string | null }
+  | { t: 'state'; seed: string; deck: DeckId; pos: number; drawer: string | null }
+  | { t: 'deck'; deck: DeckId; by: string }
   | { t: 'swipe'; dir: 'next' | 'undo'; at: number; by: string }
   | { t: 'hello'; id: string }
   | { t: 'move'; room: string }
@@ -112,13 +114,13 @@ export class Room {
   private guestIds = new Map<DataConnection, string>() // host: which device is on each connection
   private heartbeat = 0
   private listeners = new Set<() => void>()
-  private deckSize: number
+  private deckSizes: Record<DeckId, number>
   snap: Snapshot
 
-  constructor(deckSize: number) {
-    this.deckSize = deckSize
+  constructor(deckSizes: Record<DeckId, number>) {
+    this.deckSizes = deckSizes
     const me = Math.random().toString(36).slice(2, 10)
-    this.snap = { seed: '', pos: 0, drawer: me, role: 'host', status: 'connecting', people: 1, me }
+    this.snap = { seed: '', deck: 'sfw', pos: 0, drawer: me, role: 'host', status: 'connecting', people: 1, me }
   }
 
   // ---- React glue ----------------------------------------------------------
@@ -162,11 +164,24 @@ export class Room {
     void this.enter(randomSeed(), 'host-fresh')
   }
 
+  /** Picked a deck on the start screen. The same deck just resumes; a
+   *  different one restarts the room on that deck, dealt to whoever chose it. */
+  chooseDeck(deck: DeckId) {
+    if (deck === this.snap.deck) return
+    if (this.snap.role === 'guest' && this.host?.open) {
+      this.set({ deck, pos: 0, drawer: this.snap.me }) // optimistic
+      this.send(this.host, { t: 'deck', deck, by: this.snap.me })
+    } else {
+      this.set({ deck, pos: 0, drawer: this.snap.me })
+      this.broadcast()
+    }
+  }
+
   /** A swipe on this device. Applied right away; the host has the final say. */
   act(dir: 'next' | 'undo') {
     const { pos, me } = this.snap
     const next = dir === 'next' ? pos + 1 : pos - 1
-    if (next < 0 || next > this.deckSize) return
+    if (next < 0 || next > this.deckSizes[this.snap.deck]) return
     // A fresh draw is ours alone; a card coming back from the discard pile is public.
     const drawer = dir === 'next' ? me : null
     if (this.snap.role === 'guest' && this.host?.open) {
@@ -303,7 +318,7 @@ export class Room {
       if (this.host !== conn) return // a room we've already left
       this.lastSeen.set(conn, Date.now())
       const msg = d as Msg
-      if (msg.t === 'state') this.set({ seed: msg.seed, pos: msg.pos, drawer: msg.drawer })
+      if (msg.t === 'state') this.set({ seed: msg.seed, deck: msg.deck, pos: msg.pos, drawer: msg.drawer })
       else if (msg.t === 'move') void this.enter(msg.room, 'join-or-host', 8)
       else if (msg.t === 'bye') this.hostLost(conn, code)
     })
@@ -350,11 +365,23 @@ export class Room {
 
   private onHostData(from: DataConnection, msg: Msg) {
     if (msg.t === 'bye') return this.dropGuest(from)
-    if (msg.t === 'hello') return void this.guestIds.set(from, msg.id)
+    if (msg.t === 'hello') {
+      // The guest is listening now (anything we sent on connect may have
+      // arrived before it was), so send the full state again.
+      this.guestIds.set(from, msg.id)
+      return this.send(from, this.stateMsg())
+    }
+    if (msg.t === 'deck') {
+      if (msg.deck !== this.snap.deck) {
+        this.set({ deck: msg.deck, pos: 0, drawer: msg.by })
+        this.broadcast()
+      } else this.send(from, this.stateMsg())
+      return
+    }
     if (msg.t !== 'swipe') return
     const { pos } = this.snap
     const next = msg.dir === 'next' ? pos + 1 : pos - 1
-    if (msg.at === pos && next >= 0 && next <= this.deckSize) {
+    if (msg.at === pos && next >= 0 && next <= this.deckSizes[this.snap.deck]) {
       this.set({ pos: next, drawer: msg.dir === 'next' ? msg.by : null })
       this.broadcast()
     } else {
@@ -396,8 +423,8 @@ export class Room {
   }
 
   private stateMsg(): Msg {
-    const { seed, pos, drawer } = this.snap
-    return { t: 'state', seed, pos, drawer }
+    const { seed, deck, pos, drawer } = this.snap
+    return { t: 'state', seed, deck, pos, drawer }
   }
 
   private broadcast() {
@@ -419,8 +446,8 @@ export class Room {
   }
 }
 
-export function useRoom(deckSize: number) {
-  const [room] = useState(() => new Room(deckSize))
+export function useRoom(deckSizes: Record<DeckId, number>) {
+  const [room] = useState(() => new Room(deckSizes))
   useEffect(() => {
     room.start()
     // Hang up cleanly when the tab closes so others notice right away.
