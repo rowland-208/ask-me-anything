@@ -26,10 +26,9 @@ instead of breaking the site.
 ## Decks
 
 The start screen lets you pick a deck: **SFW** (everything except the spicy
-cards) or **Spicy** (all of them). It's also where the seed lives. Tap the
-logo during a game to come back here. In a room, everyone plays the same deck:
-picking the deck that's already in play resumes it, and picking the other one
-restarts the room on that deck. Opening someone's room link skips this screen.
+cards) or **Spicy** (all of them). The seed box and 🎲 live here too. Tap the
+logo during a game to come back here, which also leaves the room. Opening
+someone's room link skips this screen.
 
 ## Seed words
 
@@ -38,9 +37,10 @@ Random seeds are `<adjective>-<animal>`, picked from the lists in
 
 ## Playing together
 
-The seed is also the room code. Every visit starts a fresh room with a random
-seed like `spontaneous-squirrel`. During a game, tap **share** to get a link or QR code, and
-anyone who opens it joins your room: swipes show up on everyone's screen.
+A room is a seed plus a deck: picking **SFW** with seed `spontaneous-squirrel`
+puts you in that room. Anyone who enters the same seed and picks the same deck
+joins you; the same seed with the other deck is a different room. During a
+game, tap **share** for a link or QR code that drops people straight in.
 
 - **No backend.** Phones connect directly to each other with WebRTC
   ([PeerJS](https://peerjs.com/)). PeerJS's free public server is only used to
@@ -51,11 +51,11 @@ anyone who opens it joins your room: swipes show up on everyone's screen.
 - **Hidden draws.** The card you swipe in is face up for you and face down
   for everyone else, so you can read it out loud. Once it's discarded it's
   face up for all, and swiping back (undo) brings it back face up for everyone.
-- **Typing a code** joins that room if someone's in it, or starts it if not.
-- **Rolling a new seed** (🎲) asks first, then moves everyone in the room along
-  to the new deck.
+- **Running out of cards** offers a new seed, which moves everyone in the room
+  along to a fresh shuffle.
 - **If the host leaves**, one of the guests quietly takes over.
-- **Refreshing** as a host starts a new room; guests rejoin theirs.
+- **Refreshing** as a host goes back to deck selection with a new seed; guests
+  rejoin their room.
 - If the matchmaker can't be reached, the app still works solo.
 
 Swipe right for the next card, left to undo (put the card back on the deck and

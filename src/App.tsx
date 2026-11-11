@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
-import { CARDS, DECKS, DECK_SIZES, VIBES, dealOrder, tilt } from './deck'
+import { CARDS, DECKS, DECK_SIZES, VIBES, dealOrder, randomSeed, tilt } from './deck'
 import type { Card, DeckId } from './deck'
 import { toCode, useRoom } from './room'
 import { SharePopup } from './Share'
@@ -71,6 +71,11 @@ function App() {
   // Start on deck selection, unless we arrived through someone's room link.
   const [screen, setScreen] = useState<'select' | 'play'>(() =>
     new URLSearchParams(window.location.search).has('room') ? 'play' : 'select',
+  )
+  // The seed shown on deck selection. Picking a deck joins (or starts) the
+  // room for this seed + deck.
+  const [pickSeed, setPickSeed] = useState(
+    () => toCode(new URLSearchParams(window.location.search).get('room') ?? '') || randomSeed(),
   )
   const [seed, setSeed] = useState('')
   const [deck, setDeck] = useState<DeckId>('sfw')
@@ -290,24 +295,35 @@ function App() {
 
   const newSeed = () => {
     setModal(null)
-    room.rollNew()
+    if (screen === 'play') return room.rollNew() // out of cards: everyone moves on
+    let next = randomSeed()
+    while (next === pickSeed) next = randomSeed()
+    setPickSeed(next)
   }
 
-  /** The seed box is the room box: a typed code joins that room, or starts it. */
   const commitSeed = () => {
     const code = toCode(seedDraft ?? '')
     setSeedDraft(null)
-    if (code) room.goTo(code)
+    if (code) setPickSeed(code)
   }
 
-  /** Picked a deck: the room's current deck just resumes, another one restarts. */
+  /** Picked a deck: join the room for this seed + deck, or start it. */
   const pickDeck = (d: DeckId) => {
-    room.chooseDeck(d)
+    room.join(pickSeed, d)
     setScreen('play')
   }
 
+  /** Back to deck selection, which means leaving the room. */
+  const backToDecks = () => {
+    room.leave()
+    if (snap.seed) setPickSeed(snap.seed) // so picking the same deck again rejoins
+    setScreen('select')
+  }
+
   const rollNote =
-    snap.role === 'guest'
+    screen === 'select'
+      ? 'This shuffles up a brand new deck.'
+      : snap.role === 'guest'
       ? "You'll leave this room and start a new deck of your own."
       : snap.people > 1
         ? 'Everyone here moves to the new deck with you.'
@@ -337,7 +353,7 @@ function App() {
           <div className="deck-choices">
             {(Object.keys(DECKS) as DeckId[]).map((id) => {
               const d = DECKS[id]
-              const playing = snap.deck === id && snap.pos > 0
+              const playing = snap.seed === pickSeed && snap.deck === id && snap.pos > 0
               return (
                 <button key={id} type="button" className={`deck-choice deck-${id}`} onClick={() => pickDeck(id)}>
                   <span className="deck-stack" aria-hidden="true">
@@ -348,7 +364,7 @@ function App() {
                   <b>{d.label}</b>
                   <small>{d.blurb}</small>
                   <small>{d.cards.length.toLocaleString()} cards</small>
-                  {playing && <em>in progress</em>}
+                  {playing && <em>resume</em>}
                 </button>
               )
             })}
@@ -366,11 +382,11 @@ function App() {
             </button>
             <input
               aria-label="Shuffle seed and room code"
-              value={seedDraft ?? snap.seed}
+              value={seedDraft ?? pickSeed}
               spellCheck={false}
               autoCapitalize="none"
               autoCorrect="off"
-              onFocus={() => setSeedDraft(snap.seed)}
+              onFocus={() => setSeedDraft(pickSeed)}
               onChange={(e) => setSeedDraft(e.target.value)}
               onBlur={commitSeed}
             />
@@ -381,7 +397,7 @@ function App() {
 
       <div className={`game ${screen === 'play' ? '' : 'away'}`} aria-hidden={screen !== 'play'}>
       <header className="top">
-        <button type="button" className="logo" aria-label="Back to deck selection" onClick={() => setScreen('select')}>
+        <button type="button" className="logo" aria-label="Back to deck selection" onClick={backToDecks}>
           ask me <span>anything</span>
         </button>
         <button

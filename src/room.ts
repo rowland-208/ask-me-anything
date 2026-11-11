@@ -5,8 +5,10 @@
  * face (so they can read it out loud); everyone else sees the back until it's
  * discarded. Undo brings a discarded card back face up for everyone.
  *
- * The seed *is* the room code. Whoever registers `PREFIX + seed` with the
- * public PeerJS matchmaker is the host; everyone else connects to them
+ * A room is a deck + seed: picking the SFW deck with seed "giant-cicada" puts
+ * you in the room `PREFIX + "sfw-giant-cicada"`. You're only in a room while
+ * playing; the deck selection screen is outside any room. Whoever registers a
+ * room's id with the public PeerJS matchmaker is the host; everyone else connects to them
  * directly over WebRTC. The host owns the truth ({ seed, pos }) and
  * broadcasts it. Guests send swipes stamped with the card they swiped on,
  * and the host drops any that arrive late (someone else swiped first).
@@ -31,19 +33,24 @@ const SILENT_MS = 7000
 
 /** `drawer` is the id of whoever drew the current card, or null if everyone can see it. */
 export type DeckState = { seed: string; deck: DeckId; pos: number; drawer: string | null }
-export type Status = 'connecting' | 'live' | 'offline'
+/** `off` = not in any room (on the deck selection screen). */
+export type Status = 'off' | 'connecting' | 'live' | 'offline'
 export type Snapshot = DeckState & { role: 'host' | 'guest'; status: Status; people: number; me: string }
 
 type Msg =
   | { t: 'state'; seed: string; deck: DeckId; pos: number; drawer: string | null }
-  | { t: 'deck'; deck: DeckId; by: string }
   | { t: 'swipe'; dir: 'next' | 'undo'; at: number; by: string }
   | { t: 'hello'; id: string }
-  | { t: 'move'; room: string }
+  | { t: 'move'; room: string; deck: DeckId }
   | { t: 'ping' }
   | { t: 'bye' }
 
 type Mode = 'join-or-host' | 'host-fresh'
+
+const roomId = (code: string, deck: DeckId) => `${PREFIX}${deck}-${code}`
+
+/** Read a deck id from untrusted text (a URL), defaulting to SFW. */
+export const toDeck = (text: string | null): DeckId => (text === 'spicy' ? 'spicy' : 'sfw')
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
@@ -120,7 +127,7 @@ export class Room {
   constructor(deckSizes: Record<DeckId, number>) {
     this.deckSizes = deckSizes
     const me = Math.random().toString(36).slice(2, 10)
-    this.snap = { seed: '', deck: 'sfw', pos: 0, drawer: me, role: 'host', status: 'connecting', people: 1, me }
+    this.snap = { seed: '', deck: 'sfw', pos: 0, drawer: me, role: 'host', status: 'off', people: 1, me }
   }
 
   // ---- React glue ----------------------------------------------------------
@@ -140,9 +147,10 @@ export class Room {
   start() {
     window.clearInterval(this.heartbeat)
     this.heartbeat = window.setInterval(() => this.beat(), PING_MS)
-    const wanted = toCode(new URLSearchParams(window.location.search).get('room') ?? '')
-    if (wanted) void this.enter(wanted, 'join-or-host')
-    else void this.enter(randomSeed(), 'host-fresh')
+    // Arrived through a room link: go straight in.
+    const params = new URLSearchParams(window.location.search)
+    const wanted = toCode(params.get('room') ?? '')
+    if (wanted) void this.enter(wanted, toDeck(params.get('deck')), 'join-or-host')
   }
 
   stop() {
@@ -154,27 +162,25 @@ export class Room {
     this.teardown()
   }
 
-  /** Typed a code: join that room if it's live, otherwise host it. */
-  goTo(code: string) {
-    if (code && code !== this.snap.seed) void this.enter(code, 'join-or-host')
+  /** Picked a deck: join the room for this seed + deck if someone's in it,
+   *  otherwise start it. Coming back to the same solo game picks up where you left off. */
+  join(code: string, deck: DeckId) {
+    void this.enter(code, deck, 'join-or-host')
   }
 
-  /** Rolled the die: host a brand new room (anyone with us follows). */
+  /** Back to deck selection: leave the room (a guest takes over if we were hosting). */
+  leave() {
+    if (this.host) this.send(this.host, { t: 'bye' })
+    this.guests.forEach((g) => this.send(g, { t: 'bye' }))
+    this.token++
+    this.teardown()
+    this.set({ role: 'host', status: 'off', people: 1 })
+    this.setUrl(null)
+  }
+
+  /** Out of cards: host a brand new room on the same deck (anyone with us follows). */
   rollNew() {
-    void this.enter(randomSeed(), 'host-fresh')
-  }
-
-  /** Picked a deck on the start screen. The same deck just resumes; a
-   *  different one restarts the room on that deck, dealt to whoever chose it. */
-  chooseDeck(deck: DeckId) {
-    if (deck === this.snap.deck) return
-    if (this.snap.role === 'guest' && this.host?.open) {
-      this.set({ deck, pos: 0, drawer: this.snap.me }) // optimistic
-      this.send(this.host, { t: 'deck', deck, by: this.snap.me })
-    } else {
-      this.set({ deck, pos: 0, drawer: this.snap.me })
-      this.broadcast()
-    }
+    void this.enter(randomSeed(), this.snap.deck, 'host-fresh')
   }
 
   /** A swipe on this device. Applied right away; the host has the final say. */
@@ -197,12 +203,19 @@ export class Room {
     const url = new URL(window.location.href)
     url.search = ''
     url.searchParams.set('room', this.snap.seed)
+    url.searchParams.set('deck', this.snap.deck)
     return url.toString()
   }
 
   // ---- joining & hosting ---------------------------------------------------
 
-  private async enter(code: string, mode: Mode, retries = 0, joinTimeout = JOIN_TIMEOUT_MS): Promise<void> {
+  private async enter(
+    code: string,
+    deck: DeckId,
+    mode: Mode,
+    retries = 0,
+    joinTimeout = JOIN_TIMEOUT_MS,
+  ): Promise<void> {
     const token = ++this.token
     const stale = () => token !== this.token
     const old = { peer: this.peer, host: this.host, guests: this.guests }
@@ -212,53 +225,52 @@ export class Room {
 
     // Show the new deck immediately; if we end up joining, the host corrects us.
     // A brand new deck's first card is dealt to us.
-    const same = code === this.snap.seed
+    const same = code === this.snap.seed && deck === this.snap.deck
     this.set({
       seed: code,
+      deck,
       pos: same ? this.snap.pos : 0,
       drawer: same ? this.snap.drawer : this.snap.me,
       status: 'connecting',
       people: 1,
     })
 
-    if (mode === 'join-or-host') {
-      for (let attempt = 0; attempt <= retries; attempt++) {
-        let peer: Peer | null = null
-        try {
-          peer = await openPeer()
-          const conn = await connectTo(peer, PREFIX + code, joinTimeout)
-          if (stale()) return void peer.destroy()
-          this.handOff(old, code)
-          return this.becomeGuest(peer, conn, code)
-        } catch (e) {
-          peer?.destroy()
-          if (stale()) return
-          const t = errType(e)
-          if (t !== 'peer-unavailable' && !(e instanceof Error && e.message === 'timeout')) {
-            return this.goOffline(old, code)
-          }
-        }
-        if (attempt < retries) await sleep(700)
+    // Try to claim the room first: that's instant when nobody's in it. If it's
+    // taken, someone's hosting, so join them. (Asking to join an empty room
+    // first would make every new game wait for the matchmaker to time out.)
+    for (let attempt = 0; attempt <= retries + 1; attempt++) {
+      try {
+        const peer = await openPeer(roomId(code, deck))
+        if (stale()) return void peer.destroy()
+        this.handOff(old, code)
+        return this.becomeHost(peer)
+      } catch (e) {
         if (stale()) return
+        if (errType(e) !== 'unavailable-id') return this.goOffline(old, code)
+        // A random seed that's already taken just rolls again.
+        if (mode === 'host-fresh') return this.enter(randomSeed(), deck, 'host-fresh')
       }
-    }
-
-    // Nobody's hosting `code` (or we asked for a fresh room): host it ourselves.
-    try {
-      const peer = await openPeer(PREFIX + code)
-      if (stale()) return void peer.destroy()
-      this.handOff(old, code)
-      this.becomeHost(peer)
-    } catch (e) {
+      // Taken: join whoever has it.
+      let peer: Peer | null = null
+      try {
+        peer = await openPeer()
+        const conn = await connectTo(peer, roomId(code, deck), joinTimeout)
+        if (stale()) return void peer.destroy()
+        this.handOff(old, code)
+        return this.becomeGuest(peer, conn, code)
+      } catch (e) {
+        peer?.destroy()
+        if (stale()) return
+        const t = errType(e)
+        // The host may have just left (or not quite registered yet); go round again.
+        if (t !== 'peer-unavailable' && !(e instanceof Error && e.message === 'timeout')) {
+          return this.goOffline(old, code)
+        }
+      }
+      await sleep(700)
       if (stale()) return
-      if (errType(e) === 'unavailable-id') {
-        // Someone grabbed it first. A random seed just rolls again;
-        // a chosen code means there's a host now, so join them.
-        if (mode === 'host-fresh') return this.enter(randomSeed(), 'host-fresh')
-        return this.enter(code, 'join-or-host', 2, joinTimeout)
-      }
-      this.goOffline(old, code)
     }
+    this.goOffline(old, code)
   }
 
   /** Tell anyone who was with us where we went, then drop the old connections. */
@@ -268,7 +280,7 @@ export class Room {
     this.host = null
     this.guests = []
     this.guestIds.clear()
-    old.guests.forEach((g) => this.send(g, { t: 'move', room: code }))
+    old.guests.forEach((g) => this.send(g, { t: 'move', room: code, deck: this.snap.deck }))
     old.host?.close()
     if (old.host) this.lastSeen.delete(old.host)
     old.guests.forEach((g) => this.lastSeen.delete(g))
@@ -319,7 +331,7 @@ export class Room {
       this.lastSeen.set(conn, Date.now())
       const msg = d as Msg
       if (msg.t === 'state') this.set({ seed: msg.seed, deck: msg.deck, pos: msg.pos, drawer: msg.drawer })
-      else if (msg.t === 'move') void this.enter(msg.room, 'join-or-host', 8)
+      else if (msg.t === 'move') void this.enter(msg.room, msg.deck, 'join-or-host', 8)
       else if (msg.t === 'bye') this.hostLost(conn, code)
     })
     conn.on('close', () => this.hostLost(conn, code))
@@ -336,7 +348,7 @@ export class Room {
     const token = this.token
     // Stagger so guests don't all try to take over at the same instant.
     setTimeout(() => {
-      if (token === this.token) void this.enter(code, 'join-or-host', 1, TAKEOVER_TIMEOUT_MS)
+      if (token === this.token) void this.enter(code, this.snap.deck, 'join-or-host', 1, TAKEOVER_TIMEOUT_MS)
     }, Math.random() * 800)
   }
 
@@ -370,13 +382,6 @@ export class Room {
       // arrived before it was), so send the full state again.
       this.guestIds.set(from, msg.id)
       return this.send(from, this.stateMsg())
-    }
-    if (msg.t === 'deck') {
-      if (msg.deck !== this.snap.deck) {
-        this.set({ deck: msg.deck, pos: 0, drawer: msg.by })
-        this.broadcast()
-      } else this.send(from, this.stateMsg())
-      return
     }
     if (msg.t !== 'swipe') return
     const { pos } = this.snap
@@ -412,14 +417,17 @@ export class Room {
   }
 
   private teardown() {
-    this.lastSeen.clear()
-    this.guestIds.clear()
-    this.host?.close()
-    this.guests.forEach((g) => g.close())
-    this.peer?.destroy()
+    // Forget everything first: closing a connection can fire its "close"
+    // handler right away, and it must not look like the host vanished.
+    const { peer, host, guests } = this
     this.peer = null
     this.host = null
     this.guests = []
+    this.lastSeen.clear()
+    this.guestIds.clear()
+    host?.close()
+    guests.forEach((g) => g.close())
+    peer?.destroy()
   }
 
   private stateMsg(): Msg {
@@ -436,11 +444,16 @@ export class Room {
     if (conn.open) void conn.send(msg)
   }
 
-  /** Guests keep ?room= so a refresh rejoins; hosts don't, so a refresh rolls fresh. */
+  /** Guests keep ?room=&deck= so a refresh rejoins; hosts don't, so a refresh starts fresh. */
   private setUrl(code: string | null) {
     const url = new URL(window.location.href)
-    if (code) url.searchParams.set('room', code)
-    else url.searchParams.delete('room')
+    if (code) {
+      url.searchParams.set('room', code)
+      url.searchParams.set('deck', this.snap.deck)
+    } else {
+      url.searchParams.delete('room')
+      url.searchParams.delete('deck')
+    }
     url.searchParams.delete('seed')
     window.history.replaceState(null, '', url)
   }

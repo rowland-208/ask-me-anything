@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import type { Snapshot } from './room'
 
 function statusLine(snap: Snapshot): string {
-  if (snap.status === 'connecting') return 'Connecting…'
+  if (snap.status === 'connecting' || snap.status === 'off') return 'Connecting…'
   if (snap.status === 'offline') return "Couldn't reach the matchmaker, so it's just you for now."
   if (snap.role === 'guest') return "You're in! Anyone with this link can join too."
   if (snap.people > 1) return `${snap.people} people in this room. Swipes show up for everyone.`
