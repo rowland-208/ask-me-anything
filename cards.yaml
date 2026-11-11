@@ -12,11 +12,11 @@
 #
 # Tip: if a line contains a colon, wrap it in quotes or use the `>-` style below.
 #
-# The first 100 cards are 30% whimsical, 30% nerdy, 20% deep, 20% spicy.
-# Then come 200 preference cards: 100 scales and 100 favorites.
+# 1,200 cards: 1,000 split 30% whimsical, 30% nerdy, 20% deep, 20% spicy,
+# plus 200 preference cards (100 scales and 100 favorites).
 
 # ---------------------------------------------------------------------------
-# 🌈 WHIMSICAL (30)
+# 🌈 WHIMSICAL (300)
 # ---------------------------------------------------------------------------
 
 - vibe: whimsical
@@ -192,8 +192,1099 @@
     What's on the menu?
   nudge: Which "kid food" do you still secretly eat?
 
+# --- added in the 1,200-card expansion ---
+
+- vibe: whimsical
+  question: "You're shrunk to the size of a mouse for a day in our home. What's your plan?"
+  nudge: "Where's the first place you'd explore?"
+
+- vibe: whimsical
+  question: "If you were a houseplant, what kind would you be, and how would you need to be cared for?"
+  nudge: "Am I good at watering you?"
+
+- vibe: whimsical
+  question: "You can swap lives with any fictional character for a week. Who do you pick?"
+  nudge: "What would you mess up first?"
+
+- vibe: whimsical
+  question: "You have to wear a costume every day for a year. What is it?"
+  nudge: "What's the worst part of wearing it to the dentist?"
+
+- vibe: whimsical
+  question: "You're the mayor of a tiny town of 50 people. What's your first big project?"
+  nudge: "What's the town festival?"
+
+- vibe: whimsical
+  question: "Your superpower is something very small, like always finding parking. What is it, and what's your hero name?"
+  nudge: "What's your costume?"
+
+- vibe: whimsical
+  question: "You're on a game show built around a skill you actually have. What's the show called?"
+  nudge: "How far do you get?"
+
+- vibe: whimsical
+  question: "If you were a scented candle, what would the label say?"
+  nudge: "What would mine be called?"
+
+- vibe: whimsical
+  question: "You're opening a museum of your life. What's in the gift shop?"
+  nudge: "What's the most embarrassing exhibit?"
+
+- vibe: whimsical
+  question: "If your pet (real or imaginary) could text you, what would they text all day?"
+  nudge: "What would you text back?"
+
+- vibe: whimsical
+  question: "A movie is being made about your life. Who plays you, and what genre is it?"
+  nudge: "Who plays me?"
+
+- vibe: whimsical
+  question: "You can teleport, but only to places you've been before. Where do you go first?"
+  nudge: "Where do you go on a bad day?"
+
+- vibe: whimsical
+  question: "You can only speak in song lyrics for a day. What's your most-used lyric?"
+  nudge: "How would you say \"I'm hungry\"?"
+
+- vibe: whimsical
+  question: "If you were a holiday, how would people celebrate you?"
+  nudge: "What's the official holiday food?"
+
+- vibe: whimsical
+  question: "You're a wizard, but your only spell is mildly inconvenient. What is it?"
+  nudge: "Who would you cast it on?"
+
+- vibe: whimsical
+  question: "You're running a lemonade stand as an adult. What's your twist?"
+  nudge: "How much do you charge?"
+
+- vibe: whimsical
+  question: "If you could shape the clouds any way you wanted, what would you make?"
+  nudge: "What would you write in the sky?"
+
+- vibe: whimsical
+  question: "We're starting a band. What's the name, and what instrument do you play badly?"
+  nudge: "What's our first hit called?"
+
+- vibe: whimsical
+  question: "You're a dragon guarding a hoard, but it isn't gold. What do you hoard?"
+  nudge: "What happens to anyone who touches it?"
+
+- vibe: whimsical
+  question: "You can live in any era of fashion. What do you wear every day?"
+  nudge: "What am I wearing?"
+
+- vibe: whimsical
+  question: "You're allowed one ridiculous purchase with zero judgment. What do you buy?"
+  nudge: "Where do you keep it?"
+
+- vibe: whimsical
+  question: "You get a robot assistant. What's the first chore you give it?"
+  nudge: "What do you name it?"
+
+- vibe: whimsical
+  fact: "Many pirate ships had written codes of conduct, with rules for splitting loot and even payouts for injuries."
+  question: "You're a pirate. What's your pirate name, and what's your ship called?"
+  nudge: "What's in your code of conduct?"
+
+- vibe: whimsical
+  question: "If animals had jobs, what job would a sloth have?"
+  nudge: "What animal would be your boss?"
+
+- vibe: whimsical
+  question: "You get one hour a day where time freezes for everyone but you. What do you do with it?"
+  nudge: "Would you tell anyone?"
+
+- vibe: whimsical
+  question: "You're the mascot for a snack food. What snack, and what's your catchphrase?"
+  nudge: "Do your commercial."
+
+- vibe: whimsical
+  question: "You can make one food calorie-free forever. What is it?"
+  nudge: "How much of it are you eating today?"
+
+- vibe: whimsical
+  question: "You're the main character in a fairy tale. What's your quest?"
+  nudge: "Who's your talking animal sidekick?"
+
+- vibe: whimsical
+  question: "You're opening a theme park. What's the signature ride?"
+  nudge: "What's the snack stand famous for?"
+
+- vibe: whimsical
+  question: "If you were a flavor of ice cream, what would you be called?"
+  nudge: "What toppings come with you?"
+
+- vibe: whimsical
+  question: "We're stranded on a desert island with three things from this room. What do you grab?"
+  nudge: "How do they save us?"
+
+- vibe: whimsical
+  question: "You can have a chat with your 8-year-old self. What do they think of your life now?"
+  nudge: "What would they want to ask me?"
+
+- vibe: whimsical
+  question: "What's your role in the zombie apocalypse? Leader, medic, cook, or first to go?"
+  nudge: "Who else is on our team?"
+
+- vibe: whimsical
+  question: "You can add one room to your home for any purpose at all. What is it?"
+  nudge: "What's the dress code?"
+
+- vibe: whimsical
+  question: "If you were a weather forecast, what would today's forecast be?"
+  nudge: "And tomorrow's?"
+
+- vibe: whimsical
+  question: "You're a celebrity chef with one ridiculous rule in your kitchen. What is it?"
+  nudge: "Why?"
+
+- vibe: whimsical
+  question: "If your life had a laugh track, when would it go off the most?"
+  nudge: "When would it be totally silent?"
+
+- vibe: whimsical
+  question: "You anchor a news channel that only covers our household. What's tonight's top story?"
+  nudge: "What's the weather report in the kitchen?"
+
+- vibe: whimsical
+  question: "What ringtone would describe your personality?"
+  nudge: "What would mine be?"
+
+- vibe: whimsical
+  question: "You can talk to plants and they're brutally honest. What do they say about you?"
+  nudge: "Which plant is the biggest gossip?"
+
+- vibe: whimsical
+  question: "You get to name a brand new color. What does it look like, and what's it called?"
+  nudge: "What would you paint with it?"
+
+- vibe: whimsical
+  question: "If you were a piece of furniture, what would you be?"
+  nudge: "Am I a comfy chair or a squeaky one?"
+
+- vibe: whimsical
+  question: "You write greeting cards for awkward occasions. What's the occasion, and what does the card say?"
+  nudge: "Write one for me."
+
+- vibe: whimsical
+  question: "You've been elected president of the snack drawer. What's your first policy?"
+  nudge: "Who's banned from the drawer?"
+
+- vibe: whimsical
+  question: "You inherit a castle, but it comes with one weird condition. What is it?"
+  nudge: "Do we still move in?"
+
+- vibe: whimsical
+  question: "You can shrink or grow one animal to any size. Which, and how big?"
+  nudge: "Would it make a good pet then?"
+
+- vibe: whimsical
+  question: "You're a mime for a day. What's the hardest thing to get across?"
+  nudge: "Act something out for me right now."
+
+- vibe: whimsical
+  question: "You can only travel by one unusual vehicle for a year. Which one?"
+  nudge: "Where's our first trip?"
+
+- vibe: whimsical
+  question: "What's the title of your autobiography, and what's on the cover?"
+  nudge: "What's chapter one about?"
+
+- vibe: whimsical
+  question: "You're a superhero whose weakness is something totally ordinary. What is it?"
+  nudge: "How does your nemesis use it against you?"
+
+- vibe: whimsical
+  question: "Our home has a secret passage. Where does it lead?"
+  nudge: "What's the secret knock?"
+
+- vibe: whimsical
+  question: "You're on a reality show about a very strange hobby. What's the hobby?"
+  nudge: "Who's your rival?"
+
+- vibe: whimsical
+  fact: "The last known thylacine, or Tasmanian tiger, died in a zoo in 1936."
+  question: "You can bring back one extinct animal as a pet. Which one?"
+  nudge: "Where does it sleep?"
+
+- vibe: whimsical
+  question: "You find a door in our home that you've never noticed before. What's behind it?"
+  nudge: "Do we open it together?"
+
+- vibe: whimsical
+  question: "You write fortune cookie fortunes. What's your most mysterious one?"
+  nudge: "Write one for me right now."
+
+- vibe: whimsical
+  question: "You're the librarian of a library full of books on one strange subject. What subject?"
+  nudge: "What's the most borrowed book?"
+
+- vibe: whimsical
+  question: "You have a pet rock. What's its name, personality, and life story?"
+  nudge: "What's its job?"
+
+- vibe: whimsical
+  question: "You can add a brand new holiday to the calendar. What are we celebrating?"
+  nudge: "What are the traditions?"
+
+- vibe: whimsical
+  question: "You're invisible for one afternoon. Where do you go?"
+  nudge: "What's the most harmless mischief you'd get up to?"
+
+- vibe: whimsical
+  question: "You're a bard who sings ballads about everyday heroics. Sing me a line about your morning."
+  nudge: "What's the chorus?"
+
+- vibe: whimsical
+  question: "If you were a kitchen appliance, which one would you be?"
+  nudge: "What would I be?"
+
+- vibe: whimsical
+  question: "You run a tiny bakery that only sells one thing. What is it?"
+  nudge: "What's the secret ingredient?"
+
+- vibe: whimsical
+  question: "We're stuck in a mall overnight. What's the plan?"
+  nudge: "Which store is base camp?"
+
+- vibe: whimsical
+  question: "If your name were a verb, what would it mean?"
+  nudge: "Use it in a sentence."
+
+- vibe: whimsical
+  question: "You can borrow one animal's sense or ability for a day. What do you pick?"
+  nudge: "How do you use it?"
+
+- vibe: whimsical
+  question: "If you were a baseball player, what would your walk-up song be?"
+  nudge: "What's mine?"
+
+- vibe: whimsical
+  question: "You're designing a board game about our lives. What's the goal?"
+  nudge: "What's the \"go to jail\" square?"
+
+- vibe: whimsical
+  question: "You're the world champion of something silly. What's the sport?"
+  nudge: "What's your victory dance?"
+
+- vibe: whimsical
+  question: "You can only eat one cuisine for the rest of your life. What is it?"
+  nudge: "What's the dish you'd never get tired of?"
+
+- vibe: whimsical
+  question: "You're a famous painter for one day. What do you paint?"
+  nudge: "Who's the subject?"
+
+- vibe: whimsical
+  question: "You're narrating a nature documentary about humans. Describe what I'm doing right now."
+  nudge: "Do the voice."
+
+- vibe: whimsical
+  question: "You have a little animal sidekick that rides on your shoulder. What is it?"
+  nudge: "What's its one trick?"
+
+- vibe: whimsical
+  question: "You can give everyone in the world one small gift. What is it?"
+  nudge: "What would you give me?"
+
+- vibe: whimsical
+  question: "What would your villain origin story be if one small thing went wrong?"
+  nudge: "What's the small thing?"
+
+- vibe: whimsical
+  question: "You've been hired to name paint colors. Name three."
+  nudge: "Which would you put in a bedroom?"
+
+- vibe: whimsical
+  question: "You can only speak in rhymes on our next date. How do you order dinner?"
+  nudge: "Try it now."
+
+- vibe: whimsical
+  question: "If our relationship were a sport, what would it be?"
+  nudge: "Who's winning?"
+
+- vibe: whimsical
+  question: "You can time travel, but only 24 hours in either direction. What do you do?"
+  nudge: "What would you redo about yesterday?"
+
+- vibe: whimsical
+  question: "You're a cloud for a day. Where do you float to?"
+  nudge: "Do you rain on anyone?"
+
+- vibe: whimsical
+  question: "You get to design a new emoji. What is it?"
+  nudge: "When would you use it?"
+
+- vibe: whimsical
+  question: "Your life is a video game. What's the opening level?"
+  nudge: "Who's the final boss?"
+
+- vibe: whimsical
+  question: "You live in a tiny house with room for only 20 things. What makes the cut?"
+  nudge: "What's the hardest thing to leave behind?"
+
+- vibe: whimsical
+  question: "One appliance in our home starts talking. Which one, and what does its voice sound like?"
+  nudge: "What does it complain about?"
+
+- vibe: whimsical
+  question: "You're a spy with an incredibly boring cover job. What is it?"
+  nudge: "What's your gadget?"
+
+- vibe: whimsical
+  question: "If you were a sandwich, what would be in it?"
+  nudge: "What kind of sandwich am I?"
+
+- vibe: whimsical
+  question: "You run a dating agency for animals. Which two do you match up?"
+  nudge: "How does their first date go?"
+
+- vibe: whimsical
+  question: "You're a fairy godparent for a day. Whose wish do you grant?"
+  nudge: "What's the catch?"
+
+- vibe: whimsical
+  question: "Your hometown gets a mascot. What is it?"
+  nudge: "What does the mascot do at games?"
+
+- vibe: whimsical
+  question: "You can rename every day of the week. What are the new names?"
+  nudge: "Which day is the best now?"
+
+- vibe: whimsical
+  question: "You've won a lifetime supply of something weird. What is it?"
+  nudge: "How do you use it all up?"
+
+- vibe: whimsical
+  question: "You're a knight. What's on your shield, and what's your noble quest?"
+  nudge: "Who's your trusty steed?"
+
+- vibe: whimsical
+  question: "We get to live in any fictional house. Which one?"
+  nudge: "Which room is ours?"
+
+- vibe: whimsical
+  question: "You have a magic pocket that produces one thing whenever you need it. What is it?"
+  nudge: "When would it come in handiest?"
+
+- vibe: whimsical
+  question: "You're an alien visiting Earth. What human habit confuses you the most?"
+  nudge: "How would you report it back home?"
+
+- vibe: whimsical
+  fact: "The Moon is slowly drifting away from Earth, about 3.8 cm farther every year."
+  question: "If the Moon were made of a food, what would you want it to be?"
+  nudge: "How would we get a slice?"
+
+- vibe: whimsical
+  question: "You design a vending machine that sells anything. What's in it?"
+  nudge: "What does the mystery button give you?"
+
+- vibe: whimsical
+  question: "You're the mascot at a big game. What are you, and what's your signature move?"
+  nudge: "Who's the rival mascot?"
+
+- vibe: whimsical
+  question: "You become famous for inventing something very small. What is it?"
+  nudge: "What's the infomercial line?"
+
+- vibe: whimsical
+  question: "You become fluent in one animal's body language. Which?"
+  nudge: "What do you think a pet you've known was trying to tell you?"
+
+- vibe: whimsical
+  question: "We're characters in a cozy mystery. What's the crime?"
+  nudge: "Who's the culprit?"
+
+- vibe: whimsical
+  question: "You can bring only one song on a ten-year space voyage. Which one?"
+  nudge: "Would you still like it at the end?"
+
+- vibe: whimsical
+  question: "What would your life look like if you'd grown up in a circus?"
+  nudge: "What's your act?"
+
+- vibe: whimsical
+  question: "You open a store that only sells blue things. What's your best seller?"
+  nudge: "What's the store called?"
+
+- vibe: whimsical
+  question: "You can have a giant version of any tiny object. What is it?"
+  nudge: "Where would you put it?"
+
+- vibe: whimsical
+  question: "You're an action figure. What accessories come in your box?"
+  nudge: "What does your pull-string say?"
+
+- vibe: whimsical
+  question: "You wait tables at a restaurant for monsters. What's on the specials board?"
+  nudge: "Who's the worst tipper?"
+
+- vibe: whimsical
+  question: "You're the conductor of a train that can go anywhere. What's the first stop?"
+  nudge: "What's the snack cart serving?"
+
+- vibe: whimsical
+  question: "You can invent a new way for people to greet each other. What is it?"
+  nudge: "Show me."
+
+- vibe: whimsical
+  question: "If you were a toy, which one would you be?"
+  nudge: "Would you want to be played with gently or roughly?"
+
+- vibe: whimsical
+  question: "You're hosting dinner for five fictional characters. Who's invited?"
+  nudge: "Who causes the drama?"
+
+- vibe: whimsical
+  question: "You're captain of a submarine. What are you searching for?"
+  nudge: "What's the first thing you find?"
+
+- vibe: whimsical
+  question: "You get a personal composer to score your life. What genre is it?"
+  nudge: "What's the music for walking into a room?"
+
+- vibe: whimsical
+  question: "You're stuck in a time loop on one day. Which day would you want it to be?"
+  nudge: "How long until you'd get bored?"
+
+- vibe: whimsical
+  question: "You found a lamp, but the genie is very bad at their job. What goes wrong?"
+  nudge: "What did you wish for?"
+
+- vibe: whimsical
+  question: "You're a tour guide for our neighborhood. What's on the tour?"
+  nudge: "What's the local legend you make up?"
+
+- vibe: whimsical
+  question: "If your feet could talk, what would they say about you?"
+  nudge: "And your hands?"
+
+- vibe: whimsical
+  question: "You can live on any planet from fiction. Which one?"
+  nudge: "What's the commute like?"
+
+- vibe: whimsical
+  question: "You get to pick the next Olympic sport. What is it?"
+  nudge: "Would you medal?"
+
+- vibe: whimsical
+  question: "You're a professional pillow tester. How's your performance review?"
+  nudge: "Describe the perfect pillow."
+
+- vibe: whimsical
+  question: "You run a breakfast diner that's only open at midnight. What's on the menu?"
+  nudge: "Who are the regulars?"
+
+- vibe: whimsical
+  question: "You can turn one boring chore into a game. Which chore, and how?"
+  nudge: "What's the prize?"
+
+- vibe: whimsical
+  question: "You're writing a children's book about yourself. What's the moral of the story?"
+  nudge: "Who illustrates it?"
+
+- vibe: whimsical
+  question: "You're a fashion designer for pets. What's your signature piece?"
+  nudge: "Which animal is your muse?"
+
+- vibe: whimsical
+  question: "If you were a city, which city would you be?"
+  nudge: "Which neighborhood is your heart?"
+
+- vibe: whimsical
+  question: "You get to name a racehorse. What's its name?"
+  nudge: "What's its winning strategy?"
+
+- vibe: whimsical
+  question: "You're a magician with exactly one trick. What is it?"
+  nudge: "Do it now."
+
+- vibe: whimsical
+  question: "You're running for office on a ridiculous platform. What's your slogan?"
+  nudge: "What's your big campaign promise?"
+
+- vibe: whimsical
+  question: "You grow a sixth finger. What do you use it for?"
+  nudge: "Would you keep it?"
+
+- vibe: whimsical
+  question: "You can have dinner with any past or future version of yourself. Which one?"
+  nudge: "What do you order?"
+
+- vibe: whimsical
+  question: "You're the monster under someone's bed, but a very polite one. What's your deal?"
+  nudge: "What's your name?"
+
+- vibe: whimsical
+  question: "You're a stunt double for a movie star. Whose?"
+  nudge: "What's the one stunt you refuse to do?"
+
+- vibe: whimsical
+  question: "You can remove one small annoying thing from the world. What is it?"
+  nudge: "What replaces it?"
+
+- vibe: whimsical
+  question: "You've been chosen to welcome aliens to Earth. What's the first thing you show them?"
+  nudge: "What do you feed them?"
+
+- vibe: whimsical
+  question: "If our love story were a fairy tale, what would it be called?"
+  nudge: "Who's the villain?"
+
+- vibe: whimsical
+  question: "You can swap one body part with an animal's. Which one?"
+  nudge: "Is it worth it?"
+
+- vibe: whimsical
+  question: "You're a professional sleeper. What's your specialty?"
+  nudge: "What's your record?"
+
+- vibe: whimsical
+  question: "You run a cat café, but with a different animal. Which animal?"
+  nudge: "What's on the menu?"
+
+- vibe: whimsical
+  question: "If you were a planet, what would your moons be?"
+  nudge: "What's your weather like?"
+
+- vibe: whimsical
+  question: "You have a hugely popular channel about something oddly specific. What's it about?"
+  nudge: "What's your most-watched video?"
+
+- vibe: whimsical
+  question: "For one week, every meal has to come from one country. Which country?"
+  nudge: "What's on the menu for day one?"
+
+- vibe: whimsical
+  question: "You're a detective. What's your quirky habit?"
+  nudge: "What case made you famous?"
+
+- vibe: whimsical
+  question: "You can hear one thing that humans normally can't. What is it?"
+  nudge: "What does it sound like?"
+
+- vibe: whimsical
+  question: "You get to choose the sound the fridge makes when it opens. What is it?"
+  nudge: "And when it closes?"
+
+- vibe: whimsical
+  question: "You're a pro gamer at a game that doesn't exist yet. What's the game?"
+  nudge: "What's your username?"
+
+- vibe: whimsical
+  question: "Our street gets a theme. What is it?"
+  nudge: "How do you decorate our place?"
+
+- vibe: whimsical
+  question: "You can write one house rule that everyone has to follow forever. What is it?"
+  nudge: "Who breaks it first?"
+
+- vibe: whimsical
+  question: "You're a famous perfumer. What's your signature scent made of?"
+  nudge: "What's it called?"
+
+- vibe: whimsical
+  question: "If you were reincarnated as an object, what would you be?"
+  nudge: "Who would use you?"
+
+- vibe: whimsical
+  question: "You're a garden gnome that comes alive at night. What do you get up to?"
+  nudge: "Who are your gnome friends?"
+
+- vibe: whimsical
+  question: "You have a giant trampoline and a free afternoon. What happens?"
+  nudge: "Who's invited?"
+
+- vibe: whimsical
+  question: "You can only communicate in drawings for a day. Draw something for me."
+  nudge: "What is it?"
+
+- vibe: whimsical
+  question: "There's a theme restaurant built around your life. What's on the walls?"
+  nudge: "What's the house special?"
+
+- vibe: whimsical
+  question: "You're a talk show host. Who's your dream first guest?"
+  nudge: "What's your first question?"
+
+- vibe: whimsical
+  question: "You can bottle one feeling and sell it. Which feeling?"
+  nudge: "What's the price?"
+
+- vibe: whimsical
+  fact: "Squirrels never dig up many of the nuts they bury, and the forgotten ones help plant new trees."
+  question: "You're a squirrel getting ready for winter. What's your strategy?"
+  nudge: "Where's the secret stash?"
+
+- vibe: whimsical
+  question: "You can play one sound effect whenever you want. What is it?"
+  nudge: "When would you use it?"
+
+- vibe: whimsical
+  question: "You're designing a mascot for our relationship. What is it?"
+  nudge: "What's its catchphrase?"
+
+- vibe: whimsical
+  question: "You can visit any fictional kitchen and eat whatever's cooking. Which kitchen?"
+  nudge: "What's on the stove?"
+
+- vibe: whimsical
+  question: "You're a lighthouse keeper on a tiny island. What's your daily routine?"
+  nudge: "What do you do for fun?"
+
+- vibe: whimsical
+  question: "You can be the world's best at one party trick. What's the trick?"
+  nudge: "Who do you show first?"
+
+- vibe: whimsical
+  question: "You're a professional ice cream taster. What's the weirdest flavor you've had to try?"
+  nudge: "Rate it out of ten."
+
+- vibe: whimsical
+  question: "You've started a secret society. What's it for?"
+  nudge: "What's the secret handshake?"
+
+- vibe: whimsical
+  question: "You can make the sky any color for a day. What color?"
+  nudge: "What happens to the sunset?"
+
+- vibe: whimsical
+  question: "You're the village herbalist. What's your most popular potion?"
+  nudge: "What's the side effect?"
+
+- vibe: whimsical
+  question: "If your car or bike had a personality, what would it be?"
+  nudge: "What's its name?"
+
+- vibe: whimsical
+  question: "You're judging a cooking contest between pets. Who wins?"
+  nudge: "What did they make?"
+
+- vibe: whimsical
+  question: "You can have one wild animal as a roommate for a month. Which one?"
+  nudge: "What's the first house rule?"
+
+- vibe: whimsical
+  question: "You get one wish, but it has to be for someone else. What do you wish?"
+  nudge: "Who's it for?"
+
+- vibe: whimsical
+  question: "You can put a slide anywhere in your life. Where does it go?"
+  nudge: "Who gets to ride it?"
+
+- vibe: whimsical
+  question: "You're a famous dancer known for one move. What's it called?"
+  nudge: "Teach it to me."
+
+- vibe: whimsical
+  question: "You're mapping a land from your imagination. What's on the map?"
+  nudge: "Where's the treasure?"
+
+- vibe: whimsical
+  question: "You can live inside a snow globe. What's inside it?"
+  nudge: "Who gets to shake it?"
+
+- vibe: whimsical
+  question: "You're a sommelier for juice boxes. Describe your favorite vintage."
+  nudge: "What does it pair with?"
+
+- vibe: whimsical
+  question: "You can mute one sound in the world forever. What is it?"
+  nudge: "Would you ever miss it?"
+
+- vibe: whimsical
+  question: "We're a superhero duo. What are our powers?"
+  nudge: "What's our team name?"
+
+- vibe: whimsical
+  question: "Our kitchen becomes the set of a cooking show. What's the show called?"
+  nudge: "What's the signature dish?"
+
+- vibe: whimsical
+  question: "You're a bird. Where do you migrate for the winter?"
+  nudge: "What's your song?"
+
+- vibe: whimsical
+  question: "What would you put in a time capsule from today?"
+  nudge: "When should it be opened?"
+
+- vibe: whimsical
+  fact: "There are 88 officially recognized constellations."
+  question: "You get to name a new constellation. What's it of?"
+  nudge: "What's the legend behind it?"
+
+- vibe: whimsical
+  question: "You rule a tiny kingdom. What's the national dish?"
+  nudge: "What's the strangest law?"
+
+- vibe: whimsical
+  question: "You're a toy maker. What's the toy every kid wants this year?"
+  nudge: "What does it do?"
+
+- vibe: whimsical
+  question: "You're a hairstylist to the stars. Whose hair do you do, and what's the look?"
+  nudge: "What gossip do you overhear?"
+
+- vibe: whimsical
+  question: "You can bring one cartoon to life in our home. Which one?"
+  nudge: "What chaos follows?"
+
+- vibe: whimsical
+  question: "If you were a carnival game, which one would you be?"
+  nudge: "Are you rigged?"
+
+- vibe: whimsical
+  question: "You're a weather wizard. What weather do you make for our weekend?"
+  nudge: "And for someone who annoyed you?"
+
+- vibe: whimsical
+  question: "You get to rewrite the ending of a famous movie. Which one?"
+  nudge: "What happens instead?"
+
+- vibe: whimsical
+  question: "You're a magical creature living in our garden. What are you?"
+  nudge: "What do you trade with us?"
+
+- vibe: whimsical
+  question: "If you were a hat, what kind would you be?"
+  nudge: "Who would wear you best?"
+
+- vibe: whimsical
+  question: "For a year you can only eat with chopsticks or only with a spoon. Which do you pick?"
+  nudge: "What meal is the hardest?"
+
+- vibe: whimsical
+  question: "You're a famous explorer who discovered something silly. What did you find?"
+  nudge: "What did you name it?"
+
+- vibe: whimsical
+  question: "You can have a personal chef, a driver, or a cleaner for life. Which one?"
+  nudge: "What's the first thing you'd ask for?"
+
+- vibe: whimsical
+  question: "If you started a podcast, what would it be about?"
+  nudge: "Who's your first guest?"
+
+- vibe: whimsical
+  question: "You're a talking parrot. What phrase do you repeat most, and who taught it to you?"
+  nudge: "What's the most embarrassing thing you'd repeat?"
+
+- vibe: whimsical
+  question: "You can relive any one meal you've ever eaten. Which one?"
+  nudge: "Who were you with?"
+
+- vibe: whimsical
+  question: "You're a sock that got lost in the dryer. Where do you end up?"
+  nudge: "Do you ever find your partner?"
+
+- vibe: whimsical
+  question: "You're a puppet in a puppet show. What's the show about?"
+  nudge: "Who's pulling your strings?"
+
+- vibe: whimsical
+  question: "You get to be a background extra in any movie. Which one?"
+  nudge: "What's your character's secret backstory?"
+
+- vibe: whimsical
+  question: "You bake birthday cakes for animals. What's on the elephant's cake?"
+  nudge: "And the goldfish's?"
+
+- vibe: whimsical
+  question: "Our home can move like a vehicle. Where do we park it first?"
+  nudge: "What's the first thing that falls over?"
+
+- vibe: whimsical
+  question: "You're the royal taster. What's the weirdest dish you've had to test?"
+  nudge: "Did you survive?"
+
+- vibe: whimsical
+  question: "You're a sculptor who only works in butter. What's your masterpiece?"
+  nudge: "Where is it displayed?"
+
+- vibe: whimsical
+  question: "You can ride any animal to work. Which one?"
+  nudge: "How's parking?"
+
+- vibe: whimsical
+  question: "You're a famous chef of terrible food. What's your signature dish?"
+  nudge: "Why do people love it anyway?"
+
+- vibe: whimsical
+  question: "You're the voice of a GPS. What do you say when someone misses a turn?"
+  nudge: "Do the voice."
+
+- vibe: whimsical
+  question: "You're a mermaid or merman. What's your underwater home like?"
+  nudge: "What do you collect from shipwrecks?"
+
+- vibe: whimsical
+  question: "You can add one built-in feature to your body, like a flashlight. What is it?"
+  nudge: "How would you use it?"
+
+- vibe: whimsical
+  question: "You're writing a sequel to a movie you loved as a kid. What's the plot?"
+  nudge: "Who comes back?"
+
+- vibe: whimsical
+  question: "You get one superpower, but only on Tuesdays. What is it?"
+  nudge: "What does your Tuesday look like?"
+
+- vibe: whimsical
+  question: "You're a ninja in a very quiet library. What's your mission?"
+  nudge: "What gives you away?"
+
+- vibe: whimsical
+  question: "If you were a tree, what kind would you be, and where would you grow?"
+  nudge: "What lives in your branches?"
+
+- vibe: whimsical
+  question: "You're a hot air balloon pilot. Where do you take us?"
+  nudge: "What do we pack?"
+
+- vibe: whimsical
+  question: "You're on a quiz show where the only category is you. What question would stump even you?"
+  nudge: "Ask me one about me."
+
+- vibe: whimsical
+  question: "You can turn any room into a ball pit. Which room?"
+  nudge: "What color are the balls?"
+
+- vibe: whimsical
+  question: "You're directing a nature documentary about a pet or houseplant. What's the dramatic twist?"
+  nudge: "What's the narrator's name?"
+
+- vibe: whimsical
+  question: "You're a mad scientist with a totally harmless lab. What are you inventing?"
+  nudge: "What's your lab assistant's name?"
+
+- vibe: whimsical
+  question: "You're throwing a party for a fictional character. Who, and what's the theme?"
+  nudge: "What gift do you bring?"
+
+- vibe: whimsical
+  question: "If your sneeze had a sound effect, what would it be?"
+  nudge: "And your yawn?"
+
+- vibe: whimsical
+  question: "You're a cloud-spotting champion. What's the best shape you've ever seen?"
+  nudge: "Find one for me right now."
+
+- vibe: whimsical
+  question: "You can make any piece of furniture fly. Which do you pick?"
+  nudge: "Where are we going on it?"
+
+- vibe: whimsical
+  question: "You're a crossing guard for ducks. What's your biggest challenge?"
+  nudge: "Who's the troublemaker duck?"
+
+- vibe: whimsical
+  question: "If you were a cocktail or mocktail, what would be in you?"
+  nudge: "What's your garnish?"
+
+- vibe: whimsical
+  question: "You're a wandering minstrel. Which town do you play in, and what's your hit song about?"
+  nudge: "What do they pay you in?"
+
+- vibe: whimsical
+  question: "You invented a new sport played in pajamas. What are the rules?"
+  nudge: "Who's the MVP?"
+
+- vibe: whimsical
+  question: "You get to design your dream pajamas. What do they look like?"
+  nudge: "Would you wear them in public?"
+
+- vibe: whimsical
+  question: "Describe today in one word."
+  nudge: "And what word do you want for tomorrow?"
+
+- vibe: whimsical
+  question: "You fight crime with a household object as your partner. Which object?"
+  nudge: "What's your duo name?"
+
+- vibe: whimsical
+  question: "You run a hotel for traveling garden gnomes. What amenities do you offer?"
+  nudge: "What's the most common complaint?"
+
+- vibe: whimsical
+  question: "You get a lifetime pass to one kind of place. What kind?"
+  nudge: "Where's the first visit?"
+
+- vibe: whimsical
+  question: "You're a professional puddle jumper. What's your technique?"
+  nudge: "What's the biggest puddle you've ever conquered?"
+
+- vibe: whimsical
+  question: "You can make one food from fiction real. What is it?"
+  nudge: "What does it taste like?"
+
+- vibe: whimsical
+  question: "You guard a magical forest. What's the one rule visitors must follow?"
+  nudge: "What happens if they break it?"
+
+- vibe: whimsical
+  question: "You can swap homes with anyone for a week. Whose do you pick?"
+  nudge: "What would you snoop for?"
+
+- vibe: whimsical
+  question: "You're a wedding planner for a very unusual couple. Who's getting married?"
+  nudge: "What's the theme?"
+
+- vibe: whimsical
+  question: "You can bring one object out of a dream into real life. What is it?"
+  nudge: "What does it do?"
+
+- vibe: whimsical
+  question: "You're a DJ on a radio station only plants listen to. What's on the playlist?"
+  nudge: "What's the station called?"
+
+- vibe: whimsical
+  question: "If you were playground equipment, what would you be?"
+  nudge: "Who plays on you?"
+
+- vibe: whimsical
+  question: "You're a professional nap coach. What's your top tip?"
+  nudge: "Coach me through one."
+
+- vibe: whimsical
+  question: "You get to pick a new national animal for your country. What is it?"
+  nudge: "Why that one?"
+
+- vibe: whimsical
+  question: "You're an artist who only paints on toast. What's your masterpiece?"
+  nudge: "Butter or jam as your medium?"
+
+- vibe: whimsical
+  question: "You can say one sentence to the whole world at once. What do you say?"
+  nudge: "How do you think people would react?"
+
+- vibe: whimsical
+  question: "You can hire a marching band to follow you for a day. Which day do you pick?"
+  nudge: "What do they play?"
+
+- vibe: whimsical
+  fact: "Babies coo and babble in a kind of conversation with their caregivers, taking turns long before they can talk."
+  question: "You're a translator for babies. What are babies actually saying?"
+  nudge: "What's their most common complaint?"
+
+- vibe: whimsical
+  question: "You're designing a playground for adults. What's the main attraction?"
+  nudge: "Is there a snack bar?"
+
+- vibe: whimsical
+  question: "You're stuck in an elevator with a celebrity. Who is it?"
+  nudge: "What do you talk about?"
+
+- vibe: whimsical
+  question: "In this world everyone has a tail. What does yours look like?"
+  nudge: "What does it do when you're happy?"
+
+- vibe: whimsical
+  question: "If your mood today were a pizza, what's on it?"
+  nudge: "What would make it better?"
+
+- vibe: whimsical
+  question: "You paint portraits of pets. Who's your most demanding client?"
+  nudge: "What's their pose?"
+
+- vibe: whimsical
+  question: "You can only listen to one album for a month. Which one?"
+  nudge: "Which track would you skip?"
+
+- vibe: whimsical
+  question: "You run a hot dog stand at the end of the world. What's your bestseller?"
+  nudge: "Who's your last customer?"
+
+- vibe: whimsical
+  question: "You're a professional bubble blower. What's your signature bubble?"
+  nudge: "How big can it get?"
+
+- vibe: whimsical
+  question: "You get to redesign money. Whose face goes on the bills?"
+  nudge: "What's on the coins?"
+
+- vibe: whimsical
+  question: "You're the costume designer for our lives. What's my everyday outfit?"
+  nudge: "And yours?"
+
+- vibe: whimsical
+  question: "You're the first person to set foot on a new planet. What are your first words?"
+  nudge: "What's on the flag?"
+
+- vibe: whimsical
+  question: "You've got a huge budget to throw the world's best block party. What's the highlight?"
+  nudge: "Who's the DJ?"
+
+- vibe: whimsical
+  question: "You can turn into any animal for ten minutes a day. Which animal?"
+  nudge: "Where do you go?"
+
+- vibe: whimsical
+  question: "You host a children's TV show. What does it teach?"
+  nudge: "Who's your puppet sidekick?"
+
+- vibe: whimsical
+  question: "You're a lamp in a famous painting. What do you see?"
+  nudge: "Which painting is it?"
+
+- vibe: whimsical
+  question: "You run a shop that only sells hats for animals. What's the bestseller?"
+  nudge: "Which animal is your best customer?"
+
+- vibe: whimsical
+  question: "You control the soundtrack of whatever room you're in. What's playing right now?"
+  nudge: "What plays when someone embarrasses themselves?"
+
+- vibe: whimsical
+  fact: "In Spain and much of Latin America, a little mouse collects lost baby teeth instead of a tooth fairy."
+  question: "You're a tooth fairy with a twist. What do you leave under the pillow?"
+  nudge: "What do you do with all the teeth?"
+
+- vibe: whimsical
+  question: "If your life were a cereal box, what's the prize inside?"
+  nudge: "What's on the back of the box?"
+
+- vibe: whimsical
+  question: "You're a superhero's landlord. What problems does your tenant cause?"
+  nudge: "What's in the lease?"
+
+- vibe: whimsical
+  question: "You're a time-traveling food critic. Which era's food do you review first?"
+  nudge: "How many stars?"
+
+- vibe: whimsical
+  question: "You can only wear one color for the rest of your life. Which one?"
+  nudge: "How do you dress it up?"
+
+- vibe: whimsical
+  question: "You guard a museum at night when the exhibits come alive. Who's the troublemaker?"
+  nudge: "How do you keep them in line?"
+
+- vibe: whimsical
+  question: "You can enchant one thing you own. What do you enchant, and with what?"
+  nudge: "What's the downside?"
+
+- vibe: whimsical
+  question: "You're on a cooking show where all the ingredients come from a gas station. What do you make?"
+  nudge: "What do the judges say?"
+
+- vibe: whimsical
+  question: "You're a dream architect. Design a dream for me tonight."
+  nudge: "Where does it start?"
+
+- vibe: whimsical
+  question: "You run the world's smallest hotel. How many rooms, and what's the vibe?"
+  nudge: "Who's the first guest?"
+
+- vibe: whimsical
+  fact: "Ducklings imprint on the first moving thing they see, which is usually their mother."
+  question: "If you imprinted on the first thing you saw this morning, what would you be following around today?"
+  nudge: "What would you have wanted it to be?"
+
+
 # ---------------------------------------------------------------------------
-# 🔭 NERDY (30)
+# 🔭 NERDY (300)
 # ---------------------------------------------------------------------------
 
 - vibe: nerdy
@@ -437,8 +1528,1361 @@
     What's something heavy you carry around that nobody else can see?
   nudge: How could I help carry it?
 
+# --- added in the 1,200-card expansion ---
+
+- vibe: nerdy
+  fact: "Honeybees tell each other where to find flowers by doing a \"waggle dance.\""
+  question: "What's your way of giving directions that only makes sense to you?"
+  nudge: "Give me directions to somewhere right now."
+
+- vibe: nerdy
+  fact: "Hummingbirds are the only birds that can fly backwards."
+  question: "When have you felt like you were going backwards in life?"
+  nudge: "What got you moving forward again?"
+
+- vibe: nerdy
+  fact: "Bananas are very slightly radioactive, thanks to the potassium in them."
+  question: "What's something harmless you're irrationally suspicious of?"
+  nudge: "Where did that come from?"
+
+- vibe: nerdy
+  fact: "The shortest war in history, between Britain and Zanzibar in 1896, lasted under an hour."
+  question: "What's the shortest argument you've ever won?"
+  nudge: "And the longest one you've lost?"
+
+- vibe: nerdy
+  fact: "Human bodies give off a faint visible glow, about 1,000 times too weak for our eyes to see."
+  question: "What's something about you that people only notice if they look closely?"
+  nudge: "What did it take for me to notice?"
+
+- vibe: nerdy
+  fact: "A blue whale's heart can weigh around 180 kg, about as much as two grown adults."
+  question: "What's the biggest-hearted thing anyone has ever done for you?"
+  nudge: "Have you been able to pay it forward?"
+
+- vibe: nerdy
+  fact: "Some turtles can absorb oxygen through their rear ends, which lets them stay underwater for a very long time."
+  question: "What's the most unexpected way you've ever solved a problem?"
+  nudge: "Would you do it that way again?"
+
+- vibe: nerdy
+  fact: "A dog's nose has hundreds of millions of scent receptors. Ours has around 6 million."
+  question: "If you had a dog's nose for a day, where would you go to smell things?"
+  nudge: "What would you avoid at all costs?"
+
+- vibe: nerdy
+  fact: "The Great Pyramid of Giza was the tallest human-made structure in the world for about 3,800 years."
+  question: "What's a record you'd love to hold, even a tiny one?"
+  nudge: "How would you train for it?"
+
+- vibe: nerdy
+  fact: "Butterflies taste with their feet."
+  question: "What's something you experience totally differently from most people?"
+  nudge: "How would you explain it to me?"
+
+- vibe: nerdy
+  fact: "Saturn is less dense than water. In a big enough bathtub, it would float."
+  question: "What's something that feels heavy in your life but might be lighter than it looks?"
+  nudge: "What would help you see it that way?"
+
+- vibe: nerdy
+  fact: "A \"jiffy\" is a real unit of time. In computing it's often 1/60 or 1/100 of a second."
+  question: "What can you do in a jiffy that takes other people forever?"
+  nudge: "And what takes you forever?"
+
+- vibe: nerdy
+  fact: "Sea otters have the densest fur of any animal, up to about a million hairs per square inch."
+  question: "What's your comfort armor when the world feels cold?"
+  nudge: "What's mine?"
+
+- vibe: nerdy
+  fact: "Google's original name was \"BackRub.\""
+  question: "What was the original \"working title\" for your life plan?"
+  nudge: "How different is the real version?"
+
+- vibe: nerdy
+  fact: "Pluto takes 248 Earth years to orbit the Sun, so it hasn't finished a single orbit since it was discovered in 1930."
+  question: "What's a goal that might take you a lifetime?"
+  nudge: "What's the first step?"
+
+- vibe: nerdy
+  fact: "Lobster was once considered cheap food for prisoners and servants in colonial America."
+  question: "What did you think was uncool once that you love now?"
+  nudge: "What changed?"
+
+- vibe: nerdy
+  fact: "Bats are the only mammals capable of true flight."
+  question: "What makes you feel like you're flying?"
+  nudge: "When did you last feel it?"
+
+- vibe: nerdy
+  fact: "A typical fluffy cumulus cloud weighs around 500 tonnes."
+  question: "What's something that looks light and easy but takes a lot of work?"
+  nudge: "Who do you admire for making it look easy?"
+
+- vibe: nerdy
+  fact: "The Hawaiian alphabet has just 13 letters."
+  question: "If you could only use 13 letters for a day, which would you keep?"
+  nudge: "What's the first word you'd miss?"
+
+- vibe: nerdy
+  fact: "Cats sleep roughly 12 to 16 hours a day."
+  question: "If you could sleep as much as a cat, what would you dream about?"
+  nudge: "What would you happily sleep through?"
+
+- vibe: nerdy
+  fact: "In the 1830s, ketchup was sold in the United States as a medicine."
+  question: "What's your go-to \"medicine\" that isn't really medicine?"
+  nudge: "Does it actually work?"
+
+- vibe: nerdy
+  fact: "Mount Everest is still growing, by a few millimeters a year."
+  question: "In what way are you still growing that people might not notice?"
+  nudge: "Where do you want to grow next?"
+
+- vibe: nerdy
+  fact: "According to the Greek historian Herodotus, ancient Egyptian families shaved their eyebrows to mourn the death of a cat."
+  question: "Who or what have you mourned that others might not understand?"
+  nudge: "How did you get through it?"
+
+- vibe: nerdy
+  fact: "\"Stewardesses\" is one of the longest English words you can type with only your left hand."
+  question: "What's something you could do with one hand tied behind your back?"
+  nudge: "What do you still need help with?"
+
+- vibe: nerdy
+  fact: "Elephants are one of the few animals that can recognize themselves in a mirror."
+  question: "What's something you learned about yourself only recently?"
+  nudge: "How did you figure it out?"
+
+- vibe: nerdy
+  fact: "In a 1995 experiment, pigeons were trained to tell paintings by Picasso from paintings by Monet."
+  question: "What's an art style you love but can't explain why?"
+  nudge: "Show me an example sometime."
+
+- vibe: nerdy
+  fact: "The Statue of Liberty was originally a shiny copper color before it weathered to green."
+  question: "How has your personality changed color over the years?"
+  nudge: "Which version of you do you like best?"
+
+- vibe: nerdy
+  fact: "There's a basketball court above the US Supreme Court's courtroom, nicknamed \"the highest court in the land.\""
+  question: "What's your favorite hidden fun spot in a place everyone thinks is serious?"
+  nudge: "What do you do there?"
+
+- vibe: nerdy
+  fact: "Male seahorses carry the eggs and give birth to the babies."
+  question: "What's a role you'd happily swap with someone?"
+  nudge: "What would you be surprisingly good at?"
+
+- vibe: nerdy
+  fact: "Earth's days are slowly getting longer, by about 1.7 milliseconds every century."
+  question: "If every day had one extra hour, what would you do with it?"
+  nudge: "Would you share it with me?"
+
+- vibe: nerdy
+  fact: "The color orange was named after the fruit, not the other way around."
+  question: "What's the story behind your name?"
+  nudge: "What would you have named yourself?"
+
+- vibe: nerdy
+  fact: "There are more trees on Earth than there are stars in the Milky Way."
+  question: "What's something abundant and amazing that you take for granted?"
+  nudge: "When did you last stop to notice it?"
+
+- vibe: nerdy
+  fact: "Jellyfish have been around for more than 500 million years, and they don't have brains."
+  question: "What do you do without thinking that somehow works out anyway?"
+  nudge: "What's your best autopilot moment?"
+
+- vibe: nerdy
+  fact: "One of the oldest known recipes is for beer, preserved in a Sumerian hymn nearly 4,000 years old."
+  question: "What's a recipe you'd want to be passed down from you?"
+  nudge: "Who would you teach it to?"
+
+- vibe: nerdy
+  fact: "A bolt of lightning is about five times hotter than the surface of the Sun."
+  question: "What instantly gets you fired up?"
+  nudge: "How do you cool down?"
+
+- vibe: nerdy
+  fact: "Wood frogs can freeze solid in winter and thaw back to life in spring."
+  question: "Have you ever had a stretch of life where you felt frozen in place?"
+  nudge: "What thawed you out?"
+
+- vibe: nerdy
+  fact: "A shrimp's heart is in its head."
+  question: "Do you lead with your heart or your head?"
+  nudge: "When has that gotten you into trouble?"
+
+- vibe: nerdy
+  fact: "The Mona Lisa is surprisingly small, only about 77 by 53 centimeters."
+  question: "What was much smaller or bigger than you expected when you finally saw it in person?"
+  nudge: "Was it still worth it?"
+
+- vibe: nerdy
+  fact: "Scotland has a list of more than 400 Scots words for snow."
+  question: "What's something you have tons of words for?"
+  nudge: "Teach me one."
+
+- vibe: nerdy
+  fact: "The Moon has earthquakes too. They're called moonquakes."
+  question: "What small thing shakes you up more than it should?"
+  nudge: "What steadies you?"
+
+- vibe: nerdy
+  fact: "In ancient Greek poetry, tossing an apple to someone was a way of declaring your love."
+  question: "What's an old-fashioned romantic gesture you secretly love?"
+  nudge: "Want to try one tonight?"
+
+- vibe: nerdy
+  fact: "Hippos produce a reddish fluid on their skin that works like a natural sunscreen."
+  question: "What's your natural defense when life gets hard?"
+  nudge: "Is it still working for you?"
+
+- vibe: nerdy
+  fact: "Gentoo penguins give pebbles to potential mates to help build a nest."
+  question: "What's the smallest gift that ever meant the most to you?"
+  nudge: "What would my pebble be?"
+
+- vibe: nerdy
+  fact: "Machine-spun cotton candy was co-invented by a dentist in 1897."
+  question: "What's something ironic about your life or your job?"
+  nudge: "Does it bug you or amuse you?"
+
+- vibe: nerdy
+  fact: "Antarctica is technically the largest desert on Earth."
+  question: "What's something people misunderstand about you because of how it looks?"
+  nudge: "What do you wish they knew?"
+
+- vibe: nerdy
+  fact: "You can't hum while holding your nose closed. Try it."
+  question: "What's a weird thing your body can or can't do?"
+  nudge: "Show me."
+
+- vibe: nerdy
+  fact: "Bluetooth is named after Harald Bluetooth, a 10th-century Danish king."
+  question: "If a technology were named after you, what would it do?"
+  nudge: "What's the logo?"
+
+- vibe: nerdy
+  fact: "Flamingos are pink because of the pigments in what they eat."
+  question: "How has what you take in (food, shows, people) shaped who you are?"
+  nudge: "What would you change about your diet of influences?"
+
+- vibe: nerdy
+  fact: "In medieval Europe, a \"moment\" was a unit of time lasting about 90 seconds."
+  question: "What's a 90-second moment you'll remember forever?"
+  nudge: "Tell me about it."
+
+- vibe: nerdy
+  fact: "Humans share about 98.8% of their DNA with chimpanzees."
+  question: "What do you think is the most uniquely human thing we do?"
+  nudge: "What would a chimp think of it?"
+
+- vibe: nerdy
+  fact: "Rats make ultrasonic giggling sounds when they're tickled."
+  question: "What's the silliest thing that always makes you laugh?"
+  nudge: "Can I try it on you?"
+
+- vibe: nerdy
+  fact: "The first website ever made went live in 1991, and a restored copy is still online."
+  question: "What's the first thing you remember doing on the internet?"
+  nudge: "How old were you?"
+
+- vibe: nerdy
+  fact: "The word \"robot\" comes from a Czech word for forced labor and first appeared in a 1920 play."
+  question: "If you had a robot, what's the one job you'd never hand over to it?"
+  nudge: "Why keep it for yourself?"
+
+- vibe: nerdy
+  fact: "Polar bears have black skin under their white-looking fur."
+  question: "What's something about you that's different underneath than it looks on the surface?"
+  nudge: "Who knows that side of you?"
+
+- vibe: nerdy
+  fact: "One species of jellyfish can turn itself back into a younger stage of life, over and over."
+  question: "If you could restart at any age knowing what you know now, which age?"
+  nudge: "What would you do differently?"
+
+- vibe: nerdy
+  fact: "Horses can't vomit."
+  question: "What's something you just can't do, no matter how hard you try?"
+  nudge: "Have you made peace with it?"
+
+- vibe: nerdy
+  fact: "In Japan, there are more pet cats and dogs than there are children under 15."
+  question: "If we had a house full of pets, who's on the roster?"
+  nudge: "Who's the boss?"
+
+- vibe: nerdy
+  fact: "Weight for weight, spider silk is stronger than steel."
+  question: "What's a quiet strength you have that people underestimate?"
+  nudge: "When did it surprise someone?"
+
+- vibe: nerdy
+  fact: "Dolphins can sleep with one half of their brain at a time."
+  question: "What part of you stays \"on\" even when you're resting?"
+  nudge: "How do you switch it off?"
+
+- vibe: nerdy
+  fact: "One of the first mechanical alarm clocks, built in 1787, could only ring at 4 a.m."
+  question: "What time would your body wake up naturally if nobody made you?"
+  nudge: "What would your ideal day start with?"
+
+- vibe: nerdy
+  fact: "With no wind on the Moon, the astronauts' footprints could last for millions of years."
+  question: "What mark do you hope you leave on the people around you?"
+  nudge: "What mark have I left on you?"
+
+- vibe: nerdy
+  fact: "Coffee was briefly banned in Mecca in 1511."
+  question: "What would you protest if it were banned tomorrow?"
+  nudge: "How far would you go?"
+
+- vibe: nerdy
+  fact: "Platypuses glow blue-green under ultraviolet light."
+  question: "What's a hidden talent of yours that only shows in the right light?"
+  nudge: "When does it come out?"
+
+- vibe: nerdy
+  fact: "Japanese has a word, \"tsundoku,\" for buying books and letting them pile up unread."
+  question: "What do you collect with good intentions and never get around to using?"
+  nudge: "What's the oldest one?"
+
+- vibe: nerdy
+  fact: "One study estimated that humans can tell apart more than a trillion different smells."
+  question: "What smell do you associate with me?"
+  nudge: "Is it a good one?"
+
+- vibe: nerdy
+  fact: "Cheetahs can't roar. They purr, chirp, and meow instead."
+  question: "What's something people expect from you that isn't really you?"
+  nudge: "What's the real you like?"
+
+- vibe: nerdy
+  fact: "Some anechoic chambers are so quiet that people inside can hear their own heartbeat."
+  question: "When was the last time you sat in total silence?"
+  nudge: "What did your mind do?"
+
+- vibe: nerdy
+  fact: "An ostrich's eye is bigger than its brain."
+  question: "What's something you saw coming but ignored anyway?"
+  nudge: "What did you learn from it?"
+
+- vibe: nerdy
+  fact: "Microwaving a grape cut almost in half can create a tiny ball of glowing plasma."
+  question: "What's the most questionable kitchen experiment you've ever tried?"
+  nudge: "Would you try it again?"
+
+- vibe: nerdy
+  fact: "There are more possible games of chess than atoms in the observable universe."
+  question: "What decision opened up a whole new set of possibilities for you?"
+  nudge: "Where did it lead?"
+
+- vibe: nerdy
+  fact: "Newborn babies have around 300 bones, and many fuse together until adults have 206."
+  question: "What part of you has fused together over time, like habits or beliefs?"
+  nudge: "Are you glad it did?"
+
+- vibe: nerdy
+  fact: "A sloth can take weeks to digest a single meal."
+  question: "What takes you a long time to digest emotionally?"
+  nudge: "How do you work through it?"
+
+- vibe: nerdy
+  fact: "There are no bridges across the main stem of the Amazon River."
+  question: "What's a gap in your life you've never quite bridged?"
+  nudge: "Is it worth bridging?"
+
+- vibe: nerdy
+  fact: "The fear of long words is called \"hippopotomonstrosesquippedaliophobia.\""
+  question: "What's a fear of yours that sounds silly out loud?"
+  nudge: "Where do you think it came from?"
+
+- vibe: nerdy
+  fact: "The game that inspired Monopoly was designed in 1904 to show the dangers of monopolies."
+  question: "What's something that turned out to mean the opposite of what you first thought?"
+  nudge: "When did you realize?"
+
+- vibe: nerdy
+  fact: "Charles Darwin called blushing \"the most peculiar and the most human of all expressions.\""
+  question: "What still makes you blush?"
+  nudge: "Can I make you blush right now?"
+
+- vibe: nerdy
+  fact: "The word \"nice\" once meant foolish or ignorant."
+  question: "What's a compliment you secretly don't like getting?"
+  nudge: "What would you rather hear?"
+
+- vibe: nerdy
+  fact: "The longest recorded bout of hiccups lasted 68 years."
+  question: "What's a habit you've had for as long as you can remember?"
+  nudge: "Is it worth keeping?"
+
+- vibe: nerdy
+  fact: "Scientists estimate there's enough gold in Earth's core to coat the whole surface of the planet."
+  question: "What's the hidden treasure in your life that most people don't see?"
+  nudge: "How did you find it?"
+
+- vibe: nerdy
+  fact: "Giraffes have the same number of neck bones as humans: seven."
+  question: "What's a part of you that's much bigger than people expect, like your patience or your appetite?"
+  nudge: "Show me."
+
+- vibe: nerdy
+  fact: "One of the first webcams was set up in 1991 to watch a coffee pot at the University of Cambridge."
+  question: "What everyday thing in your life would you livestream?"
+  nudge: "Who would tune in?"
+
+- vibe: nerdy
+  fact: "The microwave oven was invented after an engineer noticed radar equipment had melted a candy bar in his pocket."
+  question: "What's the best accident that ever happened to you?"
+  nudge: "Would you have chosen it on purpose?"
+
+- vibe: nerdy
+  fact: "Your gut contains around 500 million neurons, so it's sometimes called your \"second brain.\""
+  question: "When did your gut tell you something your brain didn't want to hear?"
+  nudge: "Did you listen?"
+
+- vibe: nerdy
+  fact: "Dust blown from the Sahara helps fertilize the Amazon rainforest across the ocean."
+  question: "Who's someone far away who still helps you grow?"
+  nudge: "Do they know?"
+
+- vibe: nerdy
+  fact: "There's no evidence Vikings wore horned helmets in battle."
+  question: "What's a stereotype about where you're from that's totally wrong?"
+  nudge: "What's the truth?"
+
+- vibe: nerdy
+  fact: "The QWERTY keyboard layout dates back to typewriters in the 1870s."
+  question: "What's an old-fashioned way of doing things you still prefer?"
+  nudge: "Why does it work for you?"
+
+- vibe: nerdy
+  fact: "Earth isn't perfectly round. It bulges a little at the equator."
+  question: "What's an imperfection of yours that you've grown to love?"
+  nudge: "And one of mine?"
+
+- vibe: nerdy
+  fact: "Goats can develop \"accents,\" with their calls shifting to sound like the goats they live with."
+  question: "What phrases have you picked up from people you spend time with?"
+  nudge: "Which of mine have you caught?"
+
+- vibe: nerdy
+  fact: "Ravens have been shown to plan for the future and to barter."
+  question: "What are you planning right now that nobody knows about?"
+  nudge: "Can I help?"
+
+- vibe: nerdy
+  fact: "The International Space Station circles Earth about 16 times a day, so astronauts see around 16 sunrises."
+  question: "What's something you could see every day and never get tired of?"
+  nudge: "When did you last see it?"
+
+- vibe: nerdy
+  fact: "The oldest known musical instruments are flutes made from bird bone and mammoth ivory, about 40,000 years old."
+  question: "What instrument do you wish you could play?"
+  nudge: "What would you play for me first?"
+
+- vibe: nerdy
+  fact: "Saturn's rings are made mostly of chunks of ice."
+  question: "What's something beautiful in your life made from something ordinary?"
+  nudge: "How did it get that way?"
+
+- vibe: nerdy
+  fact: "The Great Barrier Reef is the largest structure on Earth built by living things."
+  question: "What's something you've built slowly, little by little?"
+  nudge: "What's the next piece?"
+
+- vibe: nerdy
+  fact: "Bubble Wrap was originally invented as textured wallpaper."
+  question: "What's something you started that turned into something completely different?"
+  nudge: "Do you like how it turned out?"
+
+- vibe: nerdy
+  fact: "Play-Doh started out as a wallpaper cleaner."
+  question: "What's a second career you'd love to pivot into?"
+  nudge: "What's stopping you?"
+
+- vibe: nerdy
+  fact: "Super Glue was discovered by accident, while researchers were trying to make clear plastic gun sights."
+  question: "What are you glued to, for better or worse?"
+  nudge: "Could you live without it?"
+
+- vibe: nerdy
+  fact: "The Sun makes up about 99.8% of all the mass in our solar system."
+  question: "Who's the sun that everything in your life orbits around?"
+  nudge: "Has that changed over time?"
+
+- vibe: nerdy
+  fact: "Sound travels about four times faster through water than through air."
+  question: "What's a message you wish had reached you sooner?"
+  nudge: "What would it have changed?"
+
+- vibe: nerdy
+  fact: "The Mariana Trench is deeper than Mount Everest is tall."
+  question: "What's the deepest you've ever gone into a hobby or topic?"
+  nudge: "What did you find down there?"
+
+- vibe: nerdy
+  fact: "Mantis shrimp have 12 to 16 kinds of color receptors in their eyes. Humans have 3."
+  question: "What's something you wish you could experience more vividly?"
+  nudge: "What would you do with it?"
+
+- vibe: nerdy
+  fact: "Sharks don't have bones. Their skeletons are made of cartilage."
+  question: "What's your flexible side, the part of you that bends instead of breaking?"
+  nudge: "When has it saved you?"
+
+- vibe: nerdy
+  fact: "A tortoise named Jonathan, hatched around 1832, became the oldest known living land animal."
+  question: "What advice do you think a 190-year-old would give you?"
+  nudge: "What would you ask them?"
+
+- vibe: nerdy
+  fact: "In 1992, a shipping container spilled about 28,000 bath toys into the Pacific, and scientists used them to study ocean currents."
+  question: "Where has life unexpectedly carried you?"
+  nudge: "Would you go back?"
+
+- vibe: nerdy
+  fact: "The earliest known vending machine was described by Hero of Alexandria about 2,000 years ago, and it dispensed holy water."
+  question: "What's a \"modern\" problem you think people have always had?"
+  nudge: "How do you think they dealt with it back then?"
+
+- vibe: nerdy
+  fact: "Napoleon wasn't unusually short. He was about average height for a Frenchman of his time."
+  question: "What's something people get wrong about you all the time?"
+  nudge: "Do you bother correcting them?"
+
+- vibe: nerdy
+  fact: "Fortune cookies were popularized in the United States and likely trace back to Japan, not China."
+  question: "What's something you love that turned out to have a surprising origin?"
+  nudge: "Does it change how you see it?"
+
+- vibe: nerdy
+  fact: "A 2008 study suggested moths can remember things they learned as caterpillars."
+  question: "What part of your younger self is still with you?"
+  nudge: "Is it a part you like?"
+
+- vibe: nerdy
+  fact: "Howler monkey calls can be heard up to about 5 kilometers away."
+  question: "What's something you'd shout from the rooftops if you could?"
+  nudge: "Want to practice on me?"
+
+- vibe: nerdy
+  fact: "Many trees are linked underground by fungal networks that can move water and nutrients between them."
+  question: "Who's in your underground support network?"
+  nudge: "How can we support each other better?"
+
+- vibe: nerdy
+  fact: "Male emperor penguins keep their egg warm on their feet for about two months in the Antarctic winter."
+  question: "What's the longest you've ever waited for something?"
+  nudge: "Was it worth it?"
+
+- vibe: nerdy
+  fact: "The first person convicted of speeding in Britain, in 1896, was going about 8 miles per hour."
+  question: "What's the most minor rule you've ever broken?"
+  nudge: "Did you get caught?"
+
+- vibe: nerdy
+  fact: "Olympic gold medals are mostly silver, with a coating of gold."
+  question: "What's something in your life that's gold-plated, nicer on the outside than inside?"
+  nudge: "What's solid gold?"
+
+- vibe: nerdy
+  fact: "A teaspoon of healthy soil can hold more microorganisms than there are people on Earth."
+  question: "What tiny thing has had a huge impact on your life?"
+  nudge: "Did you notice it at the time?"
+
+- vibe: nerdy
+  fact: "Some species of bamboo can grow almost a meter in a single day."
+  question: "When did you grow the fastest as a person?"
+  nudge: "What set it off?"
+
+- vibe: nerdy
+  fact: "Tigers have striped skin, not just striped fur."
+  question: "What's something about you that goes all the way down, not just on the surface?"
+  nudge: "How long has it been part of you?"
+
+- vibe: nerdy
+  fact: "The cells lining your stomach are replaced every few days."
+  question: "What do you wish you could refresh every few days?"
+  nudge: "Your outlook, your closet, or your playlist?"
+
+- vibe: nerdy
+  fact: "One of the longest words in English dictionaries is \"pneumonoultramicroscopicsilicovolcanoconiosis,\" a lung disease."
+  question: "What's a long word you love to say?"
+  nudge: "Use it in a sentence about tonight."
+
+- vibe: nerdy
+  fact: "The plastic tip on the end of a shoelace is called an aglet."
+  question: "What's something you use every day but don't know the name of?"
+  nudge: "Let's look one up."
+
+- vibe: nerdy
+  fact: "In Tromsø, Norway, the sun doesn't rise for about two months every winter."
+  question: "How do you get through the dark seasons of life?"
+  nudge: "What lights things up for you?"
+
+- vibe: nerdy
+  fact: "Clownfish are all born male, and some later change to female."
+  question: "What's a role you've grown into that you never expected?"
+  nudge: "How does it fit now?"
+
+- vibe: nerdy
+  fact: "The Hubble Space Telescope has been taking pictures of the universe since 1990."
+  question: "What's something you've been quietly watching for a long time?"
+  nudge: "What have you learned from it?"
+
+- vibe: nerdy
+  fact: "In one study, people said hot chocolate tasted better when it was served in an orange cup."
+  question: "What small detail makes something taste better to you?"
+  nudge: "Can I recreate it?"
+
+- vibe: nerdy
+  fact: "\"Lethologica\" is the word for not being able to remember the word you want."
+  question: "What's something you can never remember?"
+  nudge: "What tricks do you use?"
+
+- vibe: nerdy
+  fact: "A pineapple takes about two years to grow."
+  question: "What would you plant now to enjoy two years from now?"
+  nudge: "What do you hope our life looks like then?"
+
+- vibe: nerdy
+  fact: "Crocodiles can't stick their tongues out."
+  question: "What's something you'd say if you could get the words out?"
+  nudge: "Want to say it now?"
+
+- vibe: nerdy
+  fact: "A woodpecker's tongue wraps around the back of its skull, which may help cushion its brain."
+  question: "What protects you from life's hard knocks?"
+  nudge: "Who taught you that?"
+
+- vibe: nerdy
+  fact: "Adult elephants can't jump."
+  question: "What's something everyone assumes you can do that you can't?"
+  nudge: "Does it bother you?"
+
+- vibe: nerdy
+  fact: "Blue jay feathers aren't blue because of pigment. Their structure scatters light so they look blue."
+  question: "What changes depending on the light, like your mood?"
+  nudge: "What's your best lighting?"
+
+- vibe: nerdy
+  fact: "\"OK\" started as a joke abbreviation for \"oll korrect\" in 1839."
+  question: "What's an inside joke that became a permanent part of your vocabulary?"
+  nudge: "Where did it start?"
+
+- vibe: nerdy
+  fact: "Vincent van Gogh sold very few paintings during his lifetime."
+  question: "What do you love making even if nobody ever sees it?"
+  nudge: "Would you show me?"
+
+- vibe: nerdy
+  fact: "Abraham Lincoln is in the National Wrestling Hall of Fame."
+  question: "What's a side of you that would shock people who only know the serious you?"
+  nudge: "Who knows about it?"
+
+- vibe: nerdy
+  fact: "Albert Einstein was offered the presidency of Israel in 1952 and turned it down."
+  question: "What's a big opportunity you turned down?"
+  nudge: "Any regrets?"
+
+- vibe: nerdy
+  fact: "Marie Curie's notebooks are still radioactive and are stored in lead-lined boxes."
+  question: "What's something from your past that still has energy, for better or worse?"
+  nudge: "What do you do with it?"
+
+- vibe: nerdy
+  fact: "One of the first photos to show a person, in Paris in 1838, captured a man having his boots shined."
+  question: "What's the best accidental photo you've ever taken?"
+  nudge: "Show me if you have it."
+
+- vibe: nerdy
+  fact: "There's a Museum of Broken Relationships in Zagreb, Croatia, full of objects donated by exes."
+  question: "What object from your past has a story worthy of a museum?"
+  nudge: "Is it a happy story or a sad one?"
+
+- vibe: nerdy
+  fact: "The Library of Congress holds more than 170 million items."
+  question: "What's a book you borrowed and never gave back?"
+  nudge: "Will you ever return it?"
+
+- vibe: nerdy
+  fact: "By one definition, a \"blue moon\" is the second full moon in a single calendar month."
+  question: "What's something you do only once in a blue moon?"
+  nudge: "Should we do it soon?"
+
+- vibe: nerdy
+  fact: "A bunch of bananas is called a \"hand,\" and a single banana is a \"finger.\""
+  question: "If you could rename something everyday, what would you rename and to what?"
+  nudge: "Use it in a sentence."
+
+- vibe: nerdy
+  fact: "A hummingbird's heart can beat more than 1,200 times a minute."
+  question: "What gets your heart racing in a good way?"
+  nudge: "When did it last happen?"
+
+- vibe: nerdy
+  fact: "Owls can turn their heads about 270 degrees."
+  question: "What's something you wish you could look back on from a different angle?"
+  nudge: "What do you think you'd see?"
+
+- vibe: nerdy
+  fact: "Snow isn't actually white. Ice crystals are clear, and they scatter light in every direction."
+  question: "What looks one way from far away and totally different up close?"
+  nudge: "What about me surprised you up close?"
+
+- vibe: nerdy
+  fact: "The ancient Romans had a goddess of door hinges, named Cardea."
+  question: "If you were the god or goddess of something tiny, what would it be?"
+  nudge: "What offerings would you accept?"
+
+- vibe: nerdy
+  fact: "The distress call \"Mayday\" comes from the French \"m'aider,\" meaning \"help me.\""
+  question: "When did you last really ask for help?"
+  nudge: "Was it hard?"
+
+- vibe: nerdy
+  fact: "The Empire State Building is struck by lightning around 20 times a year."
+  question: "What do you keep getting hit with, but stay standing?"
+  nudge: "What keeps you grounded?"
+
+- vibe: nerdy
+  fact: "Cats can't taste sweetness."
+  question: "What's something everyone loves that you just don't get?"
+  nudge: "Have you tried to like it?"
+
+- vibe: nerdy
+  fact: "The first item ever sold on eBay, in 1995, was a broken laser pointer."
+  question: "What's the strangest thing you've ever bought online?"
+  nudge: "Do you still have it?"
+
+- vibe: nerdy
+  fact: "More than half of the oxygen we breathe comes from the ocean, mostly from tiny plankton."
+  question: "Who's someone in your life who quietly keeps you breathing?"
+  nudge: "Have you told them?"
+
+- vibe: nerdy
+  fact: "Fireflies flash to attract mates, and different species use different flash patterns."
+  question: "What's your signature flirting move?"
+  nudge: "Did it work on me?"
+
+- vibe: nerdy
+  fact: "Babies' kneecaps start out as soft cartilage and harden into bone over the first few years."
+  question: "What's something you had to grow into?"
+  nudge: "When did it click?"
+
+- vibe: nerdy
+  fact: "Woolly mammoths were still alive on a remote Arctic island when the Great Pyramid was being built."
+  question: "What's a mind-blowing overlap in history you know about?"
+  nudge: "What else should we look up?"
+
+- vibe: nerdy
+  fact: "The human body contains enough iron to make a small nail."
+  question: "What's something you have an iron will about?"
+  nudge: "Where did that come from?"
+
+- vibe: nerdy
+  fact: "\"Astronaut\" comes from Greek words meaning \"star sailor.\""
+  question: "What's a job title for what you do that sounds way cooler than the real one?"
+  nudge: "What's mine?"
+
+- vibe: nerdy
+  fact: "Sea turtles often return to the same beach where they hatched to lay their own eggs."
+  question: "What place keeps pulling you back?"
+  nudge: "What would you do there now?"
+
+- vibe: nerdy
+  fact: "Leonardo da Vinci wrote many of his notes in mirror writing, from right to left."
+  question: "What's your quirky way of keeping notes or remembering things?"
+  nudge: "Show me."
+
+- vibe: nerdy
+  fact: "Some apples in grocery stores have been kept in cold storage for up to a year."
+  question: "What's something that sounds gross once you know how it works?"
+  nudge: "Do you still eat it?"
+
+- vibe: nerdy
+  fact: "More than 7,000 languages are spoken in the world today."
+  question: "What's a language you'd learn for one specific reason, like a song or a person?"
+  nudge: "What's the reason?"
+
+- vibe: nerdy
+  fact: "Honeybees can learn to recognize human faces."
+  question: "Whose face makes you light up when you see it?"
+  nudge: "What does it do to you?"
+
+- vibe: nerdy
+  fact: "Earthworms have five pairs of heart-like organs."
+  question: "Who holds a piece of your heart?"
+  nudge: "How did they earn it?"
+
+- vibe: nerdy
+  fact: "The scientific name for brain freeze is \"sphenopalatine ganglioneuralgia.\""
+  question: "What cold treat is worth the brain freeze?"
+  nudge: "When did you last have one?"
+
+- vibe: nerdy
+  fact: "One of the earliest known uses of \"OMG\" was in a 1917 letter to Winston Churchill."
+  question: "Who's the most unexpected person you've ever sent something silly to?"
+  nudge: "How did they respond?"
+
+- vibe: nerdy
+  fact: "The oldest recorded joke, from ancient Sumer around 1900 BC, is a fart joke."
+  question: "What's an old joke that still gets you every time?"
+  nudge: "Tell it to me."
+
+- vibe: nerdy
+  fact: "A border collie named Chaser learned the names of more than 1,000 toys."
+  question: "What would you teach a super-smart dog?"
+  nudge: "What do you think it would teach you?"
+
+- vibe: nerdy
+  fact: "Some monarch butterflies migrate up to about 4,800 kilometers."
+  question: "What's the longest journey you've ever taken?"
+  nudge: "What did you bring back from it?"
+
+- vibe: nerdy
+  fact: "Giant pandas can spend 10 to 16 hours a day eating."
+  question: "What could you happily do for 12 hours a day?"
+  nudge: "What would get old first?"
+
+- vibe: nerdy
+  fact: "Arctic terns migrate from pole to pole, so they see two summers every year."
+  question: "If you could spend half of every year somewhere else, where would it be?"
+  nudge: "What would you do there?"
+
+- vibe: nerdy
+  fact: "A googol is 1 followed by 100 zeros, and it inspired the name Google."
+  question: "What's something you could never get enough of?"
+  nudge: "What's the most of it you've ever had?"
+
+- vibe: nerdy
+  fact: "Birds are living dinosaurs, descended from the same family tree as T. rex."
+  question: "Which animal do you think secretly still has dinosaur energy?"
+  nudge: "Do you?"
+
+- vibe: nerdy
+  fact: "Light from the Moon takes about 1.3 seconds to reach Earth."
+  question: "If you could send a message to the Moon, what would it say?"
+  nudge: "Who would you hope reads it?"
+
+- vibe: nerdy
+  fact: "Lake Hillier in Australia is naturally bright pink."
+  question: "What place on Earth would you most like to see with your own eyes?"
+  nudge: "Who would you take?"
+
+- vibe: nerdy
+  fact: "Astronauts' tears don't fall in space. They ball up around the eyes."
+  question: "When did you last cry from laughing?"
+  nudge: "What was so funny?"
+
+- vibe: nerdy
+  fact: "\"Happy Birthday to You\" was under copyright in the United States until 2016."
+  question: "What song do you sing even though you don't know all the words?"
+  nudge: "Sing what you know."
+
+- vibe: nerdy
+  fact: "An organ performance of a John Cage piece in a German church is scheduled to finish in the year 2640."
+  question: "What would you want to keep going for centuries?"
+  nudge: "Who would carry it on?"
+
+- vibe: nerdy
+  fact: "Some people experience synesthesia, like seeing colors when they hear music."
+  question: "If your favorite song had a color, what would it be?"
+  nudge: "What color am I?"
+
+- vibe: nerdy
+  fact: "A billion seconds is about 31.7 years."
+  question: "Which second of your life would you stretch out into years if you could?"
+  nudge: "Why that one?"
+
+- vibe: nerdy
+  fact: "Velcro was inspired by burrs that stuck to an engineer's dog during a walk."
+  question: "What idea of yours came from somewhere totally unexpected?"
+  nudge: "What happened to it?"
+
+- vibe: nerdy
+  fact: "Most people spend about two hours a night dreaming, even if they don't remember it."
+  question: "What do you daydream about the most?"
+  nudge: "Have you ever told anyone?"
+
+- vibe: nerdy
+  fact: "The Golden Gate Bridge's official paint color is called \"International Orange.\""
+  question: "What famous place do you love more for a small detail than for the big picture?"
+  nudge: "What's the detail?"
+
+- vibe: nerdy
+  fact: "Elephants have been seen lingering over and touching the bones of other elephants."
+  question: "How do you like to remember people you've lost?"
+  nudge: "Who would you like to tell me about?"
+
+- vibe: nerdy
+  fact: "By number of tires produced, LEGO is one of the biggest tire manufacturers in the world."
+  question: "What's something you're accidentally the best at?"
+  nudge: "How did that happen?"
+
+- vibe: nerdy
+  fact: "A kiwi bird's egg can be about 20% of the mother's body weight."
+  question: "What's the biggest thing you've ever taken on, relative to your size?"
+  nudge: "How did it go?"
+
+- vibe: nerdy
+  fact: "Hawaii is moving toward Japan by about 7 centimeters a year."
+  question: "Who are you slowly drifting toward or away from in life?"
+  nudge: "How do you feel about it?"
+
+- vibe: nerdy
+  fact: "You can't tickle yourself, because your brain predicts the sensation."
+  question: "What's something only someone else can do for you?"
+  nudge: "Who's best at it?"
+
+- vibe: nerdy
+  fact: "Measured from its base on the ocean floor, Mauna Kea in Hawaii is taller than Mount Everest."
+  question: "What's the part of your life that's mostly under the surface?"
+  nudge: "Want to show me some of it?"
+
+- vibe: nerdy
+  fact: "Some bamboo species flower only once every 100 years or more, all at the same time."
+  question: "What's a once-in-a-lifetime moment you've had?"
+  nudge: "Would you want it to happen again?"
+
+- vibe: nerdy
+  fact: "Raindrops aren't teardrop-shaped. Small ones are round, and bigger ones look more like hamburger buns."
+  question: "What's an image in your head that turned out to be totally wrong?"
+  nudge: "How did you find out?"
+
+- vibe: nerdy
+  fact: "A strawberry has about 200 seeds on the outside."
+  question: "What do you have way more of than you need?"
+  nudge: "Would you give any away?"
+
+- vibe: nerdy
+  fact: "Humpback whale songs change over time and can spread from one population to another."
+  question: "What song from your life would you want everyone to hear?"
+  nudge: "What does it mean to you?"
+
+- vibe: nerdy
+  fact: "Cats have a special organ in the roof of their mouth that lets them \"taste\" smells."
+  question: "What smell can you almost taste?"
+  nudge: "Is it a good one or a bad one?"
+
+- vibe: nerdy
+  fact: "Neanderthals made jewelry, including necklaces from eagle talons."
+  question: "What piece of jewelry or accessory means the most to you?"
+  nudge: "Who gave it to you?"
+
+- vibe: nerdy
+  fact: "An adult human body is made of roughly 37 trillion cells."
+  question: "If you could change one thing about how your body works, what would it be?"
+  nudge: "And what would you never change?"
+
+- vibe: nerdy
+  fact: "The Hollywood sign originally read \"Hollywoodland.\""
+  question: "What part of your name or story have you dropped over time?"
+  nudge: "Do you miss it?"
+
+- vibe: nerdy
+  fact: "The opposite sides of a standard die always add up to seven."
+  question: "What's something in your life that always seems to balance out?"
+  nudge: "Is that luck or effort?"
+
+- vibe: nerdy
+  fact: "Happy rabbits sometimes leap into the air and twist, a move called a \"binky.\""
+  question: "What's your happy dance?"
+  nudge: "Do it for me."
+
+- vibe: nerdy
+  fact: "At its \"triple point,\" water can boil and freeze at the same time."
+  question: "When have you felt two opposite emotions at once?"
+  nudge: "What was going on?"
+
+- vibe: nerdy
+  fact: "Ancient Egyptians often slept with their heads on carved headrests instead of soft pillows."
+  question: "What's your ideal pillow setup?"
+  nudge: "How many pillows is too many?"
+
+- vibe: nerdy
+  fact: "In World War I, a pigeon named Cher Ami carried a message that helped save nearly 200 soldiers."
+  question: "Who came through for you in a big way?"
+  nudge: "Have you thanked them?"
+
+- vibe: nerdy
+  fact: "The smell of freshly cut grass comes from chemicals the plants release when they're damaged."
+  question: "What seems pleasant on the surface but hides a struggle underneath?"
+  nudge: "How do you spot it in people?"
+
+- vibe: nerdy
+  fact: "There are more stars in the universe than grains of sand on all of Earth's beaches."
+  question: "What makes you feel small in a good way?"
+  nudge: "When did you last feel it?"
+
+- vibe: nerdy
+  fact: "In 1964, a high school student named Randy Gardner stayed awake for about 11 days."
+  question: "What's the longest you've ever stayed up, and why?"
+  nudge: "Was it worth it?"
+
+- vibe: nerdy
+  fact: "A Venus flytrap needs to be touched twice before it snaps shut."
+  question: "How many chances do you give people?"
+  nudge: "Has that changed over time?"
+
+- vibe: nerdy
+  fact: "Penguins can drink salt water, thanks to a gland that filters out the salt."
+  question: "What's something hard you've learned to swallow and filter out?"
+  nudge: "How do you do it?"
+
+- vibe: nerdy
+  fact: "The \"Wilhelm scream\" sound effect has been used in hundreds of movies since the 1950s."
+  question: "What's your signature sound or catchphrase?"
+  nudge: "Do it for me."
+
+- vibe: nerdy
+  fact: "The first video uploaded to YouTube, in 2005, was called \"Me at the zoo.\""
+  question: "If you made a video introducing yourself to the world, what would it show?"
+  nudge: "Where would you film it?"
+
+- vibe: nerdy
+  fact: "In Switzerland, it's illegal to keep just one guinea pig, because they get lonely."
+  question: "Who in your life could use more company?"
+  nudge: "How could we help?"
+
+- vibe: nerdy
+  fact: "Kopi luwak, one of the world's priciest coffees, is made from beans eaten and passed by civets."
+  question: "What's the most expensive thing you've ever eaten or drunk?"
+  nudge: "Was it worth it?"
+
+- vibe: nerdy
+  fact: "A 2022 study estimated there are about 20 quadrillion ants on Earth."
+  question: "What do you think ants would say about humans?"
+  nudge: "What could we learn from them?"
+
+- vibe: nerdy
+  fact: "A cat named Stubbs was the honorary mayor of Talkeetna, Alaska, for about 20 years."
+  question: "If a pet ran our town, what would its first act be?"
+  nudge: "Would you vote for it?"
+
+- vibe: nerdy
+  fact: "A light bulb in a Livermore, California fire station has been glowing almost nonstop since 1901."
+  question: "What's something in your life that has quietly kept going for years?"
+  nudge: "What keeps it going?"
+
+- vibe: nerdy
+  fact: "Bees visit around two million flowers to make a single pound of honey."
+  question: "What's something sweet in your life that took a lot of work behind the scenes?"
+  nudge: "Who did the work?"
+
+- vibe: nerdy
+  fact: "The Great Fire of London in 1666 destroyed more than 13,000 houses, but very few deaths were recorded."
+  question: "What disaster in your life turned out less bad than it seemed?"
+  nudge: "What came out of it?"
+
+- vibe: nerdy
+  fact: "Peanuts aren't nuts. They're legumes, like beans and peas."
+  question: "What's something you are that people assume you're not?"
+  nudge: "What's the story?"
+
+- vibe: nerdy
+  fact: "A bumblebee's wings beat about 200 times a second."
+  question: "What gets you buzzing with energy?"
+  nudge: "How do you channel it?"
+
+- vibe: nerdy
+  fact: "The northern lights happen when particles from the Sun collide with gases in our atmosphere."
+  question: "What's on your \"see it before I die\" list?"
+  nudge: "Want to add something together?"
+
+- vibe: nerdy
+  fact: "A small percentage of people are born with an extra rib."
+  question: "What's something unusual about your body that you think is cool?"
+  nudge: "Show me."
+
+- vibe: nerdy
+  fact: "The human eye can distinguish roughly 10 million colors."
+  question: "What color do you think is underrated?"
+  nudge: "Where would you use more of it?"
+
+- vibe: nerdy
+  fact: "The sandwich is named after John Montagu, the 4th Earl of Sandwich."
+  question: "What's something you'd love to be the first person ever to do?"
+  nudge: "What would you call it?"
+
+- vibe: nerdy
+  fact: "Rhino horns are made of keratin, the same stuff as your fingernails."
+  question: "What's something that seems tough about you but is really soft?"
+  nudge: "Who gets to see the soft part?"
+
+- vibe: nerdy
+  fact: "A Japanese construction company, Kongō Gumi, operated for more than 1,400 years."
+  question: "What would you want to build that lasts a thousand years?"
+  nudge: "What's the first rule?"
+
+- vibe: nerdy
+  fact: "Each cashew grows hanging from the bottom of a fruit called a cashew apple."
+  question: "What surprised you about where some food comes from?"
+  nudge: "Would you try growing it?"
+
+- vibe: nerdy
+  fact: "New Caledonian crows can bend wire into hooks to fish out food."
+  question: "What's the most creative way you've ever MacGyvered something?"
+  nudge: "Did it hold?"
+
+- vibe: nerdy
+  fact: "Before alarm clocks were common, \"knocker-uppers\" were paid to tap on windows with long poles to wake people up."
+  question: "What job from the past would you want to try for a day?"
+  nudge: "Would you be any good at it?"
+
+- vibe: nerdy
+  fact: "Sweden's Icehotel is rebuilt out of ice and snow every winter."
+  question: "What would you rebuild from scratch every year if you could?"
+  nudge: "What would you change next time?"
+
+- vibe: nerdy
+  fact: "Cheese is often reported to be one of the most shoplifted foods in the world."
+  question: "What's the most mischievous thing you did as a kid?"
+  nudge: "Did you ever confess?"
+
+- vibe: nerdy
+  fact: "Stonehenge was built in stages over more than 1,500 years."
+  question: "What's a project you'd happily work on for the rest of your life?"
+  nudge: "Where would you start?"
+
+- vibe: nerdy
+  fact: "The Kola Superdeep Borehole in Russia, the deepest hole ever drilled, is over 12 kilometers deep."
+  question: "What's a question you'd dig really deep to answer?"
+  nudge: "How far have you gotten?"
+
+- vibe: nerdy
+  fact: "Dogs dream, and their brain activity during sleep looks a lot like ours."
+  question: "What do you think a pet you've known dreams about?"
+  nudge: "What would you dream about as a dog?"
+
+- vibe: nerdy
+  fact: "Botanically speaking, cucumbers and tomatoes are fruits."
+  question: "What category do you refuse to be put in?"
+  nudge: "What would you call yourself instead?"
+
+- vibe: nerdy
+  fact: "A woman in England once sneezed almost every day for more than two and a half years."
+  question: "What's something dragging on in your life that you'd love to end?"
+  nudge: "What would it take?"
+
+- vibe: nerdy
+  fact: "Some languages, like Guugu Yimithirr in Australia, use north, south, east, and west instead of left and right."
+  question: "Honestly, how good is your sense of direction?"
+  nudge: "Have you ever gotten us lost?"
+
+- vibe: nerdy
+  fact: "You can estimate the temperature by counting a cricket's chirps."
+  question: "What's a weird way you can tell what kind of day it's going to be?"
+  nudge: "What's today's forecast?"
+
+- vibe: nerdy
+  fact: "The first computer mouse, built in the 1960s, was made of wood."
+  question: "What's a first version of something you made that you're still proud of?"
+  nudge: "What would version two look like?"
+
+- vibe: nerdy
+  fact: "It takes about 40 liters of maple sap to make 1 liter of maple syrup."
+  question: "What's something you've boiled down to its essence over the years?"
+  nudge: "What's the core of it?"
+
+- vibe: nerdy
+  fact: "Most of the ocean floor has never been mapped in high detail."
+  question: "What's an unexplored part of yourself you're curious about?"
+  nudge: "How could we explore it together?"
+
+- vibe: nerdy
+  fact: "The Leaning Tower of Pisa started leaning while it was still being built."
+  question: "What's an imperfection that became your charm?"
+  nudge: "What's one of mine you love?"
+
+- vibe: nerdy
+  fact: "One of the oldest known love poems was written in ancient Sumer about 4,000 years ago."
+  question: "If you wrote me a love poem, what would the first line be?"
+  nudge: "Say it."
+
+- vibe: nerdy
+  fact: "The longest kiss on record lasted more than 58 hours."
+  question: "What's the most memorable movie kiss you can think of?"
+  nudge: "Should we recreate it?"
+
+- vibe: nerdy
+  fact: "Over a million euros' worth of coins are tossed into Rome's Trevi Fountain every year, and the money goes to charity."
+  question: "If you tossed a coin in a fountain right now, what would you wish for?"
+  nudge: "Can you tell me, or does it ruin it?"
+
+- vibe: nerdy
+  fact: "Researchers have filmed octopuses throwing shells and silt at each other."
+  question: "What's the pettiest thing you've ever done?"
+  nudge: "Would you do it again?"
+
+- vibe: nerdy
+  fact: "A sea lion named Ronan learned to bob her head to the beat of music."
+  question: "What's the best live music moment of your life?"
+  nudge: "Who were you with?"
+
+- vibe: nerdy
+  fact: "Giant African pouched rats have been trained to sniff out landmines."
+  question: "Who's an unlikely hero you admire?"
+  nudge: "What makes them heroic?"
+
+- vibe: nerdy
+  fact: "The crack of a whip is a tiny sonic boom. The tip moves faster than the speed of sound."
+  question: "What's the fastest decision you've ever made?"
+  nudge: "Was it a good one?"
+
+- vibe: nerdy
+  fact: "Many sea stars can regrow lost arms."
+  question: "What's something you lost that grew back stronger?"
+  nudge: "How long did it take?"
+
+- vibe: nerdy
+  fact: "Some bees sleep by clamping onto a plant stem with their jaws."
+  question: "Where's the weirdest place you've ever fallen asleep?"
+  nudge: "How did you wake up?"
+
+- vibe: nerdy
+  fact: "A pigeon's feathers can weigh more than its bones."
+  question: "When was the lightest you've ever felt?"
+  nudge: "What made you feel that way?"
+
+- vibe: nerdy
+  fact: "Hippos can't swim. They walk or bounce along the bottom of rivers."
+  question: "What's something you fake your way through?"
+  nudge: "Has anyone ever noticed?"
+
+- vibe: nerdy
+  fact: "The Andromeda galaxy is heading toward our Milky Way, and the two might merge in a few billion years."
+  question: "What's something big coming up that you're excited about?"
+  nudge: "How can we get ready for it?"
+
+- vibe: nerdy
+  fact: "Studies show the brain doesn't really multitask. It switches rapidly between tasks."
+  question: "What's the most you've ever juggled at once?"
+  nudge: "Did anything drop?"
+
+- vibe: nerdy
+  fact: "Tooth enamel is the hardest substance in the human body."
+  question: "What's the toughest part of your personality?"
+  nudge: "Where did it come from?"
+
+- vibe: nerdy
+  fact: "A day on Mars is only about 40 minutes longer than a day on Earth."
+  question: "What would you do with an extra 40 minutes every day?"
+  nudge: "Would you actually use it well?"
+
+- vibe: nerdy
+  fact: "Koalas sleep up to about 20 hours a day."
+  question: "What's the laziest day you've ever had?"
+  nudge: "Was it glorious or a waste?"
+
+- vibe: nerdy
+  fact: "Some frogs can survive being frozen, and some fish make their own antifreeze."
+  question: "What's your favorite cold-weather comfort?"
+  nudge: "When can we do it together?"
+
+- vibe: nerdy
+  fact: "The Eiffel Tower was meant to be temporary and was nearly torn down in 1909."
+  question: "What's something in your life that was supposed to be temporary but stuck around?"
+  nudge: "Are you glad it did?"
+
+- vibe: nerdy
+  fact: "The world's largest living organism may be a honey fungus in Oregon that spreads over about 9 square kilometers underground."
+  question: "What's something huge that grew from small beginnings in your life?"
+  nudge: "What was the first sprout?"
+
+- vibe: nerdy
+  fact: "There's a species of moth that drinks the tears of sleeping birds."
+  question: "What's the strangest food habit you've ever seen someone have?"
+  nudge: "Do you have one?"
+
+- vibe: nerdy
+  fact: "Humans are the only animals known to cook their food."
+  question: "What's the first dish you ever learned to make?"
+  nudge: "Who taught you?"
+
+- vibe: nerdy
+  fact: "Your ears and nose keep getting a little longer as you age."
+  question: "What part of your personality keeps growing as you age?"
+  nudge: "Is that a good thing?"
+
+- vibe: nerdy
+  fact: "The word \"orange\" traces back through Arabic and Persian to the Sanskrit word \"naranga.\""
+  question: "What's something you inherited from far away, in your family or your habits?"
+  nudge: "Where did it come from?"
+
+- vibe: nerdy
+  fact: "Parrots can live for more than 60 years, so some pet parrots outlive their owners."
+  question: "What's something you'd want to leave to someone after you're gone?"
+  nudge: "Who would get it?"
+
+- vibe: nerdy
+  fact: "A tsunami can travel across the ocean as fast as a jet plane."
+  question: "What's the biggest wave of change you've ridden?"
+  nudge: "How did you stay afloat?"
+
+- vibe: nerdy
+  fact: "Arachibutyrophobia is the fear of peanut butter sticking to the roof of your mouth."
+  question: "What food do you find weirdly hard to eat gracefully?"
+  nudge: "Should we order it on our next date?"
+
+- vibe: nerdy
+  fact: "A group of people once built a working computer inside the video game Minecraft."
+  question: "What's the most impressive thing you've seen someone build from scratch?"
+  nudge: "Could we build something together?"
+
+- vibe: nerdy
+  fact: "Hot air rises, so the top bunk of a bunk bed is usually warmer."
+  question: "Top bunk or bottom bunk, and why?"
+  nudge: "What's your best sleepover memory?"
+
+- vibe: nerdy
+  fact: "The word \"quarantine\" comes from the Italian for \"forty days.\""
+  question: "What would you do with forty days completely to yourself?"
+  nudge: "Would you want me there for any of them?"
+
+- vibe: nerdy
+  fact: "A cockroach can live for about a week without its head."
+  question: "What can you do on total autopilot, practically without your head?"
+  nudge: "Is that impressive or worrying?"
+
+- vibe: nerdy
+  fact: "One study found cows produced more milk while listening to slow, calm music."
+  question: "What music helps you do your best work?"
+  nudge: "What's on that playlist?"
+
+- vibe: nerdy
+  fact: "The Pacific Ocean is wider than the Moon."
+  question: "What's the farthest distance you've ever traveled for someone?"
+  nudge: "Would you do it again?"
+
+- vibe: nerdy
+  fact: "Birds can't taste the heat in chili peppers, so they happily eat them and spread the seeds."
+  question: "What bothers other people but doesn't affect you at all?"
+  nudge: "How did you get so tough about it?"
+
+- vibe: nerdy
+  fact: "The first Ferris wheel was built for the 1893 World's Fair in Chicago."
+  question: "What's the best view you've ever had from up high?"
+  nudge: "Who were you with?"
+
+- vibe: nerdy
+  fact: "Some fairyfly wasps are smaller than a single-celled paramecium."
+  question: "What's a tiny moment from today that you'd want to remember?"
+  nudge: "Why that one?"
+
+- vibe: nerdy
+  fact: "The average person has about 100,000 hairs on their head."
+  question: "What's the best and the worst haircut you've ever had?"
+  nudge: "Are there photos?"
+
+
 # ---------------------------------------------------------------------------
-# 🌊 DEEP (20)
+# 🌊 DEEP (200)
 # ---------------------------------------------------------------------------
 
 - vibe: deep
@@ -548,8 +2992,736 @@
     stronger?
   nudge: What would you tell someone going through the same thing?
 
+# --- added in the 1,200-card expansion ---
+
+- vibe: deep
+  question: "What's something you're still trying to forgive yourself for?"
+  nudge: "What would it take?"
+
+- vibe: deep
+  question: "Who gave you a chance when nobody else would?"
+  nudge: "What did it change for you?"
+
+- vibe: deep
+  question: "What's a lesson you had to learn more than once?"
+  nudge: "Why do you think it took a few tries?"
+
+- vibe: deep
+  question: "When do you feel the loneliest, even around other people?"
+  nudge: "What helps?"
+
+- vibe: deep
+  question: "What does a perfect ordinary weekday look like to you?"
+  nudge: "How close are we to that?"
+
+- vibe: deep
+  question: "What's something you believe that most people around you don't?"
+  nudge: "How did you come to believe it?"
+
+- vibe: deep
+  question: "What do you hope people say about you when you're not in the room?"
+  nudge: "What do you think they actually say?"
+
+- vibe: deep
+  question: "What's a season of your life you'd never want to repeat?"
+  nudge: "What did it give you anyway?"
+
+- vibe: deep
+  question: "If you could have one more conversation with someone who's passed away, who would it be?"
+  nudge: "What would you ask them?"
+
+- vibe: deep
+  question: "What's the bravest thing you've ever done?"
+  nudge: "Would you do it again?"
+
+- vibe: deep
+  question: "What do you wish you'd known when you were twenty?"
+  nudge: "Would you have listened?"
+
+- vibe: deep
+  question: "What makes you feel safe?"
+  nudge: "How can I help with that?"
+
+- vibe: deep
+  question: "What's a goodbye that was harder than you expected?"
+  nudge: "What made it so hard?"
+
+- vibe: deep
+  question: "Who do you miss right now?"
+  nudge: "Have you told them?"
+
+- vibe: deep
+  question: "Is there something you've never told anyone? You don't have to tell me what it is."
+  nudge: "Why have you kept it to yourself?"
+
+- vibe: deep
+  question: "When did you first feel like a grown-up?"
+  nudge: "Do you feel like one now?"
+
+- vibe: deep
+  question: "What's something you're quietly hoping for?"
+  nudge: "What would it mean if it happened?"
+
+- vibe: deep
+  question: "What's your relationship with money like, emotionally?"
+  nudge: "Where do you think that came from?"
+
+- vibe: deep
+  question: "How do you handle being wrong?"
+  nudge: "What's the last thing you were wrong about?"
+
+- vibe: deep
+  question: "What kind of friend are you?"
+  nudge: "What kind of friend do you want to be?"
+
+- vibe: deep
+  question: "What's a risk you're glad you took?"
+  nudge: "And one you're glad you didn't?"
+
+- vibe: deep
+  question: "What does love look like to you, day to day?"
+  nudge: "Where did you learn that?"
+
+- vibe: deep
+  question: "When have you felt truly seen by someone?"
+  nudge: "What did they do?"
+
+- vibe: deep
+  question: "What do you do when you feel overwhelmed?"
+  nudge: "What do you wish you did instead?"
+
+- vibe: deep
+  question: "What's one thing you'd change about how you were raised?"
+  nudge: "And one thing you'd keep?"
+
+- vibe: deep
+  question: "What are you most afraid of losing?"
+  nudge: "How do you live with that fear?"
+
+- vibe: deep
+  question: "What's a dream you still have but rarely say out loud?"
+  nudge: "Will you say it now?"
+
+- vibe: deep
+  fact: "Research suggests that doing kind things for others can lift your own mood too."
+  question: "What's the kindest thing a stranger has ever done for you?"
+  nudge: "Have you passed it on?"
+
+- vibe: deep
+  question: "When was the last time you felt completely at peace?"
+  nudge: "Where were you?"
+
+- vibe: deep
+  question: "What's something you used to see as weakness that you now see as strength?"
+  nudge: "What changed your mind?"
+
+- vibe: deep
+  question: "How do you want to grow in the next year?"
+  nudge: "How can I support it?"
+
+- vibe: deep
+  question: "What's the hardest thing about being you that people don't see?"
+  nudge: "How can I make it easier?"
+
+- vibe: deep
+  question: "What role do you usually play in your family?"
+  nudge: "Do you like that role?"
+
+- vibe: deep
+  question: "What's a value you'd never compromise on?"
+  nudge: "Has it ever been tested?"
+
+- vibe: deep
+  question: "What does success mean to you now, compared to when you were younger?"
+  nudge: "What changed?"
+
+- vibe: deep
+  question: "What's a memory that always makes you smile?"
+  nudge: "Can you take me there?"
+
+- vibe: deep
+  question: "What did your childhood bedroom feel like?"
+  nudge: "What was on the walls?"
+
+- vibe: deep
+  question: "What's something you're grieving that isn't a person?"
+  nudge: "How are you holding up?"
+
+- vibe: deep
+  question: "Who taught you the most about love, for better or worse?"
+  nudge: "What did they teach you?"
+
+- vibe: deep
+  question: "What's one thing you'd like to get better at in our relationship?"
+  nudge: "What would that look like?"
+
+- vibe: deep
+  question: "What do you need more of in your life right now?"
+  nudge: "And what do you need less of?"
+
+- vibe: deep
+  question: "When do you feel most creative?"
+  nudge: "What gets in the way?"
+
+- vibe: deep
+  question: "What's an apology you never got but wish you had?"
+  nudge: "What would it sound like?"
+
+- vibe: deep
+  question: "Is there an apology you owe someone?"
+  nudge: "Will you give it?"
+
+- vibe: deep
+  question: "What's something about your body you've learned to appreciate?"
+  nudge: "What helped?"
+
+- vibe: deep
+  question: "If you knew you couldn't fail, what would you try?"
+  nudge: "What's stopping you from trying anyway?"
+
+- vibe: deep
+  question: "What's a promise you made to yourself that you've kept?"
+  nudge: "And one you're still working on?"
+
+- vibe: deep
+  question: "How do you know when you need a break?"
+  nudge: "Do you usually take it?"
+
+- vibe: deep
+  question: "What are you proud of in how you handle conflict?"
+  nudge: "What would you like to improve?"
+
+- vibe: deep
+  question: "When do you feel most connected to me?"
+  nudge: "How can we do more of that?"
+
+- vibe: deep
+  question: "What's a fear you have about the future?"
+  nudge: "What would make it smaller?"
+
+- vibe: deep
+  question: "What's the best decision you've ever made?"
+  nudge: "How did you know it was right?"
+
+- vibe: deep
+  question: "What's a version of you that you've left behind?"
+  nudge: "Do you ever miss them?"
+
+- vibe: deep
+  question: "What book, song, or movie changed how you see the world?"
+  nudge: "How did it change you?"
+
+- vibe: deep
+  question: "How do you show love, and how do you like to receive it?"
+  nudge: "Are they different?"
+
+- vibe: deep
+  question: "What makes a day feel meaningful to you?"
+  nudge: "Was today one?"
+
+- vibe: deep
+  question: "What's a tradition you want us to have someday?"
+  nudge: "When should we start?"
+
+- vibe: deep
+  question: "Who do you wish you were closer to?"
+  nudge: "What's in the way?"
+
+- vibe: deep
+  question: "What does forgiveness mean to you?"
+  nudge: "Is there anyone you're still working on forgiving?"
+
+- vibe: deep
+  question: "When did you last surprise yourself?"
+  nudge: "How did it feel?"
+
+- vibe: deep
+  question: "What do you think your purpose is, right now?"
+  nudge: "Has it changed over the years?"
+
+- vibe: deep
+  question: "What have you stopped apologizing for?"
+  nudge: "What made you stop?"
+
+- vibe: deep
+  question: "What does a good apology look like to you?"
+  nudge: "Have I ever given you one?"
+
+- vibe: deep
+  question: "What's something you're curious about in me that you haven't asked yet?"
+  nudge: "Go ahead and ask."
+
+- vibe: deep
+  question: "What part of growing up was harder than you expected?"
+  nudge: "And what part was easier?"
+
+- vibe: deep
+  question: "What do you hope our life looks like in ten years?"
+  nudge: "What's one step toward it?"
+
+- vibe: deep
+  question: "What's something you're working on accepting?"
+  nudge: "What's helping?"
+
+- vibe: deep
+  question: "What's the most important thing a friend has taught you?"
+  nudge: "Who was it?"
+
+- vibe: deep
+  question: "How do you recharge when you're emotionally drained?"
+  nudge: "Do I help, or do I get in the way?"
+
+- vibe: deep
+  question: "What's a hard truth you've had to face about yourself?"
+  nudge: "How did you handle it?"
+
+- vibe: deep
+  question: "What does being a good partner mean to you?"
+  nudge: "Where do you think we shine?"
+
+- vibe: deep
+  question: "What do you think happens after we die?"
+  nudge: "Does that comfort you or scare you?"
+
+- vibe: deep
+  question: "When was a time you stood up for something?"
+  nudge: "Would you do it differently now?"
+
+- vibe: deep
+  question: "What's something you've always wanted to ask your parents?"
+  nudge: "What's stopping you?"
+
+- vibe: deep
+  question: "What's a habit you're proud of building?"
+  nudge: "How long did it take?"
+
+- vibe: deep
+  question: "When have you felt completely free?"
+  nudge: "What would it take to feel that again?"
+
+- vibe: deep
+  question: "What's the most valuable thing you own that's worth nothing in money?"
+  nudge: "Why does it matter so much?"
+
+- vibe: deep
+  question: "When do you feel the most misunderstood?"
+  nudge: "What do you wish people understood?"
+
+- vibe: deep
+  question: "What would you do with a year off, no strings attached?"
+  nudge: "Would you spend it alone or with me?"
+
+- vibe: deep
+  question: "What part of your personality do you think came from a grandparent?"
+  nudge: "What do you remember about them?"
+
+- vibe: deep
+  question: "What does respect look like to you?"
+  nudge: "When have you felt most respected?"
+
+- vibe: deep
+  question: "What do you think your biggest blind spot is?"
+  nudge: "Would you want me to tell you if I see it?"
+
+- vibe: deep
+  question: "How do you hope people feel after spending time with you?"
+  nudge: "Do you think they do?"
+
+- vibe: deep
+  question: "What's a regret that taught you something important?"
+  nudge: "Do you still regret it?"
+
+- vibe: deep
+  question: "What's something you do just for yourself?"
+  nudge: "Do you do it enough?"
+
+- vibe: deep
+  question: "What's a conversation that changed your life?"
+  nudge: "Who was it with?"
+
+- vibe: deep
+  question: "How do you like to be supported when you're stressed?"
+  nudge: "What's the worst thing someone can do?"
+
+- vibe: deep
+  question: "What's something you'd want the kids in our lives to learn from you?"
+  nudge: "How would you teach it?"
+
+- vibe: deep
+  question: "What does a good life look like to you?"
+  nudge: "Are you living it?"
+
+- vibe: deep
+  question: "What were you really like as a teenager?"
+  nudge: "Would we have been friends?"
+
+- vibe: deep
+  question: "What's the hardest decision you've ever had to make?"
+  nudge: "Do you think you made the right call?"
+
+- vibe: deep
+  question: "What do you wish you could say to someone but can't?"
+  nudge: "Want to say it to me instead?"
+
+- vibe: deep
+  question: "What's a small act of kindness you still think about?"
+  nudge: "Who did it?"
+
+- vibe: deep
+  question: "When do you feel like you're pretending?"
+  nudge: "What would happen if you stopped?"
+
+- vibe: deep
+  question: "What's something that matters to you that you keep putting off?"
+  nudge: "What's the first tiny step?"
+
+- vibe: deep
+  question: "What always makes you feel better on a bad day?"
+  nudge: "Can I be part of it?"
+
+- vibe: deep
+  question: "What relationship in your life shaped the way you love?"
+  nudge: "How did it shape you?"
+
+- vibe: deep
+  fact: "Most adults can't remember much from before age three or four. It's called childhood amnesia."
+  question: "What's your earliest memory?"
+  nudge: "Why do you think it stuck?"
+
+- vibe: deep
+  question: "What does vulnerability feel like to you?"
+  nudge: "When are you most comfortable being vulnerable?"
+
+- vibe: deep
+  question: "What's a boundary you've learned to set?"
+  nudge: "Was it hard to set?"
+
+- vibe: deep
+  question: "What part of the world do you feel responsible for?"
+  nudge: "What do you do about it?"
+
+- vibe: deep
+  question: "What do you think you'll be remembered for?"
+  nudge: "And what do you want to be remembered for?"
+
+- vibe: deep
+  question: "What's something you find beautiful that other people might overlook?"
+  nudge: "Will you show me sometime?"
+
+- vibe: deep
+  question: "How do you deal with jealousy?"
+  nudge: "When did you last feel it?"
+
+- vibe: deep
+  question: "What's something you need to hear more often?"
+  nudge: "Can I say it now?"
+
+- vibe: deep
+  question: "What's a mistake you made that you're secretly glad about?"
+  nudge: "Why?"
+
+- vibe: deep
+  question: "What do you value most in a friendship?"
+  nudge: "Who does it best?"
+
+- vibe: deep
+  question: "What's something you wish you could do over?"
+  nudge: "What would you do differently?"
+
+- vibe: deep
+  question: "What about me makes you proud?"
+  nudge: "Have you told me before?"
+
+- vibe: deep
+  question: "What are you still healing from?"
+  nudge: "What helps the healing?"
+
+- vibe: deep
+  question: "What's an ordinary moment between us that you treasure?"
+  nudge: "Why that one?"
+
+- vibe: deep
+  question: "When do you feel the most alive?"
+  nudge: "How can we have more of that?"
+
+- vibe: deep
+  question: "What's something you're scared to want?"
+  nudge: "What would it mean to want it out loud?"
+
+- vibe: deep
+  question: "How has your relationship with your family changed since you became an adult?"
+  nudge: "Is it better, or harder?"
+
+- vibe: deep
+  question: "What's a sacrifice you've made that nobody knows about?"
+  nudge: "Was it worth it?"
+
+- vibe: deep
+  question: "What does trust look like when it's rebuilt?"
+  nudge: "Have you ever rebuilt it with someone?"
+
+- vibe: deep
+  question: "What's a failure you're grateful for now?"
+  nudge: "What would you have missed without it?"
+
+- vibe: deep
+  question: "What do you think makes people really change?"
+  nudge: "Have you seen it happen?"
+
+- vibe: deep
+  question: "What's a part of your culture or upbringing you're proud of?"
+  nudge: "What would you want to share with me?"
+
+- vibe: deep
+  fact: "Studies suggest that regularly writing down what you're grateful for can measurably boost well-being."
+  question: "When did you last feel deeply grateful?"
+  nudge: "What brought it on?"
+
+- vibe: deep
+  question: "What do you think you're meant to learn in this phase of your life?"
+  nudge: "How's it going?"
+
+- vibe: deep
+  question: "What's one thing you'd love to stop worrying about?"
+  nudge: "What would you do with all that energy?"
+
+- vibe: deep
+  question: "What's a quality you admire in someone else that you wish you had?"
+  nudge: "Who has it?"
+
+- vibe: deep
+  fact: "Research suggests spending money on other people makes us happier than spending it on ourselves."
+  question: "What's the most meaningful gift you've ever given?"
+  nudge: "How did they react?"
+
+- vibe: deep
+  question: "What's your relationship with silence?"
+  nudge: "Do you seek it out or avoid it?"
+
+- vibe: deep
+  question: "What do you think about when you can't sleep?"
+  nudge: "Does talking about it help?"
+
+- vibe: deep
+  question: "What do you want to be braver about?"
+  nudge: "What's the first brave step?"
+
+- vibe: deep
+  question: "What does commitment mean to you?"
+  nudge: "How do you show it?"
+
+- vibe: deep
+  question: "What experience made you more empathetic?"
+  nudge: "How did it change you?"
+
+- vibe: deep
+  question: "What's something you've outgrown that you used to love?"
+  nudge: "Do you miss it?"
+
+- vibe: deep
+  question: "What are you most looking forward to in the next ten years of your life?"
+  nudge: "And what are you nervous about?"
+
+- vibe: deep
+  question: "If you could give your parents one gift money can't buy, what would it be?"
+  nudge: "Why that?"
+
+- vibe: deep
+  question: "What's something about yourself you've never been able to explain?"
+  nudge: "Want to try now?"
+
+- vibe: deep
+  question: "What helps you feel grounded when everything is changing?"
+  nudge: "Is it working lately?"
+
+- vibe: deep
+  question: "What's a loss that changed your perspective?"
+  nudge: "How do you carry it now?"
+
+- vibe: deep
+  question: "What do you hope I always remember about you?"
+  nudge: "Why that?"
+
+- vibe: deep
+  question: "What's something you used to chase that you've let go of?"
+  nudge: "What do you chase now?"
+
+- vibe: deep
+  question: "How do you know when you're truly happy?"
+  nudge: "Are you right now?"
+
+- vibe: deep
+  question: "What's the most important question you've ever asked yourself?"
+  nudge: "What was the answer?"
+
+- vibe: deep
+  question: "When do you feel most like a kid again?"
+  nudge: "Can we do more of that?"
+
+- vibe: deep
+  question: "Is there anything small between us you've been meaning to bring up?"
+  nudge: "Is now a good time?"
+
+- vibe: deep
+  question: "What part of your past are you most at peace with?"
+  nudge: "How did you get there?"
+
+- vibe: deep
+  question: "What would make you feel more at home in your own life?"
+  nudge: "What's one change we could make?"
+
+- vibe: deep
+  question: "What's a story your family always tells about you?"
+  nudge: "Is it true?"
+
+- vibe: deep
+  question: "Who was your hero growing up?"
+  nudge: "Are they still?"
+
+- vibe: deep
+  question: "What's a fear you've faced head-on?"
+  nudge: "What happened?"
+
+- vibe: deep
+  question: "How do you want to be comforted when you're grieving?"
+  nudge: "And what doesn't help?"
+
+- vibe: deep
+  question: "What part of your day would you never give up?"
+  nudge: "Why does it matter so much?"
+
+- vibe: deep
+  question: "What's the most important promise you've ever made?"
+  nudge: "Have you kept it?"
+
+- vibe: deep
+  question: "When have you felt like you truly belonged?"
+  nudge: "Where was it?"
+
+- vibe: deep
+  question: "What would your younger self be proudest of today?"
+  nudge: "What would surprise them?"
+
+- vibe: deep
+  question: "When did you realize your parents were just people?"
+  nudge: "How did that feel?"
+
+- vibe: deep
+  question: "What's a place that changed you?"
+  nudge: "Would you go back?"
+
+- vibe: deep
+  question: "What's the hardest thing you've ever had to say to someone?"
+  nudge: "How did they take it?"
+
+- vibe: deep
+  question: "How do you hold onto hope when things look bad?"
+  nudge: "What's given you hope lately?"
+
+- vibe: deep
+  question: "What would you do if you weren't afraid of being judged?"
+  nudge: "What's the first thing?"
+
+- vibe: deep
+  question: "What are you still figuring out about love?"
+  nudge: "And what have you figured out?"
+
+- vibe: deep
+  question: "What's a habit of mine that comforts you?"
+  nudge: "Do I know I do it?"
+
+- vibe: deep
+  question: "What do you think we're best at as a couple?"
+  nudge: "What should we work on?"
+
+- vibe: deep
+  question: "When do you feel proudest to be with me?"
+  nudge: "Want to hear mine?"
+
+- vibe: deep
+  question: "What would you change about the world for the next generation?"
+  nudge: "What could we do about it?"
+
+- vibe: deep
+  question: "What do you wish you'd asked a grandparent while you could?"
+  nudge: "Is there someone else you could ask?"
+
+- vibe: deep
+  question: "What's a question you're still searching for an answer to?"
+  nudge: "Where have you looked?"
+
+- vibe: deep
+  question: "Who believed in you before you believed in yourself?"
+  nudge: "Do they know?"
+
+- vibe: deep
+  question: "What emotion do you find hardest to express?"
+  nudge: "How can I make it easier?"
+
+- vibe: deep
+  question: "What does \"enough\" look like to you?"
+  nudge: "Do you have it?"
+
+- vibe: deep
+  question: "What's the most patient you've ever been?"
+  nudge: "What were you waiting for?"
+
+- vibe: deep
+  fact: "Some albatross couples stay together for decades, reuniting every breeding season."
+  question: "What do you think is the secret to a long relationship?"
+  nudge: "Where did you learn it?"
+
+- vibe: deep
+  question: "What's a fear from childhood that still lingers a little?"
+  nudge: "Where does it show up?"
+
+- vibe: deep
+  question: "What's a part of you that only a few people get to see?"
+  nudge: "What makes someone one of those people?"
+
+- vibe: deep
+  question: "What do you want more of from me, and less of?"
+  nudge: "Be honest. I can take it."
+
+- vibe: deep
+  question: "What's the best thing anyone has ever done for your mental health?"
+  nudge: "Have you thanked them?"
+
+- vibe: deep
+  question: "What gives you a sense of meaning outside of work?"
+  nudge: "How much time do you give it?"
+
+- vibe: deep
+  question: "What's something you do that you hope I never stop noticing?"
+  nudge: "Do I notice it now?"
+
+- vibe: deep
+  question: "What's the most honest thing you've ever said to someone?"
+  nudge: "How did it go?"
+
+- vibe: deep
+  question: "When do you feel like you have to be strong for everyone else?"
+  nudge: "Who's strong for you?"
+
+- vibe: deep
+  question: "What do you want our relationship to be known for?"
+  nudge: "What do we need to do to get there?"
+
+- vibe: deep
+  question: "What do you think love asks of us?"
+  nudge: "What has it asked of you?"
+
+- vibe: deep
+  question: "What's a compliment you find hard to accept?"
+  nudge: "Why do you think that is?"
+
+- vibe: deep
+  question: "What did you learn about relationships from watching the adults around you as a kid?"
+  nudge: "What did you decide to do differently?"
+
+
 # ---------------------------------------------------------------------------
-# 🌶️ SPICY (20)
+# 🌶️ SPICY (200)
 # ---------------------------------------------------------------------------
 
 - vibe: spicy
@@ -652,6 +3824,729 @@
     What's a role-play scenario you'd be up for trying, even just for
     the laughs?
   nudge: Who would you be, and who would I be?
+
+# --- added in the 1,200-card expansion ---
+
+- vibe: spicy
+  question: "What's the sexiest thing I wear without realizing it?"
+  nudge: "Should I wear it more often?"
+
+- vibe: spicy
+  question: "What's a compliment about your body you love to hear?"
+  nudge: "Can I say it now?"
+
+- vibe: spicy
+  question: "What's the most daring thing you'd want to do on a date night?"
+  nudge: "Tonight?"
+
+- vibe: spicy
+  question: "What's your favorite thing I do with my hands?"
+  nudge: "Want a demonstration?"
+
+- vibe: spicy
+  question: "Describe your ideal date that ends back at home."
+  nudge: "How does it end, exactly?"
+
+- vibe: spicy
+  question: "What's a kiss of ours you think about more than you'd admit?"
+  nudge: "Want to recreate it?"
+
+- vibe: spicy
+  question: "We have a whole weekend alone with zero plans. What do you want?"
+  nudge: "Saturday or Sunday first?"
+
+- vibe: spicy
+  question: "What's something I did once that you'd love me to do again?"
+  nudge: "How soon?"
+
+- vibe: spicy
+  question: "What's your favorite way to be kissed?"
+  nudge: "Show me."
+
+- vibe: spicy
+  question: "What's more attractive to you, confidence or a little shyness?"
+  nudge: "Which one am I?"
+
+- vibe: spicy
+  question: "What movie scene made you blush the hardest?"
+  nudge: "What about it got to you?"
+
+- vibe: spicy
+  question: "What's your favorite time of day for us to be intimate?"
+  nudge: "Why then?"
+
+- vibe: spicy
+  question: "What's a sound I make that drives you wild?"
+  nudge: "Want to hear it?"
+
+- vibe: spicy
+  question: "What's the boldest text you've ever wanted to send me?"
+  nudge: "Send it now."
+
+- vibe: spicy
+  question: "What would you wear if you wanted to drive me crazy?"
+  nudge: "When's the occasion?"
+
+- vibe: spicy
+  question: "What's your favorite memory of us being intimate?"
+  nudge: "What made it so special?"
+
+- vibe: spicy
+  question: "Massage time. Shoulders, back, or somewhere else?"
+  nudge: "For how long?"
+
+- vibe: spicy
+  question: "What's a fantasy location you'd like to try, like a hotel, a beach, or a cabin?"
+  nudge: "How would the night go?"
+
+- vibe: spicy
+  question: "What's one word for how you feel when I give you a certain look?"
+  nudge: "Do the look."
+
+- vibe: spicy
+  question: "Do you like being told what to do in the bedroom?"
+  nudge: "How much?"
+
+- vibe: spicy
+  question: "What fabric or texture feels sexy to you?"
+  nudge: "Silk, lace, leather, or something else?"
+
+- vibe: spicy
+  question: "On a scale from \"absolutely not\" to \"please,\" how much do you like being bitten?"
+  nudge: "Where?"
+
+- vibe: spicy
+  question: "What's something you'd like to try in the shower together?"
+  nudge: "This week?"
+
+- vibe: spicy
+  question: "What do you love most about my voice?"
+  nudge: "What should I say with it?"
+
+- vibe: spicy
+  question: "Have you ever had a dream about me that you never told me about?"
+  nudge: "Tell me now."
+
+- vibe: spicy
+  question: "What's a dare you'd like me to give you?"
+  nudge: "I dare you."
+
+- vibe: spicy
+  question: "Morning, afternoon, or midnight?"
+  nudge: "Defend your answer."
+
+- vibe: spicy
+  question: "What part of my personality do you find really sexy?"
+  nudge: "When did you first notice it?"
+
+- vibe: spicy
+  question: "What's something you want me to whisper to you?"
+  nudge: "Which ear?"
+
+- vibe: spicy
+  question: "What's a part of yourself you've learned to find sexy?"
+  nudge: "Show me why."
+
+- vibe: spicy
+  question: "Would you want to watch something steamy together?"
+  nudge: "What kind?"
+
+- vibe: spicy
+  question: "What's a toy you'd be curious to try?"
+  nudge: "Should we go shopping together?"
+
+- vibe: spicy
+  question: "Plan a night of pure indulgence. What's on the agenda?"
+  nudge: "Dessert before or after?"
+
+- vibe: spicy
+  question: "What's your favorite position, and why?"
+  nudge: "Want to make it tonight's plan?"
+
+- vibe: spicy
+  question: "What's a slow-motion moment between us you'd replay?"
+  nudge: "What did it feel like?"
+
+- vibe: spicy
+  question: "What's the most daring thing you've ever done in a relationship?"
+  nudge: "Would you do it with me?"
+
+- vibe: spicy
+  question: "How do you feel about leaving marks?"
+  nudge: "Where would you want one?"
+
+- vibe: spicy
+  question: "What's something you've always wanted to say in bed but never have?"
+  nudge: "Say it now?"
+
+- vibe: spicy
+  question: "What's your favorite kind of foreplay?"
+  nudge: "Can we start now?"
+
+- vibe: spicy
+  question: "How do you like to be undressed?"
+  nudge: "Slowly, or all at once?"
+
+- vibe: spicy
+  question: "What's a turn-off that might surprise me?"
+  nudge: "Have I ever done it?"
+
+- vibe: spicy
+  question: "What's one thing you'd like more of in bed?"
+  nudge: "And less of?"
+
+- vibe: spicy
+  question: "You have one hour with me and no interruptions. What do you do?"
+  nudge: "Start the clock."
+
+- vibe: spicy
+  question: "What's the best kiss I've ever given you in public?"
+  nudge: "Where were we?"
+
+- vibe: spicy
+  question: "Have you ever had a crush on someone you really shouldn't have?"
+  nudge: "Tell me the story."
+
+- vibe: spicy
+  question: "What's the flirtiest thing anyone has ever said to you?"
+  nudge: "Can I top it?"
+
+- vibe: spicy
+  question: "Would you rather get a love note or a dirty note?"
+  nudge: "Write me one."
+
+- vibe: spicy
+  question: "What's something you find irresistible about my body?"
+  nudge: "Show me where."
+
+- vibe: spicy
+  question: "How do you feel about skinny dipping?"
+  nudge: "Where would we do it?"
+
+- vibe: spicy
+  question: "What's the most romantic, sexy anniversary you can imagine?"
+  nudge: "Should we plan it?"
+
+- vibe: spicy
+  question: "What part of a slow dance gets to you the most?"
+  nudge: "Dance with me?"
+
+- vibe: spicy
+  question: "What do you remember most vividly about our first time together?"
+  nudge: "What would you redo?"
+
+- vibe: spicy
+  question: "Would you like to try a little power play?"
+  nudge: "Who's in charge first?"
+
+- vibe: spicy
+  question: "What's your favorite word for what we do?"
+  nudge: "Say it."
+
+- vibe: spicy
+  question: "What's a sexy habit you wish I'd pick up?"
+  nudge: "Starting when?"
+
+- vibe: spicy
+  question: "What sensation would you like to explore: hot, cold, soft, or rough?"
+  nudge: "Which first?"
+
+- vibe: spicy
+  question: "How would you feel about me watching you get ready?"
+  nudge: "Want to try?"
+
+- vibe: spicy
+  question: "Would you rather get a long massage or give one?"
+  nudge: "Who goes first?"
+
+- vibe: spicy
+  question: "What's the most attractive thing about how I kiss?"
+  nudge: "What would make it even better?"
+
+- vibe: spicy
+  question: "What do you love hearing me say in the dark?"
+  nudge: "Say it to me."
+
+- vibe: spicy
+  question: "Would you try sensory deprivation, like earplugs and a blindfold?"
+  nudge: "Which sense would you keep?"
+
+- vibe: spicy
+  question: "When were you really turned on in public?"
+  nudge: "What did you do about it?"
+
+- vibe: spicy
+  question: "How much eye contact do you like when we're intimate?"
+  nudge: "Show me."
+
+- vibe: spicy
+  question: "How do you feel about dirty talk?"
+  nudge: "Give me a sample."
+
+- vibe: spicy
+  question: "What's the sexiest season?"
+  nudge: "Why?"
+
+- vibe: spicy
+  question: "What's something you fantasized about long before we met?"
+  nudge: "Is it still on the list?"
+
+- vibe: spicy
+  question: "How do you feel about taking a sexy photo for each other?"
+  nudge: "Just for us?"
+
+- vibe: spicy
+  question: "What's your favorite way to tease me?"
+  nudge: "Do it."
+
+- vibe: spicy
+  question: "What's the hottest scene you've ever read in a book?"
+  nudge: "Will you read it to me?"
+
+- vibe: spicy
+  question: "Where do you like to be touched in public, discreetly?"
+  nudge: "Show me under the table."
+
+- vibe: spicy
+  question: "What would our \"do not disturb\" sign say?"
+  nudge: "When do we hang it?"
+
+- vibe: spicy
+  question: "How do you feel about things getting a little rough?"
+  nudge: "Where's the line?"
+
+- vibe: spicy
+  question: "What's the most spontaneous intimate moment we've had?"
+  nudge: "Should we be more spontaneous?"
+
+- vibe: spicy
+  question: "We're planning a sexy vacation. Where do we go?"
+  nudge: "What's in the suitcase?"
+
+- vibe: spicy
+  question: "What's your favorite piece of lingerie or underwear, on you or on me?"
+  nudge: "When should it make an appearance?"
+
+- vibe: spicy
+  question: "What part of the night do you look forward to most?"
+  nudge: "Why?"
+
+- vibe: spicy
+  question: "What sound, scent, or song instantly reminds you of being intimate with me?"
+  nudge: "Should we bring it back?"
+
+- vibe: spicy
+  question: "What's something you'd like me to initiate more often?"
+  nudge: "How should I start?"
+
+- vibe: spicy
+  question: "How do you like to be kissed when you first wake up?"
+  nudge: "Is morning breath allowed?"
+
+- vibe: spicy
+  question: "What would you want to try in a hotel room that you wouldn't at home?"
+  nudge: "Should we book one?"
+
+- vibe: spicy
+  question: "What would you like me to beg for?"
+  nudge: "Or should I make you beg?"
+
+- vibe: spicy
+  question: "Neck or collarbone?"
+  nudge: "Can I check both?"
+
+- vibe: spicy
+  question: "What's your favorite way to make up after a fight?"
+  nudge: "Was the fight worth it?"
+
+- vibe: spicy
+  question: "What's your favorite scent on me?"
+  nudge: "Where do you notice it most?"
+
+- vibe: spicy
+  question: "What's a little thing I could do in public that would drive you wild?"
+  nudge: "Should I do it tonight?"
+
+- vibe: spicy
+  question: "What's the longest you've gone without being touched, and how did it feel?"
+  nudge: "Let's make up for it."
+
+- vibe: spicy
+  question: "What do you love about the way I undress?"
+  nudge: "Should I go slower?"
+
+- vibe: spicy
+  question: "How do you feel about mirrors?"
+  nudge: "Want to find out?"
+
+- vibe: spicy
+  question: "What's a fantasy you'd only try on vacation, far from home?"
+  nudge: "Where?"
+
+- vibe: spicy
+  question: "What's something sexy you've learned about yourself in the past few years?"
+  nudge: "How did you figure it out?"
+
+- vibe: spicy
+  question: "If we had a safe word, what would it be?"
+  nudge: "Why that one?"
+
+- vibe: spicy
+  question: "How much do you like being praised in bed?"
+  nudge: "Should I tell you how good you are?"
+
+- vibe: spicy
+  question: "What body part of mine do you love to kiss?"
+  nudge: "Show me."
+
+- vibe: spicy
+  question: "What's your favorite kind of touch when we're cuddling?"
+  nudge: "And when we're doing more than cuddling?"
+
+- vibe: spicy
+  question: "Would you want to make a \"yes, no, maybe\" list together?"
+  nudge: "Want to start one tonight?"
+
+- vibe: spicy
+  question: "What's the naughtiest thought you've had about me today?"
+  nudge: "Spill."
+
+- vibe: spicy
+  question: "Do you like being surprised with something new, or planning it together?"
+  nudge: "Which for the next new thing?"
+
+- vibe: spicy
+  question: "What's your favorite way for me to let you know I'm in the mood?"
+  nudge: "Have I been getting it right?"
+
+- vibe: spicy
+  question: "How long should a really good kiss last?"
+  nudge: "Want to time one?"
+
+- vibe: spicy
+  question: "What's a \"first\" you'd still like to have with me?"
+  nudge: "When?"
+
+- vibe: spicy
+  question: "Do you like to be teased with words or with touch?"
+  nudge: "Show me which."
+
+- vibe: spicy
+  question: "What would you do if I came home wearing nothing under my coat?"
+  nudge: "Should I find out?"
+
+- vibe: spicy
+  question: "What's your favorite thing about my lips?"
+  nudge: "Do something with them."
+
+- vibe: spicy
+  question: "How do you feel about massage oil?"
+  nudge: "Warm or cool?"
+
+- vibe: spicy
+  question: "What do you like me wearing to bed?"
+  nudge: "Or nothing at all?"
+
+- vibe: spicy
+  question: "How do you feel about a quick one in the morning before work?"
+  nudge: "Worth being late?"
+
+- vibe: spicy
+  question: "What's the most memorable compliment I've ever given you in bed?"
+  nudge: "What do you want to hear next?"
+
+- vibe: spicy
+  question: "What have you seen in a movie that you'd like to try?"
+  nudge: "Which movie?"
+
+- vibe: spicy
+  question: "What's something totally ordinary that's unbearably sexy to you, like rolled-up sleeves?"
+  nudge: "Do I do it?"
+
+- vibe: spicy
+  question: "What do you think about while we kiss?"
+  nudge: "Be honest."
+
+- vibe: spicy
+  question: "What's the sexiest thing about the way I walk?"
+  nudge: "Want me to walk away from you so you can watch?"
+
+- vibe: spicy
+  question: "How do you feel about public displays of affection?"
+  nudge: "How far is too far?"
+
+- vibe: spicy
+  question: "What would you like to be pinned against?"
+  nudge: "A wall, a door, or the kitchen counter?"
+
+- vibe: spicy
+  question: "How do you like to be told that I want you?"
+  nudge: "Can I tell you now?"
+
+- vibe: spicy
+  question: "What's the most sensual meal you can imagine eating together?"
+  nudge: "Should we cook it?"
+
+- vibe: spicy
+  question: "What's your fantasy involving a uniform?"
+  nudge: "Who's wearing it?"
+
+- vibe: spicy
+  question: "What's your favorite slow way to start the night?"
+  nudge: "Start it."
+
+- vibe: spicy
+  question: "How do you feel about quickies?"
+  nudge: "Kitchen or car?"
+
+- vibe: spicy
+  question: "What makes you feel incredibly desired?"
+  nudge: "How can I do it more?"
+
+- vibe: spicy
+  question: "What do you find sexy about how I talk about the things I love?"
+  nudge: "Get me going on something."
+
+- vibe: spicy
+  question: "Do you like it when I'm loud or quiet?"
+  nudge: "Should I prove it?"
+
+- vibe: spicy
+  question: "What would make tonight unforgettable?"
+  nudge: "Let's do it."
+
+- vibe: spicy
+  question: "What's your favorite way to fall asleep together afterward?"
+  nudge: "Spooning or tangled up?"
+
+- vibe: spicy
+  question: "What's a song we can never play at a dinner party because of what it reminds you of?"
+  nudge: "Hum it."
+
+- vibe: spicy
+  question: "Would you ever give me a striptease?"
+  nudge: "Want to practice?"
+
+- vibe: spicy
+  question: "Have you ever written something steamy?"
+  nudge: "Would you write something for me?"
+
+- vibe: spicy
+  question: "What's your favorite thing about the morning after?"
+  nudge: "What should we have for breakfast?"
+
+- vibe: spicy
+  question: "Where's the most surprising place you've felt a spark with me?"
+  nudge: "Let's go back."
+
+- vibe: spicy
+  question: "What's a fantasy where you're completely in control?"
+  nudge: "What do you make me do?"
+
+- vibe: spicy
+  question: "And what's one where you're not in control at all?"
+  nudge: "How far would you go?"
+
+- vibe: spicy
+  question: "What gentle touch gives you goosebumps?"
+  nudge: "Try it on me."
+
+- vibe: spicy
+  question: "How would you feel about a night with no hands allowed?"
+  nudge: "Who breaks first?"
+
+- vibe: spicy
+  question: "What's a game we could play that ends in bed?"
+  nudge: "Name the rules."
+
+- vibe: spicy
+  question: "How do you feel about a sexy scavenger hunt?"
+  nudge: "What's the final prize?"
+
+- vibe: spicy
+  question: "What's the best way for me to say \"come to bed\"?"
+  nudge: "Practice on me."
+
+- vibe: spicy
+  question: "How do you feel about a bath built for two?"
+  nudge: "Bubbles or candles?"
+
+- vibe: spicy
+  question: "What's something about how I make you feel that you've never said out loud?"
+  nudge: "Say it now."
+
+- vibe: spicy
+  question: "What's your favorite piece of clothing to take off me?"
+  nudge: "Do it later."
+
+- vibe: spicy
+  question: "What's something sexy we could learn together, like a dance or a massage technique?"
+  nudge: "Should I sign us up?"
+
+- vibe: spicy
+  question: "What's your favorite memory of almost getting caught?"
+  nudge: "Would you risk it again?"
+
+- vibe: spicy
+  question: "Would you rather be tied up or do the tying?"
+  nudge: "With what?"
+
+- vibe: spicy
+  question: "How do you feel about a sexy voice message?"
+  nudge: "Record one for me?"
+
+- vibe: spicy
+  question: "What part of your body do you want me to pay more attention to?"
+  nudge: "Starting tonight."
+
+- vibe: spicy
+  question: "What's your favorite time I surprised you in a sexy way?"
+  nudge: "Should I do it again?"
+
+- vibe: spicy
+  question: "What pet name would you like me to call you in the heat of the moment?"
+  nudge: "Try it out."
+
+- vibe: spicy
+  question: "How do you feel about a little spanking?"
+  nudge: "Gentle or firm?"
+
+- vibe: spicy
+  question: "What's a kink you're curious about but haven't looked into yet?"
+  nudge: "Want to look it up together?"
+
+- vibe: spicy
+  question: "Would you want to try a sexy board game or card deck?"
+  nudge: "Does this deck count?"
+
+- vibe: spicy
+  question: "What kind of power dynamic do you find exciting?"
+  nudge: "In bed, or out of it too?"
+
+- vibe: spicy
+  question: "We just met at a bar. How do you seduce me?"
+  nudge: "Let's hear your opening line."
+
+- vibe: spicy
+  question: "What's the most attractive thing about me when I'm being serious?"
+  nudge: "Want me to be serious now?"
+
+- vibe: spicy
+  question: "How do you feel about temperature play, like ice cubes?"
+  nudge: "Where should the ice go?"
+
+- vibe: spicy
+  question: "What's the best way to get you in the mood after a stressful day?"
+  nudge: "Do I need to cook first?"
+
+- vibe: spicy
+  question: "Long, slow nights or quick, passionate moments?"
+  nudge: "Which is tonight?"
+
+- vibe: spicy
+  question: "What's a word or phrase that makes you melt?"
+  nudge: "Should I say it?"
+
+- vibe: spicy
+  question: "Which room in our home should we christen next?"
+  nudge: "When?"
+
+- vibe: spicy
+  question: "What did we do on our early dates that still gives you butterflies?"
+  nudge: "Should we recreate it?"
+
+- vibe: spicy
+  question: "If you could make one rule for our bedroom, what would it be?"
+  nudge: "Who enforces it?"
+
+- vibe: spicy
+  question: "How do you feel about long eye contact across a crowded room?"
+  nudge: "Let's try it at the next party."
+
+- vibe: spicy
+  question: "What's your favorite thing about my neck?"
+  nudge: "Can I have yours?"
+
+- vibe: spicy
+  question: "What's the hottest way for me to ask for consent?"
+  nudge: "Show me how you'd want to be asked."
+
+- vibe: spicy
+  question: "What sexy surprise would you love to come home to?"
+  nudge: "Hint, hint?"
+
+- vibe: spicy
+  question: "How would you feel about getting lingerie as a gift?"
+  nudge: "What color?"
+
+- vibe: spicy
+  question: "What's a fantasy about strangers that's really about us?"
+  nudge: "Who are we pretending to be?"
+
+- vibe: spicy
+  question: "What do you need right afterward?"
+  nudge: "What's your ideal aftercare?"
+
+- vibe: spicy
+  question: "How do you feel about edging?"
+  nudge: "Want to test your patience?"
+
+- vibe: spicy
+  question: "Would you want to try going really slow, like a whole evening of it?"
+  nudge: "How slow can we go?"
+
+- vibe: spicy
+  question: "What would you love me to do to you in a parked car?"
+  nudge: "Where are we parking?"
+
+- vibe: spicy
+  question: "What's the most attractive thing I do when I'm half asleep?"
+  nudge: "Want me to do it tonight?"
+
+- vibe: spicy
+  question: "What do you like me to do to your ears?"
+  nudge: "Whisper, nibble, or kiss?"
+
+- vibe: spicy
+  question: "What's a sexy promise you'd like me to make for later tonight?"
+  nudge: "I promise."
+
+- vibe: spicy
+  question: "What's the best way to touch you while we watch a movie?"
+  nudge: "Shall we test it?"
+
+- vibe: spicy
+  question: "What about my body do you think about when I'm not around?"
+  nudge: "Tell me in detail."
+
+- vibe: spicy
+  question: "How do you feel about flirty texts during the workday?"
+  nudge: "Should I send one now?"
+
+- vibe: spicy
+  question: "What makes you feel sexy when you're alone?"
+  nudge: "How can I bring that out?"
+
+- vibe: spicy
+  question: "What's the most intense eye contact we've ever had?"
+  nudge: "Want to try again?"
+
+- vibe: spicy
+  question: "What's your ideal ratio of romance to raunch?"
+  nudge: "And tonight's ratio?"
+
+- vibe: spicy
+  question: "What fantasy would you want to act out on a rainy afternoon?"
+  nudge: "It's raining somewhere."
+
+- vibe: spicy
+  question: "What do you want me to do to you right after this card?"
+  nudge: "Deal."
+
+- vibe: spicy
+  question: "Is there a spot on me you've never kissed but want to?"
+  nudge: "Go find it."
+
 
 # ---------------------------------------------------------------------------
 # 🎚️ PREFERENCE (200): where do you land, and what's your favorite?
