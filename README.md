@@ -25,10 +25,12 @@ instead of breaking the site.
 
 ## Decks
 
-The start screen lets you pick a deck: **SFW** (everything except the spicy
-cards) or **Spicy** (all of them). The seed box and 🎲 live here too. Tap the
-logo during a game to come back here, which also leaves the room. Opening
-someone's room link skips this screen.
+The start screen shows the five card types as little decks: 🌈 whimsical,
+🔭 nerdy, 🌊 deep, 🎚️ preference and 🌶️ spicy. Tap a deck to switch it on (full
+color) or off (grayed out). Spicy starts off. **Deal me in** starts a game
+with whatever's on. The seed box and 🎲 live here too. Tap the logo during a
+game to come back here, which also leaves the room. Opening someone's room
+link skips this screen.
 
 ## Seed words
 
@@ -37,9 +39,9 @@ Random seeds are `<adjective>-<animal>`, picked from the lists in
 
 ## Playing together
 
-A room is a seed plus a deck: picking **SFW** with seed `spontaneous-squirrel`
-puts you in that room. Anyone who enters the same seed and picks the same deck
-joins you; the same seed with the other deck is a different room. During a
+A room is a seed plus the card types that are switched on. Anyone who enters
+the same seed with the same types on joins you; any other combination is a
+different room. During a
 game, tap **share** for a link or QR code that drops people straight in.
 
 - **No backend.** Phones connect directly to each other with WebRTC

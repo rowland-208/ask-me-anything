@@ -104,18 +104,19 @@ body {
   font-weight: 500;
 }
 
-.deck-choices {
+.vibe-decks {
   display: flex;
-  width: 100%;
+  max-width: 400px;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(18px, 7vw, 40px);
+  gap: 14px 20px;
 }
 
-.deck-choice {
+.vibe-deck {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 8px;
   padding: 0;
   border: 0;
   background: none;
@@ -124,78 +125,100 @@ body {
   font: inherit;
 }
 
-.deck-choice b {
-  margin-top: 14px;
-  font-size: 1.4rem;
-}
-
-.deck-choice small {
-  opacity: 0.7;
+.vibe-deck small {
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
+  transition: opacity 200ms;
 }
 
-.deck-choice em {
-  margin-top: 4px;
-  padding: 1px 9px 2px;
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  background: #3ccf6e;
-  font-size: 0.75rem;
-  font-style: normal;
-  font-weight: 700;
+.vibe-deck.off small {
+  opacity: 0.4;
 }
 
-/* a little stack of card backs */
-.deck-stack {
+/* a little deck: two cards underneath, one face up on top */
+.mini-stack {
   position: relative;
-  width: clamp(104px, 32vw, 140px);
+  display: block;
+  width: min(25vw, 13dvh, 104px);
   aspect-ratio: 5 / 7;
-  transition: transform 250ms cubic-bezier(0.3, 1.6, 0.5, 1);
+  transition:
+    transform 260ms cubic-bezier(0.3, 1.6, 0.5, 1),
+    filter 200ms,
+    opacity 200ms;
 }
 
-.deck-stack span {
+.mini-under,
+.mini-card {
   position: absolute;
   inset: 0;
-  border: var(--line);
-  border-radius: 14px;
-  background-color: var(--back);
-  background-image: radial-gradient(var(--back-dot) 6px, transparent 7px);
-  background-size: 22px 22px;
-  box-shadow: 0 5px 0 var(--ink);
+  display: block;
 }
 
-.deck-stack span:nth-child(1) {
-  transform: rotate(-9deg) translate(-6px, 4px);
+.mini-under {
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+  background: var(--c);
+  box-shadow: 0 3px 0 var(--ink);
 }
 
-.deck-stack span:nth-child(2) {
-  transform: rotate(5deg) translate(5px, 2px);
+.mini-under:nth-child(1) {
+  transform: rotate(-8deg) translate(-4px, 3px);
 }
 
-.deck-spicy .deck-stack span {
-  background-color: #ff7a93;
-  background-image: radial-gradient(#ffb3c1 6px, transparent 7px);
+.mini-under:nth-child(2) {
+  transform: rotate(6deg) translate(4px, 2px);
 }
 
-.deck-stack .deck-top {
-  display: grid;
-  place-items: center;
-  font-size: clamp(2.4rem, 12vw, 3.2rem);
+.mini-card {
+  /* the face inside sizes everything in cqw, so it shrinks to fit */
+  container-type: inline-size;
 }
 
-.deck-choice:hover .deck-stack {
-  transform: rotate(-4deg) translateY(-6px);
+.mini-card .face {
+  border-width: 2.5px;
+  border-radius: 10px;
+  box-shadow: 0 3px 0 var(--ink);
 }
 
-.deck-choice:active .deck-stack {
-  transform: scale(0.95);
+.vibe-deck.on .mini-stack {
+  transform: rotate(-2deg);
 }
 
-.deck-choice:focus-visible {
-  border-radius: 16px;
+.vibe-deck.on:nth-child(even) .mini-stack {
+  transform: rotate(2deg);
+}
+
+.vibe-deck.off .mini-stack {
+  filter: grayscale(1);
+  opacity: 0.4;
+  transform: scale(0.92);
+}
+
+.vibe-deck:hover .mini-stack {
+  transform: translateY(-4px) rotate(-3deg);
+}
+
+.vibe-deck:active .mini-stack {
+  transform: scale(0.9);
+}
+
+.vibe-deck:focus-visible {
+  border-radius: 12px;
   outline: 3px solid var(--ink);
-  outline-offset: 6px;
+  outline-offset: 5px;
+}
+
+.new-seed.deal {
+  margin-top: 4px;
+  padding: 11px 26px 13px;
+  font-size: 1.25rem;
+  animation: none;
+}
+
+.new-seed.deal:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: rotate(-3deg);
 }
 
 .select .seed {

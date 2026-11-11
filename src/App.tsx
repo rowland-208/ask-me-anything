@@ -1,7 +1,21 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import type { PointerEvent as ReactPointerEvent } from 'react'
-import { CARDS, DECKS, DECK_SIZES, VIBES, dealOrder, randomSeed, tilt } from './deck'
-import type { Card, DeckId } from './deck'
+import {
+  CARDS,
+  DECK_VIBES,
+  DEFAULT_DECK,
+  DEFAULT_VIBES,
+  SAMPLES,
+  VIBES,
+  VIBE_COUNTS,
+  dealOrder,
+  deckId,
+  deckSize,
+  deckVibes,
+  randomSeed,
+  tilt,
+} from './deck'
+import type { Card, DeckId, Vibe } from './deck'
 import { toCode, useRoom } from './room'
 import { SharePopup } from './Share'
 
@@ -67,7 +81,7 @@ function CardBack() {
 function App() {
   // The room holds the shared truth ({ seed, deck, pos }). `seed`, `deck` and
   // `pos` below are what this screen is showing; animations catch them up.
-  const { room, snap } = useRoom(DECK_SIZES)
+  const { room, snap } = useRoom(deckSize)
   // Start on deck selection, unless we arrived through someone's room link.
   const [screen, setScreen] = useState<'select' | 'play'>(() =>
     new URLSearchParams(window.location.search).has('room') ? 'play' : 'select',
@@ -78,7 +92,10 @@ function App() {
     () => toCode(new URLSearchParams(window.location.search).get('room') ?? '') || randomSeed(),
   )
   const [seed, setSeed] = useState('')
-  const [deck, setDeck] = useState<DeckId>('sfw')
+  const [deck, setDeck] = useState<DeckId>(DEFAULT_DECK)
+  // Which card types are switched on at deck selection. Spicy starts off.
+  const [vibesOn, setVibesOn] = useState<Set<Vibe>>(() => new Set(DEFAULT_VIBES))
+  const pickedDeck = deckId(vibesOn)
   const [seedDraft, setSeedDraft] = useState<string | null>(null) // null = not editing
   const [pos, setPos] = useState(0)
   const [pose, setPose] = useState<Pose>({ ...CENTER, back: true, motion: 'none' })
@@ -307,16 +324,27 @@ function App() {
     if (code) setPickSeed(code)
   }
 
-  /** Picked a deck: join the room for this seed + deck, or start it. */
-  const pickDeck = (d: DeckId) => {
-    room.join(pickSeed, d)
+  const toggleVibe = (v: Vibe) =>
+    setVibesOn((on) => {
+      const next = new Set(on)
+      if (next.has(v)) next.delete(v)
+      else next.add(v)
+      return next
+    })
+
+  /** Deal me in: join the room for this seed + these card types, or start it. */
+  const play = () => {
+    if (!pickedDeck) return
+    room.join(pickSeed, pickedDeck)
     setScreen('play')
   }
 
   /** Back to deck selection, which means leaving the room. */
   const backToDecks = () => {
     room.leave()
-    if (snap.seed) setPickSeed(snap.seed) // so picking the same deck again rejoins
+    // Keep the seed and card types we were playing, so "deal me in" rejoins.
+    if (snap.seed) setPickSeed(snap.seed)
+    setVibesOn(new Set(deckVibes(snap.deck)))
     setScreen('select')
   }
 
@@ -349,26 +377,40 @@ function App() {
           <h1 className="logo big">
             ask me <span>anything</span>
           </h1>
-          <p className="select-note">pick a deck</p>
-          <div className="deck-choices">
-            {(Object.keys(DECKS) as DeckId[]).map((id) => {
-              const d = DECKS[id]
-              const playing = snap.seed === pickSeed && snap.deck === id && snap.pos > 0
+          <p className="select-note">pick your decks</p>
+          <div className="vibe-decks">
+            {DECK_VIBES.map((v) => {
+              const on = vibesOn.has(v)
               return (
-                <button key={id} type="button" className={`deck-choice deck-${id}`} onClick={() => pickDeck(id)}>
-                  <span className="deck-stack" aria-hidden="true">
-                    <span />
-                    <span />
-                    <span className="deck-top">{id === 'spicy' ? '🌶️' : '☕'}</span>
+                <button
+                  key={v}
+                  type="button"
+                  className={`vibe-deck ${on ? 'on' : 'off'}`}
+                  aria-pressed={on}
+                  aria-label={`${VIBES[v].label} cards`}
+                  onClick={() => toggleVibe(v)}
+                >
+                  <span className={`mini-stack vibe-${v}`} aria-hidden="true">
+                    <span className="mini-under" />
+                    <span className="mini-under" />
+                    <span className="mini-card">
+                      <CardFront card={CARDS[SAMPLES[v]]} number={SAMPLES[v] + 1} />
+                    </span>
                   </span>
-                  <b>{d.label}</b>
-                  <small>{d.blurb}</small>
-                  <small>{d.cards.length.toLocaleString()} cards</small>
-                  {playing && <em>resume</em>}
+                  <small>
+                    {VIBES[v].sticker} {VIBE_COUNTS[v]}
+                  </small>
                 </button>
               )
             })}
           </div>
+          <button type="button" className="new-seed deal" disabled={!pickedDeck} onClick={play}>
+            {!pickedDeck
+              ? 'pick at least one'
+              : snap.seed === pickSeed && snap.deck === pickedDeck && snap.pos > 0
+                ? 'resume'
+                : `deal me in · ${deckSize(pickedDeck).toLocaleString()}`}
+          </button>
           <form
             className="seed"
             onSubmit={(e) => {

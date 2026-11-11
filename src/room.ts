@@ -5,8 +5,9 @@
  * face (so they can read it out loud); everyone else sees the back until it's
  * discarded. Undo brings a discarded card back face up for everyone.
  *
- * A room is a deck + seed: picking the SFW deck with seed "giant-cicada" puts
- * you in the room `PREFIX + "sfw-giant-cicada"`. You're only in a room while
+ * A room is a deck + seed: the deck is which card types are switched on
+ * (e.g. "wndp", everything but spicy), so seed "giant-cicada" with that deck
+ * is the room `PREFIX + "wndp-giant-cicada"`. You're only in a room while
  * playing; the deck selection screen is outside any room. Whoever registers a
  * room's id with the public PeerJS matchmaker is the host; everyone else connects to them
  * directly over WebRTC. The host owns the truth ({ seed, pos }) and
@@ -20,7 +21,7 @@
  */
 import { useEffect, useState, useSyncExternalStore } from 'react'
 import type { DataConnection, Peer, PeerError } from 'peerjs'
-import { randomSeed } from './deck'
+import { DEFAULT_DECK, randomSeed, toDeck } from './deck'
 import type { DeckId } from './deck'
 
 const PREFIX = 'ask-me-anything-v1-'
@@ -49,8 +50,6 @@ type Mode = 'join-or-host' | 'host-fresh'
 
 const roomId = (code: string, deck: DeckId) => `${PREFIX}${deck}-${code}`
 
-/** Read a deck id from untrusted text (a URL), defaulting to SFW. */
-export const toDeck = (text: string | null): DeckId => (text === 'spicy' ? 'spicy' : 'sfw')
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
@@ -121,13 +120,13 @@ export class Room {
   private guestIds = new Map<DataConnection, string>() // host: which device is on each connection
   private heartbeat = 0
   private listeners = new Set<() => void>()
-  private deckSizes: Record<DeckId, number>
+  private deckSize: (deck: DeckId) => number
   snap: Snapshot
 
-  constructor(deckSizes: Record<DeckId, number>) {
-    this.deckSizes = deckSizes
+  constructor(deckSize: (deck: DeckId) => number) {
+    this.deckSize = deckSize
     const me = Math.random().toString(36).slice(2, 10)
-    this.snap = { seed: '', deck: 'sfw', pos: 0, drawer: me, role: 'host', status: 'off', people: 1, me }
+    this.snap = { seed: '', deck: DEFAULT_DECK, pos: 0, drawer: me, role: 'host', status: 'off', people: 1, me }
   }
 
   // ---- React glue ----------------------------------------------------------
@@ -187,7 +186,7 @@ export class Room {
   act(dir: 'next' | 'undo') {
     const { pos, me } = this.snap
     const next = dir === 'next' ? pos + 1 : pos - 1
-    if (next < 0 || next > this.deckSizes[this.snap.deck]) return
+    if (next < 0 || next > this.deckSize(this.snap.deck)) return
     // A fresh draw is ours alone; a card coming back from the discard pile is public.
     const drawer = dir === 'next' ? me : null
     if (this.snap.role === 'guest' && this.host?.open) {
@@ -386,7 +385,7 @@ export class Room {
     if (msg.t !== 'swipe') return
     const { pos } = this.snap
     const next = msg.dir === 'next' ? pos + 1 : pos - 1
-    if (msg.at === pos && next >= 0 && next <= this.deckSizes[this.snap.deck]) {
+    if (msg.at === pos && next >= 0 && next <= this.deckSize(this.snap.deck)) {
       this.set({ pos: next, drawer: msg.dir === 'next' ? msg.by : null })
       this.broadcast()
     } else {
@@ -459,8 +458,8 @@ export class Room {
   }
 }
 
-export function useRoom(deckSizes: Record<DeckId, number>) {
-  const [room] = useState(() => new Room(deckSizes))
+export function useRoom(deckSize: (deck: DeckId) => number) {
+  const [room] = useState(() => new Room(deckSize))
   useEffect(() => {
     room.start()
     // Hang up cleanly when the tab closes so others notice right away.

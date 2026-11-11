@@ -38,32 +38,66 @@ function loadCards(): Card[] {
 
 export const CARDS = loadCards()
 
-export type DeckId = 'sfw' | 'spicy'
+/** The card types you can toggle on the start screen, in display order. */
+export const DECK_VIBES: Vibe[] = ['whimsical', 'nerdy', 'deep', 'preference', 'spicy']
+export const DEFAULT_VIBES: Vibe[] = ['whimsical', 'nerdy', 'deep', 'preference']
 
-/** The decks you can pick on the start screen. Each is a list of card indices. */
-export const DECKS: Record<DeckId, { label: string; blurb: string; cards: number[] }> = {
-  sfw: {
-    label: 'SFW',
-    blurb: 'silly, deep & nerdy',
-    cards: CARDS.flatMap((c, i) => (c.vibe === 'spicy' ? [] : [i])),
-  },
-  spicy: {
-    label: 'Spicy',
-    blurb: 'everything, plus 🌶️',
-    cards: CARDS.map((_, i) => i),
-  },
+/**
+ * A deck is whichever card types are switched on, written as one letter per
+ * type in a fixed order, e.g. "wndp" (everything but spicy). It goes in room
+ * ids and share links, so the same seed + same deck means the same room.
+ */
+export type DeckId = string
+const LETTER: Record<Vibe, string> = { whimsical: 'w', nerdy: 'n', deep: 'd', preference: 'p', spicy: 's' }
+
+export function deckId(vibes: Iterable<Vibe>): DeckId {
+  const on = new Set(vibes)
+  return DECK_VIBES.filter((v) => on.has(v)).map((v) => LETTER[v]).join('')
 }
 
-export const DECK_SIZES: Record<DeckId, number> = {
-  sfw: DECKS.sfw.cards.length,
-  spicy: DECKS.spicy.cards.length,
+export function deckVibes(id: DeckId): Vibe[] {
+  return DECK_VIBES.filter((v) => id.includes(LETTER[v]))
+}
+
+export const DEFAULT_DECK = deckId(DEFAULT_VIBES)
+
+/** Read a deck from untrusted text (a URL), falling back to the default. */
+export function toDeck(text: string | null): DeckId {
+  return deckId(deckVibes(text ?? '')) || DEFAULT_DECK
+}
+
+/** How many cards of each type there are. */
+export const VIBE_COUNTS = Object.fromEntries(
+  DECK_VIBES.map((v) => [v, CARDS.filter((c) => c.vibe === v).length]),
+) as Record<Vibe, number>
+
+/** The deck's cards, as indices into CARDS. */
+function deckCards(id: DeckId): number[] {
+  const on = new Set(deckVibes(id))
+  return CARDS.flatMap((c, i) => (on.has(c.vibe) ? [i] : []))
+}
+
+export function deckSize(id: DeckId): number {
+  return deckVibes(id).reduce((n, v) => n + VIBE_COUNTS[v], 0)
 }
 
 /** The deck's cards (as indices into CARDS) in this seed's shuffled order. */
-export function dealOrder(seed: string, deck: DeckId): number[] {
-  const pool = DECKS[deck].cards
+export function dealOrder(seed: string, id: DeckId): number[] {
+  const pool = deckCards(id)
   return shuffled(seed, pool.length).map((i) => pool[i])
 }
+
+/** The card shown face up on each type's deck on the start screen. */
+const SAMPLE_QUESTIONS: Record<Vibe, string> = {
+  whimsical: "What's a completely useless skill you're weirdly proud of?",
+  nerdy: 'If your friend group had a collective noun, what would it be?',
+  deep: 'When do you feel most like yourself?',
+  preference: 'How do you feel about pineapple on pizza?',
+  spicy: "What's the first thing you noticed about me that you found attractive?",
+}
+export const SAMPLES = Object.fromEntries(
+  DECK_VIBES.map((v) => [v, CARDS.findIndex((c) => c.vibe === v && c.question === SAMPLE_QUESTIONS[v])]),
+) as Record<Vibe, number>
 
 /** String -> 32-bit hash (cyrb53, folded). */
 function hash(str: string): number {
